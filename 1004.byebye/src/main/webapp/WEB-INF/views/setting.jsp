@@ -71,7 +71,6 @@ text-align: center;
         <!-- end nav -->
         </div>
  
-<<<<<<< HEAD
  <div class="main-container portfolio-inner clearfix">
  <!-- top bar -->
     <div class="top-bar">
@@ -120,7 +119,7 @@ text-align: center;
  
  
  <!-- div 종료 -->
-=======
+
 <div class="main-container portfolio-inner clearfix">
 	<!-- top bar -->
 	<div class="top-bar">
