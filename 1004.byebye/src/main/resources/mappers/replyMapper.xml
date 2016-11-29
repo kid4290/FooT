@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="work.com.mapper.ReplyMapper">
+	<resultMap id="replyResult" type="work.com.byebye.dto.Reply">
+		<result property="reNum" column="re_num" />
+		<result property="reCon" column="re_con" />
+		<result property="docNum" column="doc_Num" />
+		<result property="userid" column="user_id" />
+	</resultMap>
+
+	<!-- 사진 게시 insert -->
+	<insert id="replyInsert" parameterType="Reply">
+		insert into reply
+		values
+		(seq_re_num.nextval,#{reCon},#{docNum},#{userid})
+	</insert>
+	
+	<!-- 사진 조회 -->
+	<select id="replySearch" resultMap="replyResult" parameterType="String">
+		select * from Reply where user_id= #{userid}
+	</select>
+	
+	<!-- 사진수정 -->
+	<select id="replyUpdate" parameterType="Reply">
+		update reply set re_con=#{reCon} where re_num=#{reNum}
+	</select>	
+
+	
+
+</mapper>

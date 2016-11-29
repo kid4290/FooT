@@ -102,6 +102,9 @@
                         <a href="updateContentView.do?seq=${docNum}"><input type="button"  value="수정"/></a>
         
         </div>
+         <div class="col-md-12">
+            <a href="replyInsertView.do?seq=${docNum}"><input type="button" class="btn btn-box" value="REPLY"></a>
+        </div>
         </div>
     </div>
     <!-- end Main container -->

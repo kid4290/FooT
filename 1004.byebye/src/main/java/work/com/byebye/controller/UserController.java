@@ -33,11 +33,7 @@ public class UserController {
       return "login";
    }
 
-   @RequestMapping(value="index.do")
-   public String index() {
-      return "index";
-   }
-   
+ 
    @RequestMapping(value="setting.do")
    public String setting() {
       return "setting";
@@ -149,6 +145,6 @@ public class UserController {
 
          mv.setViewName("index");
       }
-      return "index";
+      return "redirect:index.do";
    }
 }
