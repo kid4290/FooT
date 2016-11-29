@@ -1,0 +1,49 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.work.mapper.MemberMapper">
+   <resultMap id="memberResult" type="com.work.spring15.dto.Upload">
+      <result property="docNum" column="doc_num"/>
+      <result property="userid" column="user_id" />
+      <result property="lat" column="lat" />
+      <result property="lon" column="lon" />
+      <result property="picFile" column="pic_File" />
+      <result property="movFile" column="mov_File" />
+      <result property="docTle" column="doc_Tle" />
+      <result property="docCon" column="doc_Con" />
+      <result property="docDate" column="doc_Date" />
+      <result property="docHit" column="doc_Hit" />
+      <result property="docTf" column="doc_Tf" />
+      <result property="docTag" column="doc_Tag" />
+         
+   </resultMap>
+
+<!-- 사진 게시 insert -->
+      <insert id="insert" parameterType="com.work.spring15.dto.Upload" >
+      insert into upload
+      values (upload_num.nextval,#{userId}, #{lat}, #{lon}, #{picFile},#{movFile}, #{docTle}, #{docCon}, #{docDate},#{docHit}, #{docTf},#{docTag})
+   </insert>
+
+
+   <!-- 사진 조회  -->
+   <select id="myPlace" resultMap="memberResult" parameterType="String">
+      select * from upload where user_id= #{userid}
+   </select>
+
+<!-- 비디오 상세 조회  -->
+   <select id="myPlaceMovContent" resultType="Upload" parameterType="String">
+      select * from upload where doc_num= #{docNum}
+   </select>
+   
+   <!-- 사진 상세 조회  -->
+   <select id="myPlaceContent" resultMap="memberResult" parameterType="String">
+      select * from upload where doc_num= #{docNum}
+   </select>
+   
+   <!-- 내용 수정  -->
+   <update id="updateContent"  parameterType="Upload" >
+      update upload set doc_con = #{docCon}, doc_Tag = #{docTag} where doc_num = #{docNum}
+   </update>
+   
+</mapper>
