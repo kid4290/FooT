@@ -1,81 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-<head> 
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum=scale=1.0,minimum-scale=1.0,user-scalable=no">
 <title>LOGIN</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
-<style>
-.tl_container {
-   width: 100%;
-    /* height: 100%; */
-    background-repeat: no-repeat;
-}
 
-.card-container.card {
-    max-width: 350px;
-    padding: 40px 40px;
-}
-
-/*
- * Card component
- */
-.card {
-    background-color: #F7F7F7;
-    /* just in case there no content*/
-    padding: 20px 25px 30px;
-    margin: 0 auto 25px;
-    margin-top: 50px;
-    /* shadows and rounded borders */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.profile-img-card {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
-/*
- * Form styles
- */
-.profile-name-card {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0 0;
-    min-height: 1em;
-}
-
-.form-signin .form-control:focus {
-    border-color: rgb(104, 145, 162);
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-}
-.form-signin {
-padding-left: 60px;
-}
-.tl_formtd {
-align:center;
-}
-.tl_formtr {
-align:center;
-}
-</style>
-
+<!-- main css -->
+<link href="css/login.css" rel="stylesheet">
 
 <!-- API -->
 <script src="http://apis.google.com/js/platform.js" async defer></script>
