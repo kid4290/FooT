@@ -48,12 +48,24 @@ public class BoardService {
 		list = dao.myPlace(userid);
 		return list;
 	}
+	
+	// 홈화면 사진 조회 
+	public List<BoardDto> index(String userid) {
+		list = dao.index(userid);
+		return list;
+	}
 
 	// 사진 상세 조회
 	public BoardDto myPlaceContent(String docNum) {
 		dpo = dao.myPlaceContent(docNum);
 		return dpo;
 	}
+	
+	// 남의 사진 상세 조회
+		public BoardDto indexContent(String docNum) {
+			dpo = dao.indexContent(docNum);
+			return dpo;
+		}
 
 	// 수정 서비스
 	public int updateContent(String docCon, String docNum, String docTag, String place) {

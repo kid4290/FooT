@@ -102,142 +102,40 @@
       <!-- end box-intro -->
 
    <!-- main container -->
-   <div class="main-container portfolio-inner clearfix">
-      <!-- portfolio div -->
-      <div class="portfolio-div">
-         <div class="portfolio">
-            <!-- portfolio_filter -->
-            <div class="categories-grid wow fadeInLeft">
-               <nav class="categories text-center">
-               <ul class="portfolio_filter">
-                  <li><a href="" class="active" data-filter="*">전체</a></li>
-               </ul>
-               </nav>
-            </div>
-            <!-- portfolio_filter -->
+	<!-- portfolio div -->
+        <div class="portfolio-div">
+            <div class="portfolio">
+                <!-- portfolio_filter -->
+                <div class="categories-grid wow fadeInLeft">
+                    <nav class="categories text-center">
+                        <ul class="portfolio_filter">
+                            <li><a href="" class="active" data-filter="*">my</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- portfolio_filter -->
 
-            <!-- portfolio_container -->
-            <div class="no-padding portfolio_container clearfix">
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2  fashion logo">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>1번 사진</span> <em>Fashion / Logo</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 ads graphics">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>2번 사진</span> <em>Ads / Graphics</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 fashion ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>3번 사진</span> <em>Fashion / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>4번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>5번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>6번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>7번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-            </div>
-            <!-- end portfolio_container -->
-         </div>
-         <!-- portfolio -->
-      </div>
-      <!-- end portfolio div -->
-   </div>
+                <!-- portfolio_container -->
+                <div class="no-padding portfolio_container clearfix">
+                    <!-- single work -->
+                    <c:forEach var="dto" items="${requestScope.list}"> 
+                    <div class="col-md-4 col-sm-6  fashion logo">
+                        <a href="indexPicContent.do?seq=${dto.getDocNum()}" class="portfolio_item">
+                            <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
+                           />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>${dto.getPlace()}</span>
+                                        <p>${dto.getDocNum()}
+                                        <em>check my place</em>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                    </c:forEach>
    <!-- end main container -->
    </div>
 
