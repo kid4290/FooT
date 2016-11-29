@@ -43,14 +43,12 @@
 </head>
 <body>
 
-<div data-role="header" data-position="fixed" >
-<!-- box-header -->
-<header class="box-header">
+<div data-role="header" data-position="fixed">
+	<header class="box-header">
 	<div class="box-logo">
-	    <a href="index.html"><img src="img/logo.png" width="80" alt="Logo"></a>
+	<a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
 	</div>
-</header>
-<!-- end box-header -->
+	</header>
 </div>
 
 <div class="content">
