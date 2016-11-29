@@ -50,7 +50,7 @@ public class BoardDao {
 		return sqlSession.selectList("myPlace", userid);
 	}
 	
-	// 홈화면  남의 ㅏ진 조회
+	// 홈화면  남의 사진 조회
 	public List<BoardDto> index(String userid) {
 		return sqlSession.selectList("index", userid);
 	}
