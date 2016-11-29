@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum=scale=1.0,minimum-scale=1.0,user-scalable=no">
 <title>Header,Footer 고정</title>
-<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> -->
-<link href="css/jquery.mobile-1.3.1.min.css" rel="stylesheet">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+<!-- <link href="css/jquery.mobile-1.3.1.min.css" rel="stylesheet"> -->
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +22,7 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    <script src="js/jindo_coo_ajax.js"></script>
 
 <style type="text/css">
 .tl_tr {
@@ -72,55 +73,6 @@ text-align: center;
         </div>
  
  <div class="main-container portfolio-inner clearfix">
- <!-- top bar -->
-    <div class="top-bar">
-        <h1>my photo</h1>
-        <p><a href="#">Home</a> </p>
-    </div>
-    <!-- end top bar -->
- 
-  <table>
-   <tr>
-    <td height="300">content1</td>
-   </tr>
-    <tr>
-    <td height="300">content1</td>
-   </tr>
-    <tr>
-    <td height="300">content1</td>
-   </tr>
-    <tr>
-    <td height="300">content1</td>
-   </tr>
-    <tr>
-    <td height="300">content1</td>
-   </tr>
-    <tr>
-    <td height="300">content1</td>
-   </tr>
-    <tr>
-    <td height="300">content1</td>
-   </tr>
-  </table>
- 
-  </div>
-  
-<div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
-  <div data-role="navbar" >
-   <ul>
-    <li><a href="index.do" data-icon="home" >Home</a></li>
-    <li><a href="fileBoardDtoFormView.do" data-icon="star">Insert</a></li>
-    <li><a href="myPlace.do" data-icon="search" >MyList</a></li>
-    <li><a href="beaconlist.do" data-icon="check" >Beacon</a></li>
-    <li><a href="setting.do" data-icon="gear">Setting</a></li>
-   </ul>
-  </div>
- </div>
- 
- 
- <!-- div 종료 -->
-
-<div class="main-container portfolio-inner clearfix">
 	<!-- top bar -->
 	<div class="top-bar">
 		<h1>Setting</h1>
@@ -150,23 +102,39 @@ text-align: center;
 	</tr>
 	</table>
 </div>
+  
+<div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
+	  <div data-role="navbar" >
+	   <ul>
+	    <li><a href="index.do" data-icon="home" >Home</a></li>
+	    <li><a href="fileBoardDtoFormView.do" data-icon="star">Insert</a></li>
+	    <li><a href="myPlace.do" data-icon="search" >MyList</a></li>
+	    <li><a href="beaconlist.do" data-icon="check" >Beacon</a></li>
+	    <li><a href="setting.do" data-icon="gear">Setting</a></li>
+	   </ul>
+	  </div>
+	 </div>
+ 
+ 
+ <!-- div 종료 -->
 
-<div data-role="footer" data-id="persistFooter" data-position="fixed"
-	data-theme="c">
-<div data-role="navbar">
-	<ul>
-	<li><a href="index.do"><i class="ion-android-home"></i>&nbsp;Home</a></li>
-	<li><a href="fileBoardDtoFormView.do"><i class="ion-android-create"></i>&nbsp;Insert</a></li>
-	<li><a href="myPlace.do"><i class="ion-android-list"></i>&nbsp;MyList</a></li>
-	<li><a href="list.do"><i class="ion-android-wifi"></i>&nbsp;Beacon</a></li>
-	<li><a href="setting.do"><i class="ion-android-settings"></i>&nbsp;Setting</a></li>
-	</ul>
-</div>
-</div>
+
+
+<!-- <div data-role="footer" data-id="persistFooter" data-position="fixed" -->
+<!-- 	data-theme="c"> -->
+<!-- <div data-role="navbar"> -->
+<!-- 	<ul> -->
+<!-- 	<li><a href="index.do"><i class="ion-android-home"></i>&nbsp;Home</a></li> -->
+<!-- 	<li><a href="fileBoardDtoFormView.do"><i class="ion-android-create"></i>&nbsp;Insert</a></li> -->
+<!-- 	<li><a href="myPlace.do"><i class="ion-android-list"></i>&nbsp;MyList</a></li> -->
+<!-- 	<li><a href="list.do"><i class="ion-android-wifi"></i>&nbsp;Beacon</a></li> -->
+<!-- 	<li><a href="setting.do"><i class="ion-android-settings"></i>&nbsp;Setting</a></li> -->
+<!-- 	</ul> -->
+<!-- </div> -->
+<!-- </div> -->
 
 
 <!-- div 종료 -->
->>>>>>> branch 'master' of https://github.com/kid4290/FootFoot.git
 
 <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
