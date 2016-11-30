@@ -78,6 +78,9 @@
          <div class="col-md-12">
             <a href="replyInsertView.do?seq=${docNum}"><input type="button" class="btn btn-box" value="REPLY"></a>
         </div>
+        <span class="col-md-12">
+        	<a href="deletePlace.do?seq=${docNum}&&seq1=${userid}"><input type="button"  value="삭제"/></a>
+        </span>
         <div class="col-md-12">
         	<a href="replySearch.do"><input type="button" class="btn btn-box" value="replySearch"></a>
         </div>
@@ -108,6 +111,7 @@
                         </div>
                </div>
 <!-- END comment -->        
+      
     </div>
     <!-- end Main container -->
     </div>

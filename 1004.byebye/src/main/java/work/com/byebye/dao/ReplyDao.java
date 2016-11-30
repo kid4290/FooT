@@ -62,7 +62,9 @@ public class ReplyDao {
 	}
 	
 	public int replyDelete(String reNum) {
+		System.out.println("reply test dao " + reNum);
 		return sqlSession.delete("replyDelete",reNum);
+
 	}
 	
 

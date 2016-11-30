@@ -73,4 +73,11 @@ public class BoardService {
 		int upt = dao.updateContent(dpo);
 		return upt;
 	}
+	
+	//삭제 서비스 
+	public int deletePlace(String docNum) {
+		int delPlace = dao.deletePlace(docNum);
+		return delPlace;
+		
+	}
 }

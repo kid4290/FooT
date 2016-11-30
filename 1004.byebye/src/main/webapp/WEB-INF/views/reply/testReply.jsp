@@ -72,7 +72,7 @@
 <table style="width:100%">
 <c:forEach var="dto" items="${requestScope.list}"> 
   <tr>
-    <td>${dto.getReNum()}</td><td>${dto.getReCon()}</td><td>${dto.getDocNum()}</td><td><a href="replyDelete.do?seq=${dto.getReNum()}}">삭제</a></td>
+    <td>${dto.getReNum()}</td><td>${dto.getReCon()}</td><td>${dto.getDocNum()}</td><td><a href="replyDelete.do?seq=${dto.getReNum()}&seq2=${dto.getuserid()}">삭제</a></td>
   </tr>
 </c:forEach>
 </table>

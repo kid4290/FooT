@@ -59,5 +59,10 @@
 		update BOARD set doc_con = #{docCon}, doc_Tag = #{docTag} , doc_Tle = #{docTle} , place=#{place} 
 		where doc_num = #{docNum}
 	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deletePlace" parameterType="String"> 
+		delete from BOARD where doc_num = #{docNum}
+	</delete>
 
 </mapper>

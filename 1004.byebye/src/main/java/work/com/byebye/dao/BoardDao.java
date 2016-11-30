@@ -72,7 +72,12 @@ public class BoardDao {
 	public int updateContent(BoardDto dto) {
 		int upt = sqlSession.update("updateContent", dto);
 		return upt;
+	}
 
+	// 삭제 
+	public int deletePlace(String docNum) {
+		int delPlace = sqlSession.delete("deletePlace",docNum);
+		return delPlace;
 	}
 
 }

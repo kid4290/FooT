@@ -244,14 +244,17 @@ public class ReplyController {
 	@RequestMapping(value="replyDelete.do") 
 	public String replyDelete(HttpSession session, HttpServletRequest request) {
 		String reNum = (String) request.getParameter("seq");
+		String userid2 = (String) request.getParameter("seq2");
+		String userid = (String) session.getAttribute("userid");
 		
+	if(userid.equals(userid2)) {	
 		int replyDel = service.replyDelete(reNum);
-		
+		System.out.println("replydel"+replyDel);
 		if(replyDel>0) {
-			return "";
+			return "index";
 		}
-		
-		return "";
+	}	
+		return "contact";
 	}
 	
 	
