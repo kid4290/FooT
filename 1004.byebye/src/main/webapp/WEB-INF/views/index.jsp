@@ -1,16 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum=scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>HOME</title>
+
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-<title>index</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
 <!-- Bootstrap -->
@@ -42,46 +43,35 @@
 </head>
 <body>
 
+<div data-role="header" data-position="fixed">
+	<header class="box-header">
+	<div class="box-logo">
+	<a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
+	</div>
+	</header>
+</div>
 
- <div data-role="header" data-position="fixed" >
-      <!-- box header -->
-      <header class="box-header">
-      <div class="box-logo">
-         <a href="index.do">
-         <img src="img/circlelogo.png" width="50" alt="Logo">
-         </a>
-      </div>
-      <!-- box-nav --> 
-      <a class="box-primary-nav-trigger" href="#0"> 
-<!--       <span class="box-menu-text">Menu</span> -->
-      <span class="box-menu-icon"></span>
-      </a> 
-      <!-- box-primary-nav-trigger --> 
-      </header>
-      <!-- end box header -->
-      </div>
-
-	<div class="content">
-      <!-- nav -->
-      <nav>
-            <ul class="box-primary-nav">
-                 <li class="box-label">FootFoot</li>
-		         <li><a href="index.do">HOME</a><i class="ion-ios-circle-filled color"></i></li>
-		         <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
-		         <li><a href="myPlace.do">MYLIST</a></li>
-		         <li><a href="beaconlist.do">BEACON</a></li>
-		         <li><a href="setting.do">SETTING</a></li>
+<div class="content">
+<!-- nav -->
+<nav>
+	<ul class="box-primary-nav">
+		<li class="box-label">FootFoot</li>
+		<li><a href="index.do">HOME</a><i class="ion-ios-circle-filled color"></i></li>
+		<li><a href="fileBoardDtoFormView.do">INSERT</a></li>
+		<li><a href="myPlace.do">MYLIST</a></li>
+		<li><a href="beaconlist.do">BEACON</a></li>
+		<li><a href="setting.do">SETTING</a></li>
 		         
-                <li class="box-label">Follow me</li>
+		<li class="box-label">Follow me</li>
 
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
-        </nav>
-      <!-- end nav -->
-      </div>
+		<li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
+		<li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
+		<li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
+		<li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
+	</ul>
+</nav>
+<!-- end nav -->
+</div>
       
 
 	<div class="main-container portfolio-inner clearfix">
@@ -102,142 +92,40 @@
       <!-- end box-intro -->
 
    <!-- main container -->
-   <div class="main-container portfolio-inner clearfix">
-      <!-- portfolio div -->
-      <div class="portfolio-div">
-         <div class="portfolio">
-            <!-- portfolio_filter -->
-            <div class="categories-grid wow fadeInLeft">
-               <nav class="categories text-center">
-               <ul class="portfolio_filter">
-                  <li><a href="" class="active" data-filter="*">전체</a></li>
-               </ul>
-               </nav>
-            </div>
-            <!-- portfolio_filter -->
+	<!-- portfolio div -->
+        <div class="portfolio-div">
+            <div class="portfolio">
+                <!-- portfolio_filter -->
+                <div class="categories-grid wow fadeInLeft">
+                    <nav class="categories text-center">
+                        <ul class="portfolio_filter">
+                            <li><a href="" class="active" data-filter="*">my</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- portfolio_filter -->
 
-            <!-- portfolio_container -->
-            <div class="no-padding portfolio_container clearfix">
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2  fashion logo">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>1번 사진</span> <em>Fashion / Logo</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 ads graphics">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>2번 사진</span> <em>Ads / Graphics</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 fashion ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>3번 사진</span> <em>Fashion / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>4번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>5번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>6번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-               <!-- single work -->
-               <div class="col-md-4 col-sm-2 graphics ads">
-                  <a href="single-project.html" class="portfolio_item"> <img
-                     src="http://placehold.it/1000x1000" alt="image"
-                     class="img-responsive" />
-                     <div class="portfolio_item_hover">
-                        <div class="portfolio-border clearfix">
-                           <div class="item_info">
-                              <span>7번 사진</span> <em>Graphics / Ads</em>
-                           </div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-               <!-- end single work -->
-
-            </div>
-            <!-- end portfolio_container -->
-         </div>
-         <!-- portfolio -->
-      </div>
-      <!-- end portfolio div -->
-   </div>
+                <!-- portfolio_container -->
+                <div class="no-padding portfolio_container clearfix">
+                    <!-- single work -->
+                    <c:forEach var="dto" items="${requestScope.list}"> 
+                    <div class="col-md-4 col-sm-6  fashion logo">
+                        <a href="indexPicContent.do?seq=${dto.getDocNum()}" class="portfolio_item">
+                            <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
+                           />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>${dto.getPlace()}</span>
+                                        <p>${dto.getDocNum()}
+                                        <em>check my place</em>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                    </c:forEach>
    <!-- end main container -->
    </div>
 

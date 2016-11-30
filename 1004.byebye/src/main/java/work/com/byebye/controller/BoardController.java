@@ -49,7 +49,26 @@ public class BoardController {
 	// public String BoardDtoView() {
 	// return "BoardDto";
 	// }
+	
+	//home 화면에 사진호출 남의 사진 
+	 @RequestMapping(value="index.do")
+	   public  @ResponseBody ModelAndView index(HttpSession session) {
+			String userid = (String) session.getAttribute("userid");
 
+			list = service.index(userid);
+
+			ModelAndView mv = new ModelAndView();
+			if (userid != null) {
+				mv.addObject("list", list);
+				mv.setViewName("index");
+			} else {
+				mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
+				mv.setViewName("error/errorLogin");
+			}
+			return mv;
+	  }
+	   
+	
 	@RequestMapping("fileBoardDtoFormView.do")
 	public String BoardDtoView() {
 		return "board/contact";
@@ -150,17 +169,48 @@ public class BoardController {
 		}
 		return mv;
 	}
-
-	// 사진 수정 뷰 이동
-	@RequestMapping("updateContentView.do")
-	public ModelAndView updateContentView(HttpSession session, int seq) {
+	
+	/** 남의 사진 상세조회 */
+	@RequestMapping("indexPicContent.do")
+	public ModelAndView indexContent(HttpSession session, int seq) {
 		BoardDto dto = new BoardDto();
 		String userid = (String) session.getAttribute("userid");
 		String docNum = String.valueOf(seq);
 
-		dto = service.myPlaceContent(docNum);
+		dto = service.indexContent(docNum);
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
+			mv.addObject("docNum", dto.getDocNum());
+			mv.addObject("userid", dto.getUserid());
+			mv.addObject("lat", dto.getLat());
+			mv.addObject("lon", dto.getLon());
+			mv.addObject("picFile", dto.getPicFile());
+			mv.addObject("docTle", dto.getDocTle());
+			mv.addObject("docCon", dto.getDocCon());
+			mv.addObject("docDate", dto.getDocDate());
+			mv.addObject("docHit", dto.getDocHit());
+			mv.addObject("docTf", dto.getDocTf());
+			mv.addObject("docTag", dto.getDocTag());
+			mv.addObject("place", dto.getPlace());
+			mv.setViewName("board/indexContent");
+		} else {
+			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
+			mv.setViewName("error/errorLogin");
+		}
+		return mv;
+	}
+
+	// 사진 수정 뷰 이동
+	@RequestMapping("updateContentView.do")
+	public ModelAndView updateContentView(HttpSession session, int seq, int seq2) {
+		BoardDto dto = new BoardDto();
+		String userid = (String) session.getAttribute("userid");
+		String docNum = String.valueOf(seq);
+		String userid2 = String.valueOf(seq2);
+		
+		dto = service.myPlaceContent(docNum);
+		ModelAndView mv = new ModelAndView();
+		if (userid == userid2) {
 			mv.addObject("docNum", dto.getDocNum());
 			mv.addObject("userid", dto.getUserid());
 			mv.addObject("lat", dto.getLat());

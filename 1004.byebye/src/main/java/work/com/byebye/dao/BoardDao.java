@@ -49,12 +49,24 @@ public class BoardDao {
 	public List<BoardDto> myPlace(String userid) {
 		return sqlSession.selectList("myPlace", userid);
 	}
+	
+	// 홈화면  남의 사진 조회
+	public List<BoardDto> index(String userid) {
+		return sqlSession.selectList("index", userid);
+	}
+
 
 	// 사진 상세 조회
 	public BoardDto myPlaceContent(String docNum) {
 		dto = sqlSession.selectOne("myPlaceContent", docNum);
 		return dto;
 	}
+	
+	// 남의 사진 상세 조회
+		public BoardDto indexContent(String docNum) {
+			dto = sqlSession.selectOne("indexContent", docNum);
+			return dto;
+		}
 
 	// 수정 : 내용파트
 	public int updateContent(BoardDto dto) {
