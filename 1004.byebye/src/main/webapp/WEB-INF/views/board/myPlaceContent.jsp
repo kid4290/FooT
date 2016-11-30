@@ -59,7 +59,7 @@
                <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
                <li><a href="myPlace.do">MYLIST</a><i class="ion-ios-circle-filled color"></i></li>
                <li><a href="beaconlist.do">BEACON</a></li>
-               <li><a href="myInfo.do">SETTING</a></li>
+               <li><a href="setting.do">SETTING</a></li>
             </ul>
         </nav>
         <!-- end nav -->  

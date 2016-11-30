@@ -29,6 +29,7 @@
 
 <body>
 
+<div data-role="page">
 <div data-role="header" data-position="fixed">
    <header class="box-header">
    <div class="box-logo">
@@ -37,6 +38,7 @@
    </header>
 </div>
 
+ <div data-role="content">
     <!-- top bar -->
     <div class="top-bar">
         <h1>Insert</h1>
@@ -49,9 +51,6 @@
 
         <div class="col-md-6">
             <h3 class="text-uppercase"></h3>
-            <h5></h5>
-            <div class="h-30"></div>
-            <p>aa </p>
             <div class="contact-info">
                 <p><i class="ion-android-call"></i>010-1234-1234</p>
                 <p><i class="ion-ios-email"></i> place@footfoot.com</p>
@@ -125,6 +124,7 @@
 </div>
 </div>
     <!-- end main-container -->
+    </div>
 
     <!-- footer -->
     <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
@@ -143,6 +143,8 @@
     <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
     <!-- end back to top -->
+
+</div>
 
 
     <!-- jQuery -->

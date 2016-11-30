@@ -112,7 +112,7 @@
     <li><a href="fileBoardDtoFormView.do" data-icon="star">Insert</a></li>
     <li><a href="myPlace.do" data-icon="search" >MyList</a></li>
     <li><a href="beaconlist.do" data-icon="check" >Beacon</a></li>
-    <li><a href="myInfo.do" data-icon="gear">Setting</a></li>
+    <li><a href="setting.do" data-icon="gear">Setting</a></li>
    </ul>
   </div>
  </div>
