@@ -199,7 +199,7 @@ public class BoardController {
 		}
 		return mv;
 	}
-
+  
 	// 사진 수정 뷰 이동
 		@RequestMapping("updateContentView.do")
 		public ModelAndView updateContentView(HttpSession session, int seq, HttpServletRequest request) {

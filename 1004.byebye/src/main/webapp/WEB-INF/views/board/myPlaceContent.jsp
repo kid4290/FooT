@@ -97,7 +97,7 @@
                 <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
                 <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
             </ul>
-
+   
 		<div class="col-md-12">
                         <a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input type="button"  value="수정"/></a>
         
