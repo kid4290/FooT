@@ -71,8 +71,7 @@
 		<tbody>
 			<c:forEach var="dto" items="${list}">
 			<tr>
-				<td class="bSpotName"><a href="beacon.do?BId=${dto.B_ID}"
-					data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
+				<td class="bSpotName"><a data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
 				<td class="bLoaction"><a type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
 			</c:forEach>
