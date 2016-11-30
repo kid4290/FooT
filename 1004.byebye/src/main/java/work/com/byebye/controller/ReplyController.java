@@ -107,9 +107,10 @@ public class ReplyController {
 		
 		String userid = (String) session.getAttribute("userid");
 		System.out.println("test replySearch con " + userid);
+		String docNum = (String) request.getParameter("docNum");
 		
 		
-		reList = service.replySearch(userid);
+		reList = service.replySearch(docNum);
 		
 		ModelAndView mv = new ModelAndView();
 		

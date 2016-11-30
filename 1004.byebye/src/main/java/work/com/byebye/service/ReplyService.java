@@ -38,12 +38,12 @@ public class ReplyService {
     * 
     * 조회는 컨트롤러 부분을 제외한 나머지는 같이 사용가능 
     */
-   public List<Reply> replySearch(String userid) {
+   public List<Reply> replySearch(String docNum) {
 	   
-	   System.out.println("test re service " + userid);
+	   System.out.println("test re service " + docNum);
 	   
 	   
-	   reList = replydao.replySearch(userid);
+	   reList = replydao.replySearch(docNum);
 	   
 	   return reList;
 	   

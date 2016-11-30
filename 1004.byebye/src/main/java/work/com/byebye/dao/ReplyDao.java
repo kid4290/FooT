@@ -47,8 +47,8 @@ public class ReplyDao {
 		return sqlSession.insert("replyInsert", dto);
 	}
 
-	public List<Reply> replySearch(String userid) {
-		return sqlSession.selectList("replySearch", userid);
+	public List<Reply> replySearch(String docNum) {
+		return sqlSession.selectList("replySearch", docNum);
 	}
 	
 	public Reply replyContent(String reNum) {
