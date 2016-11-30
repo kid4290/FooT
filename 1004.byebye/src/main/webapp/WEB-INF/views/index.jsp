@@ -83,13 +83,14 @@
             <a type="button" class="btn btn-default btn-xs"
                data-toggle="modal" data-target="#myModal">수동수정</a>
          </div>
-         <div class="tl_locationborder">
-         	<span id="jusoView" data-toggle="modal" data-target="#myModal">현재 위치를 찾고 있습니다.</span>
+         <div class="tl_locationborder col-md-6">
+         	<span id="jusoView" style="background-color:#cdcdcd;margin-top:10px;" data-toggle="modal" data-target="#myModal">현재 위치를 찾고 있습니다.</span>
          </div>
          <h5>${nickname}님 환영합니다.</h5>
       </div>
       </section>
       <!-- end box-intro -->
+    </div>
 
    <!-- main container -->
 	<!-- portfolio div -->
@@ -111,21 +112,21 @@
                     <c:forEach var="dto" items="${requestScope.list}"> 
                     <div class="col-md-4 col-sm-6  fashion logo">
                         <a href="indexPicContent.do?seq=${dto.getDocNum()}" class="portfolio_item">
-                            <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
-                           />
+                        <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" />
                             <div class="portfolio_item_hover">
                                 <div class="portfolio-border clearfix">
                                     <div class="item_info">
                                         <span>${dto.getPlace()}</span>
-                                        <p>${dto.getDocNum()}
+                                        <p>${dto.getDocNum()}</p>
                                         <em>check my place</em>
                                     </div>
                                 </div>
                             </div>
-                            
                         </a>
                     </div>
                     </c:forEach>
+                 </div>
+        </div>
    <!-- end main container -->
    </div>
 
@@ -143,13 +144,6 @@
 	 </div>
    <!-- end footer -->
 
-   <!-- back to top -->
-   <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
-   <!-- end back to top -->
-
-
-
-
    <!-- jQuery -->
    <script src="js/jquery-2.1.1.js"></script>
    <!--  plugins -->
@@ -157,8 +151,6 @@
    <script src="js/menu.js"></script>
    <script src="js/animated-headline.js"></script>
    <script src="js/isotope.pkgd.min.js"></script>
-
-
    <!--  custom script -->
    <script src="js/custom.js"></script>
 
@@ -191,9 +183,7 @@
 							placeholder="지도를 움직이면 화살표 속 주소가 입력됩니다." readonly>
 					</div>
 					<div id="map" style="width: 100%; height: 300px;">
-						<!-- <div id="overlay" style="margin: 0;"> -->
-							<span id="overlay" style="font-size: 200%;color:red;"><img src="img/locationIcon.png"/></span>
-						<!-- </div> -->
+						<span id="overlay" style="font-size: 200%;color:red;"><img src="img/locationIcon.png"/></span>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -399,5 +389,4 @@
 	<!-- 현재위치를 고칠 수 있는 스크립트 끝 -->
 
 </body>
-
 </html>
