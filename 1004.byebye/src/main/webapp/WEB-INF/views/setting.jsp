@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="work.com.byebye.dto.UserDto"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,14 +39,47 @@
 		color: inderit;
 		text-align: start;
 	}
+	.imagebtn {
+		border: 0;
+		cursor: pointer;
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		align-items: flex-start;
+		text-align: center;
+	}
+	.imagediv {
+		height: 152px;
+		width: 152px;
+		display: block;
+		border-radius: 50%;
+		box-sizing: border-box;
+		overflow: hidden;
+		
+		border: 1px solid red;
+	}
 	.imagepart {
-		width: 100px;
-		height: 100px;
+		width: 100%;
+		height: 100%;
+		
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+		text-align: center;
 	}
 	.myimage {
-		width: 150px;
-		height: 150px;
-		border:1px solid red;
+		flex-shrink: 0;
+		align-items: stretch;
+		box-sizing: border-box;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		flex-direction: column;
+		
 		float:left;
 	}
 	.tl_settingtable {
@@ -55,10 +89,9 @@
 	.tl_trr {
 		text-align: center;
 	}
-	
 	.tl_tdd {
 		text-align: center;
-		height: 300; 
+		height: auto; 
 		border: 1px solid blue;"
 	}
 	</style>
@@ -86,9 +119,11 @@
 	<tr class="tl_trr">
 	<td class="tl_tdd">
 	<div class="myimage">
-		<button class="imagebtn" title="프로필 사진 바꾸기">
-			<img alt="프로필 사진 바꾸기" class="imagepart" src="img/sheep.png">
-		</button>
+		<div class="imagediv">
+			<div class="imagebtn">
+			<img alt="프로필 사진 바꾸기" class="imagepart" src="<%=user.getUserimg()%>">
+			</div>
+		</div>
 		
 	<div class="myimage" style="width:150px;height:AUTO;border:1px solid red;float:left;">
 		<form>
