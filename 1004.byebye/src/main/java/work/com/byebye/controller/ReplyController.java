@@ -51,7 +51,6 @@ public class ReplyController {
 		
 	}
 	
-		
 	
 	@RequestMapping("replyInsertView.do")
 	public ModelAndView ReplyInsertView(HttpSession session, int seq) {
@@ -222,7 +221,7 @@ public class ReplyController {
 		return mv;
 	}
 	
-	@RequestMapping(value="rep lyUpdate.do")
+	@RequestMapping(value="replyUpdate.do")
 	public ModelAndView replyUpdate(HttpSession session, HttpServletRequest request) {
 		String reNum = (String) request.getParameter("seq");
 		String reCon = (String) request.getParameter("reCon");

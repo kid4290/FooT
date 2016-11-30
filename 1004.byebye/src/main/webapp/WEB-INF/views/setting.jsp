@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="work.com.byebye.dto.UserDto"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,78 @@
 <script src="js/modernizr.js"></script>
 <script src="js/jindo_coo_ajax.js"></script>
 
+	<style>
+	input[type="buttonn" i], input[type="file" i]::-webkit-file-upload-button, button {
+		align-items: flex-start;
+		text-align: center;
+		color: buttontext;
+		background-color: buttonface;
+		box-sizing: border-box;
+	}
+	input[type="file" i] {
+		align-items: baseline;
+		color: inderit;
+		text-align: start;
+	}
+	.imagebtn {
+		border: 0;
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		align-items: flex-start;
+		text-align: center;
+	}
+	.imagediv {
+		height: 152px;
+		width: 152px;
+		display: block;
+		border-radius: 50%;
+		box-sizing: border-box;
+		overflow: hidden;
+		margin: 0px auto;
+	}
+	.imagepart {
+		width: 100%;
+		height: 100%;
+		
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+		text-align: center;
+	}
+	.myimage2 {
+		width: auto;
+		height: auto;
+		float: left;
+	}
+	.myimage {
+		flex-shrink: 0;
+		align-items: stretch;
+		box-sizing: border-box;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		flex-direction: column;
+		margin-top: 20px;
+		float:center;
+	}
+	.tl_settingtable {
+		margin: 0px auto;
+		width: 90%;
+	}
+	.tl_trr {
+		text-align: center;
+	}
+	.tl_tdd {
+		text-align: center;
+		height: auto; 
+	}
+	</style>
+
 </head>
 <body>
 
@@ -43,28 +116,53 @@
 		<p><a href="#">당신의 설정을 도와드립니다.</a></p>
 	</div>
 	<!-- end top bar -->
+	
+<div class="tl_settingform">
+<table class="tl_settingtable">
+	<tr class="tl_trr">
+	<td class="tl_tdd">
+	<div class="myimage">
+		<div class="imagediv">
+			<div class="imagebtn">
+			<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">
+			</div>
 
-<table>
-	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid red;">로그인 계정정보</td>
+		</div>
+		
+	<div class="myimage2">
+		<form>
+			<input type="file" accept="image/jpeg" class="imagefile">
+		</form>
+	</div>
+
+	</div>
+	</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid orange;">로그아웃</td>
+	<td class="tl_td" height="200" style="border: 1px solid green;">내가 쓴 댓글</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid yellow;">내가 쓴 댓글</td>
+	<td class="tl_td" height="50">
+		<a type="button" href="#">로그아웃</a>
+	</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid green;">알림 설정</td>
+	<td class="tl_td" height="50">
+		<a type="button" href="#">알림설정</a>
+	</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid blue;">회원탈퇴</td>
+	<td class="tl_td" height="50">
+		<a type="button" href="#">회원탈퇴</a>
+	</td>
 	</tr>
 </table>
+</div>
+
 </div>
   
 <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
@@ -80,10 +178,6 @@
 </div>
 
 <!-- div 종료 -->
-
-<!-- back to top -->
-<a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
-<!-- end back to top -->
 
 <!-- jQuery -->
 <script src="js/jquery-2.1.1.js"></script>

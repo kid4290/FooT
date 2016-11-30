@@ -26,6 +26,10 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    <script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript"
+		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+    
 
 </head>
 
@@ -39,13 +43,12 @@
          <a href="index.do">
          <img src="img/circlelogo.png" width="50" alt="Logo">
          </a>
+         <!-- 뒤로가기 버튼 -->
+         <span class="box-menu-text">
+        <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c" 			aria-hidden="true">이전</a>
+        </span>
       </div>
-            <!-- box-nav -->
-            <a class="box-primary-nav-trigger" href="#0">
-                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
-            </a>
         </header>
-        <!-- end box-header -->
         </div>
         
         <div class="content">
@@ -57,14 +60,7 @@
 		         <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
 		         <li><a href="myPlace.do">MYLIST</a><i class="ion-ios-circle-filled color"></i></li>
 		         <li><a href="beaconlist.do">BEACON</a></li>
-		         <li><a href="setting.do">SETTING</a></li>
-
-                <li class="box-label">Follow me</li>
-
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
+		         <li><a href="myInfo.do">SETTING</a></li>
             </ul>
         </nav>
         <!-- end nav -->  
@@ -81,7 +77,7 @@
     <!-- Main container -->
      
         <div class="col-md-6">
-            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" alt="" />
+            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
         </div>
         <div class="col-md-6">
            <h3 class="uppercase">${docNum} </h3>
@@ -91,18 +87,14 @@
 
             <p>with ${docTag}</p>
             <div class="h-10"></div>
-            <ul class="social-ul">
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
    
 		<div class="col-md-12">
                 <a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input type="button"  value="수정"/></a>
         </div>
          <div class="col-md-12">
             <a href="replyInsertView.do?seq=${docNum}"><input type="button" class="btn btn-box" value="REPLY"></a>
+                        <a href="updateContentView.do?seq=${docNum}&seq2=${userid}" type="button">수정</a>
+        
         </div>
         <div class="col-md-12">
         	<a href="replySearch.do"><input type="button" class="btn btn-box" value="replySearch"></a>

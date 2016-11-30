@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import work.com.byebye.dto.UserDto;
+
 
 @Repository
 public class UserDao {
@@ -24,6 +26,8 @@ public class UserDao {
    public static UserDao getInstance() {
       return instance;
    }
+   
+   UserDto dto;
 
    /** 기본 생성자 */
    private UserDao() {}
@@ -62,4 +66,25 @@ public class UserDao {
       map.put("grade", grade);
       return sqlSession.insert("insertFacebook", map);
    }
+   
+   /** 회원 정보 조회 */
+   public UserDto getUser(String userid) {
+	   System.out.println("userid : " + userid);
+	   dto = sqlSession.selectOne("getUser", userid);
+	   return dto;
+   }
+   
+   
+   /** 회원 탈퇴 */
+   public int deletUser(String userid) {
+	   return sqlSession.delete("deleteUser", userid);
+   }
+   
+   
+   
+   
+   
+   
+   
+   
 }

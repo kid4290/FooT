@@ -10,7 +10,7 @@
 	text-align: center;
 }
 
-.tl_tb {
+.tl_td {
 	text-align: center;
 }
 
@@ -39,13 +39,6 @@
 
 /* General
 ==================================================*/
-
-html,
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.8;
-    color: #333;
-}
 
 .no-padding {
     padding-left: 0;
