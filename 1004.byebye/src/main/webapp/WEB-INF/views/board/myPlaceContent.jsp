@@ -82,8 +82,10 @@
         	<a href="replySearch.do"><input type="button" class="btn btn-box" value="replySearch"></a>
         </div>
         </div>
+        </div>
 
 <!-- comment -->
+<div class="container main-container clearfix">
                    <div class="col-md-12">
                        <div class="image-reply-post"></div>
                        <div class="name-reply-post">Igor vlademir</div>

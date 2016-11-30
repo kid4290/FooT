@@ -193,7 +193,7 @@ public class BoardController {
 			mv.addObject("docTf", dto.getDocTf());
 			mv.addObject("docTag", dto.getDocTag());
 			mv.addObject("place", dto.getPlace());
-			mv.setViewName("board/indexContent");
+			mv.setViewName("board/myPlaceContent");
 		} else {
 			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
 			mv.setViewName("error/errorLogin");

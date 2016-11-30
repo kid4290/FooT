@@ -71,6 +71,8 @@
 		</thead>
 		
 		<tbody>
+			 <c:choose>
+             <c:when test="${!empty list}">
 			<c:forEach var="dto" items="${list}">
 			<tr>
 				<td class="bId"><a type="button" href="#">${dto.B_IDX}</a></td>
@@ -78,6 +80,11 @@
 				<td class="bLoaction"><a type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
 			</c:forEach>
+			</c:when>
+			<c:otherwise>
+			Bluetooth does not exist
+			</c:otherwise>
+       </c:choose>
 		</tbody>
 		</table>
 		
@@ -95,7 +102,7 @@
 	<li><a href="fileBoardDtoFormView.do" data-icon="star">Insert</a></li>
 	<li><a href="myPlace.do" data-icon="search" >MyList</a></li>
 	<li><a href="beaconlist.do" data-icon="check" >Beacon</a></li>
-	<li><a href="myInfo.do" data-icon="gear">Setting</a></li>
+	<li><a href="setting.do" data-icon="gear">Setting</a></li>
 	</ul>
 </div>
 </div>

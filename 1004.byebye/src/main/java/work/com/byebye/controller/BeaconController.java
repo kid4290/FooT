@@ -51,6 +51,7 @@ public class BeaconController {
 		try {
 			JSONObject obj = (JSONObject) parser.parse(mac);
 			JSONArray array = (JSONArray) obj.get("mac");
+			@SuppressWarnings("unchecked")
 			Iterator<String> iterator = array.iterator();
 			while(iterator.hasNext()){
 				macList.add(iterator.next());
