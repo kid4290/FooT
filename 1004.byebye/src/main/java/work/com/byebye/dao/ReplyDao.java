@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import work.com.byebye.dto.Reply;
-
+ 
 @Repository
 public class ReplyDao {
 	private FactoryDAODataSource factory;

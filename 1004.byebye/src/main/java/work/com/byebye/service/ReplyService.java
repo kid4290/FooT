@@ -21,7 +21,7 @@ public class ReplyService {
       this.replydao = replydao;
    }
    
-   List<Reply> reList = new ArrayList<Reply>();
+   List<Reply> reList = new ArrayList<Reply>(); 
    Reply dto = new Reply();
    
    public int replyInsert(String reCon,String docNum, String userId){

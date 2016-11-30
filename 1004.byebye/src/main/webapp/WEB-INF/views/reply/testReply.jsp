@@ -89,7 +89,7 @@
 			<li><a href="setting.do" data-icon="gear">Setting</a></li>
 		</ul>
 	</div>
-</div>
+</div> 
 <!-- end footer -->
     
 <!-- back to top -->

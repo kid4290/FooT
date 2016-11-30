@@ -27,7 +27,7 @@
 	</select>	
 	
 	<!--  댓글 삭제  -->
-	<delete id="replyDelete" prameterType="String">
+	<delete id="replyDelete" parameterType="String">
 		delete from reply where re_num = #{reNum}
 	
 	</delete>

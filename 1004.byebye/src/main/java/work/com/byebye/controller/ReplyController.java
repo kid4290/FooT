@@ -222,7 +222,7 @@ public class ReplyController {
 		return mv;
 	}
 	
-	@RequestMapping(value="replyUpdate.do")
+	@RequestMapping(value="rep lyUpdate.do")
 	public ModelAndView replyUpdate(HttpSession session, HttpServletRequest request) {
 		String reNum = (String) request.getParameter("seq");
 		String reCon = (String) request.getParameter("reCon");
