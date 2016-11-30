@@ -62,4 +62,7 @@ public class UserDao {
       map.put("grade", grade);
       return sqlSession.insert("insertFacebook", map);
    }
+   
+   /** 회원 정보 조회 */
+   
 }
