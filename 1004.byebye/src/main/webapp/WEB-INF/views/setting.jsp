@@ -119,6 +119,7 @@
 		<p><a href="#">당신의 설정을 도와드립니다.</a></p>
 	</div>
 	<!-- end top bar -->
+	
 <div class="tl_settingform">
 <table class="tl_settingtable">
 	<tr class="tl_trr">
