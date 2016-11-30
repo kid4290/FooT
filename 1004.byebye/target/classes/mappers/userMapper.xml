@@ -29,5 +29,10 @@
    <insert id="insertFacebook" parameterType="map">
       insert into users values(#{userid}, #{nickname}, #{userimg}, #{grade})
    </insert>
+   
+   <!-- 회원 정보 가져오기 -->
+   <select id="getUser" parameterType="string" resultType="UserDto">
+   	select * from users where userid =${userid}
+   </select>
 
 </mapper>
