@@ -209,6 +209,9 @@ public class BoardController {
 //			String userid2 = (String) request.getParameter("seq2");
 //			String userid = (String) session.getAttribute("userid");
 			String userid2 = (String) request.getParameter("seq2");
+			
+			System.out.println("test update contentview" + userid + userid2);
+			
 			dto = service.myPlaceContent(docNum);
 			ModelAndView mv = new ModelAndView();
 			if (userid.equals(userid2)) {
