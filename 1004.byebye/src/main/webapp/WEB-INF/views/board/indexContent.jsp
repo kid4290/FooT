@@ -52,10 +52,9 @@
         <!-- end box-header -->
         </div>
         
-        <div class="content">
-    </div>
+        <div data-role="content">
     
-    <div class="container main-container clearfix">
+    
     <!-- Top bar -->
     <div class="top-bar">
         <h1>Posts</h1>
@@ -63,7 +62,7 @@
     <!-- end Top bar -->
     
     <!-- Main container -->
-     
+     <div class="container main-container">
         <div class="col-md-6">
             <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" alt="" />
         </div>
@@ -81,7 +80,7 @@
         </div>
     </div>
     <!-- end Main container -->
-
+</div>
 
     <!-- footer -->
     <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">

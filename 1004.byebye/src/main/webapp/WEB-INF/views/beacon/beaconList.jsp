@@ -38,12 +38,14 @@
 	</header>
 </div>
 
-<div class="container main-container">
+<div data-role="content">
+
 	<!-- top bar -->
 	<div class="top-bar">
 		<h1>BEACON</h1>
 	</div>
 	<!-- end top bar -->
+
 
 	<div class="clearfix">
 		<!-- service-box -->
@@ -52,6 +54,7 @@
 		<h3>BEACON LIST</h3>
 		<div class="h-10"></div>
 		
+	<div class="container main-container">	
 		<table style="width:100%;border:1px solid;">
 		<colgroup>
 			<col width="20%">
@@ -81,6 +84,7 @@
 		</div>
 		<!-- end service-box -->
 	</div>
+</div>
 </div>
 
 <!-- footer -->

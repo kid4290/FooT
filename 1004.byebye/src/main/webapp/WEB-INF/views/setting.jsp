@@ -109,13 +109,16 @@
 	</header>
 </div>
 
-<div class="main-container portfolio-inner clearfix">
+
+<div data-role="content">
+
 	<!-- top bar -->
 	<div class="top-bar">
 		<h1>Setting</h1>
 	</div>
 	<!-- end top bar -->
 	
+	<div class="main-container portfolio-inner clearfix">
 <div class="tl_settingform">
 <table class="tl_settingtable">
 	<tr class="tl_trr">
@@ -161,6 +164,7 @@
 	</td>
 	</tr>
 </table>
+</div>
 </div>
 
 </div>

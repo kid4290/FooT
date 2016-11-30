@@ -44,33 +44,20 @@
         </header>
         <!-- end box-header -->
         </div>
-
-<div class="content">
-        </div>
-
-
- <div class="main-container portfolio-inner clearfix">
+        
+<div data-role="content">
+ 
     <!-- top bar -->
     <div class="top-bar">
-        <h1>my photo</h1>
-        <p><a href="#">Home</a> </p>
+        <h1>Posts</h1>
     </div>
     <!-- end top bar -->
 
     <!-- main container -->
-    
+    <div class="main-container portfolio-inner clearfix">
         <!-- portfolio div -->
         <div class="portfolio-div">
             <div class="portfolio">
-                <!-- portfolio_filter -->
-                <div class="categories-grid wow fadeInLeft">
-                    <nav class="categories text-center">
-                        <ul class="portfolio_filter">
-                            <li><a href="" class="active" data-filter="*">my</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- portfolio_filter -->
 
                 <!-- portfolio_container -->
                 <div class="no-padding portfolio_container clearfix">
@@ -102,7 +89,7 @@
         <!-- end portfolio div -->
     </div>
     <!-- end main container -->
-
+</div>
 
     <!-- footer -->
    <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">

@@ -50,22 +50,7 @@
         </header>
         </div>
         
-        <div class="content">
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-                 <li class="box-label">FootFoot</li>
-               <li><a href="index.do">HOME</a></li>
-               <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
-               <li><a href="myPlace.do">MYLIST</a><i class="ion-ios-circle-filled color"></i></li>
-               <li><a href="beaconlist.do">BEACON</a></li>
-               <li><a href="setting.do">SETTING</a></li>
-            </ul>
-        </nav>
-        <!-- end nav -->  
-    </div>
-    
-    <div class="container main-container clearfix">
+    <div data-role="content">    
     <!-- Top bar -->
     <div class="top-bar">
         <h1>내 컨텐츠</h1>
@@ -74,7 +59,7 @@
     <!-- end Top bar -->
     
     <!-- Main container -->
-     
+     <div class="container main-container clearfix">
         <div class="col-md-6">
             <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
         </div>
@@ -102,13 +87,11 @@
                    <div class="col-md-12">
                        <div class="image-reply-post"></div>
                        <div class="name-reply-post">Igor vlademir</div>
-                       <div class="text-reply-post">Awesome mockup, i like it very much ! It will help me for my website i was looking for since few days. Thank you a lot.</div>
                    </div>
                     
                     <div class="col-md-12">
                        <div class="image-reply-post-2"></div>
                        <div class="name-reply-post-2">Nathan Shaw</div>
-                       <div class="text-reply-post-2">Well done ! I like the way you did it. Awesome ! </div>
                    </div>
                     
                    <div class="col-md-12">
@@ -125,6 +108,7 @@
 <!-- END comment -->        
     </div>
     <!-- end Main container -->
+    </div>
     
 
 

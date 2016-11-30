@@ -49,10 +49,10 @@
         <!-- end box-header -->
         </div>
         
-        <div class="content"> 
-    </div>
+        <div data-role="content">
     
-    <div class="container main-container clearfix">
+    
+    
     <!-- Top bar -->
     <div class="top-bar">
         <h1>Post</h1>
@@ -60,7 +60,7 @@
     <!-- end Top bar -->
     
     <!-- Main container -->
-     
+     <div class="container main-container clearfix">
         <div class="col-md-6">
             <img src="http://localhost:8090/spring15/imgLoad.do?fileName=${picFile}" class="img-responsive" />
         </div>
@@ -83,7 +83,7 @@
         </form>
     </div>
     <!-- end Main container -->
-
+</div>
 
     <!-- footer -->
    <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
