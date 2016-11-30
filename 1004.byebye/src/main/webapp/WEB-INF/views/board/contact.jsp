@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> -->
-<!-- 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
-<!-- 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script> -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
     <title>등록 페이지</title>
 
     <!-- Bootstrap -->
@@ -38,31 +38,6 @@
 	</header>
 </div>
 
-	<div class="content">
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-				<li class="box-label">FootFoot</li>
-		         <li><a href="index.do">HOME</a></li>
-		         <li><a href="fileBoardDtoFormView.do">INSERT</a>
-		         <i class="ion-ios-circle-filled color"></i></li>
-		         <li><a href="myPlace.do">MYLIST</a></li>
-		         <li><a href="beaconlist.do">BEACON</a></li>
-		         <li><a href="setting.do">SETTING</a></li>
-
-                <li class="box-label">Follow me</li>
-
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
-        </nav>
-        <!-- end nav -->
-        </div>
-
-
- <div class="content">
     <!-- top bar -->
     <div class="top-bar">
         <h1>Insert</h1>
@@ -71,68 +46,72 @@
     <!-- end top bar -->
 
     <!-- main-container -->
-    
+    <div class="container main-container">
         <div class="col-md-6">
             <form action="multiInsert.do" method="POST" enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         
-                        <!-- upload -->
-                       <div class="col-md-6">
-                        <div class="input-contact">
-                            <input type="text" name="place">
-                            <span>place</span>
-                        </div>
-                    </div>                   
+                   <div class="col-md-6">     
+                    <div data-role="fieldcontain">
+					    <label for="name">Place</label>
+					    <input type="text" name="place" />
+					</div>	
+					</div>       
+	                        
+	             <div class="col-md-6">           
+	                <div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup">
+					   <input type="checkbox" name="docTf" id="checkbox-2" class="custom" />
+					   <label for="checkbox-2">공개</label>
+				    </fieldset>
+					</div>
+					</div>
+				
                     <div class="col-md-6">
-                        <div class="input-contact">
-                            <input type="checkbox" name="docTf" value="O">
-                            <span>open?</span>
-                        </div>
+	                    <div data-role="fieldcontain">
+						    <label for="name">Title</label>
+						    <input type="text" name="docTle" />
+						</div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="input-contact">
-                            <input type="text" name="docTle">
-                            <span>Title</span>
-                        </div>
+                    
+                    <div class="col-md-6">
+                        <div data-role="fieldcontain">
+						<label for="textarea">Textarea</label>
+							<textarea name="docCon" ></textarea>
+						</div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="textarea-contact">
-                            <textarea name="docCon"></textarea>
-                            <span>Context</span>
-                        </div>
+                    
+                        <div data-role="fieldcontain">
+						    <label for="name">with who?</label>
+						    <input type="text" name="docTag" />
+						</div>
                     </div>
-                     <div class="input-contact">
-                            <input type="text" name="docTag">
-                            <span>with who?</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="input-contact">
+                    <div class="col-md-6">
+                        <div >
                             <input type="file" name="picFile">
                             <span>choice photo</span>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <input type="submit" class="btn btn-box"/>
+                    <div class="col-md-6">
+                        <input type="submit" />등록
                     </div>
                 </div>
             </form>
-        </div>
+       	 </div>
+        
 
         <div class="col-md-6">
             <h3 class="text-uppercase"></h3>
             <h5></h5>
             <div class="h-30"></div>
-            <p>aa </p>
             <div class="contact-info">
                 <p><i class="ion-android-call"></i> 010 9295 4920</p>
                 <p><i class="ion-ios-email"></i> box@info.com</p>
             </div>
         </div>
+	</div>
 
-
-    </div>
     <!-- end main-container -->
 
     <!-- footer -->
