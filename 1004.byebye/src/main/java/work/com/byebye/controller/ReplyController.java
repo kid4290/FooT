@@ -44,9 +44,7 @@ public class ReplyController {
 	public void setService(ReplyService service) {
 		this.service = service;
 	}
-
 	
-		
 	
 	@RequestMapping("replyInsertView.do")
 	public ModelAndView ReplyInsertView(HttpSession session, int seq) {

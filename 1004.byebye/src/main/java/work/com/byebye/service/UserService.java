@@ -37,5 +37,9 @@ public class UserService {
 	   return userdao.getUser(userid);
    }
    
+   public int deleteUser(String userid) {
+	   return userdao.deletUser(userid);
+   }
+   
    
 }

@@ -75,12 +75,10 @@ public class UserDao {
    }
    
    
-   
-   
-   
-   
-   
-   
+   /** 회원 탈퇴 */
+   public int deletUser(String userid) {
+	   return sqlSession.delete("deleteUser", userid);
+   }
    
    
    

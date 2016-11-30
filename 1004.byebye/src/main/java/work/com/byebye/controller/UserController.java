@@ -29,13 +29,10 @@ public class UserController {
       return "login";
    }
 
-
    /** 네이버 로그인 시 아이디 중복 체크 후 로그인 및 회원등록 
     * @throws UnsupportedEncodingException */
    @RequestMapping(value="naverLogin.do")
    public String naverLogin(String userid, String nickname, String userimg, HttpSession session) throws UnsupportedEncodingException {
-
-
       String grade = userservice.loginCheck(userid);
 
       ModelAndView mv = new ModelAndView();
@@ -45,11 +42,6 @@ public class UserController {
 
          if(result > 0) {
             session.setAttribute("userid", userid);
-            session.setAttribute("nickname", nickname);
-            session.setAttribute("grade", grade);
-
-            mv.addObject("user", userid);
-            mv.addObject("grade", grade);
             mv.addObject("nickname",nickname);
 
             mv.setViewName("index");
@@ -59,12 +51,7 @@ public class UserController {
          }
       } else {
          session.setAttribute("userid", userid);
-         session.setAttribute("nickname", nickname);
-         System.out.println(nickname);
-         session.setAttribute("grade", grade);
-
-         mv.addObject("user", userid);
-         mv.addObject("grade", grade);
+         mv.addObject("nickname",nickname);
 
          mv.setViewName("index");
       }
@@ -82,12 +69,7 @@ public class UserController {
          int result = userservice.insertKakao(userid, nickname, userimg, "kakao");
          if(result > 0) {
             session.setAttribute("userid", userid);
-            session.setAttribute("nickname", nickname);
-            session.setAttribute("grade", grade);
-
-            mv.addObject("user", userid);
-            mv.addObject("grade", grade);
-
+            mv.addObject("nickname",nickname);
             mv.setViewName("index");
          } else {
             mv.addObject("message", "로그인 오류");
@@ -95,12 +77,7 @@ public class UserController {
          }
       } else {
          session.setAttribute("userid", userid);
-         session.setAttribute("nickname", nickname);
-         session.setAttribute("grade", grade);
-
-         mv.addObject("user", userid);
-         mv.addObject("grade", grade);
-
+         mv.addObject("nickname",nickname);
          mv.setViewName("index");
       }
       return "index";
@@ -115,12 +92,7 @@ public class UserController {
          int result = userservice.insertKakao(userid, nickname, userimg, "facebook");
          if(result > 0) {
             session.setAttribute("userid", userid);
-            session.setAttribute("nickname", nickname);
-            session.setAttribute("grade", grade);
-
-            mv.addObject("user", userid);
-            mv.addObject("grade", grade);
-
+            mv.addObject("nickname",nickname);
             mv.setViewName("index");
          } else {
             mv.addObject("message", "로그인 오류");
@@ -128,17 +100,13 @@ public class UserController {
          }
       } else {
          session.setAttribute("userid", userid);
-         session.setAttribute("nickname", nickname);
-         session.setAttribute("grade", grade);
-
-         mv.addObject("user", userid);
-         mv.addObject("grade", grade);
-
+         mv.addObject("nickname",nickname);
          mv.setViewName("index");
       }
       return "redirect:index.do";
    }
    
+   /** setting(내정보 보기) 페이지 */
    @RequestMapping(value="setting.do")
    public ModelAndView getUser(HttpSession session) {
 	   String userid = (String) session.getAttribute("userid");
@@ -157,7 +125,31 @@ public class UserController {
 	   
    }
    
-   
+   /** 로그아웃 요청 */
+	@RequestMapping("logout.do")
+	public String logout(HttpSession session) {
+		if (session.getAttribute("userid") != null) {
+			session.removeAttribute("userid");
+		}
+		session.invalidate();
+		return "login";
+	}
+	
+	/** 회원 탈퇴 */
+	@RequestMapping("deleteUser.do")
+	public String delete(HttpSession session) {
+		String userid = (String) session.getAttribute("userid");
+		int result = userservice.deleteUser(userid);
+		if(result > 0) {
+			if (session.getAttribute("userid") != null) {
+				session.removeAttribute("userid");
+			}
+			session.invalidate();
+		} else {
+			return "setting";
+		}
+		return "login";
+	}
    
    
 }
