@@ -50,6 +50,11 @@ public class BoardDto implements Serializable {
 	      this.place = place;
 	   }
 	   
+	   public BoardDto(String userid, Double lon, Double lat) {
+		   this.userid = userid;
+		   this.lon = lon;
+		   this.lat = lat;
+	   }
 	   
 	   public String getPlace() {
 	      return place;

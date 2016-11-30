@@ -44,14 +44,14 @@ public class BoardService {
 	List<BoardDto> list = new ArrayList<BoardDto>();
 
 	// 사진 조회
-	public List<BoardDto> myPlace(String userid) {
-		list = dao.myPlace(userid);
+	public List<BoardDto> myPlace(String userid,double lon, double lat) {
+		list = dao.myPlace(userid,lon,lat);
 		return list;
 	}
 	
 	// 홈화면 사진 조회 
-	public List<BoardDto> index(String userid) {
-		list = dao.index(userid);
+	public List<BoardDto> index(String userid,Double lon, Double lat) {
+		list = dao.index(userid,lon,lat);
 		return list;
 	}
 

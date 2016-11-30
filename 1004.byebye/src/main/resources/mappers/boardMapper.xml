@@ -27,13 +27,30 @@
 
 
 	<!-- 사진 조회 -->
+	<!-- 
 	<select id="myPlace" resultMap="boardResult" parameterType="String">
 		select * from BOARD where userid= #{userid}
 	</select>
+	 -->
+	<select id="myPlace" resultMap="boardResult" parameterType="BoardDto">
+		select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag 
+		from 
+		(select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag,
+		(abs(#{lat}-lat)+abs(#{lon}-lon))/2 
+		from board where (userid=#{userid}) 
+		or (userid!=#{userid} and doc_tf='O') 
+		order by (abs(#{lat}-lat)+abs(#{lon}-lon))/2 asc, doc_date desc)
+   </select>
 	
 	<!-- 홈 화면 남의 사진 조회 -->
-	<select id="index" resultMap="boardResult" parameterType="String">
-		select * from BOARD where userid != #{userid}
+	<select id="index" resultMap="boardResult" parameterType="BoardDto">
+				select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag 
+		from 
+		(select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag,
+		(abs(#{lat}-lat)+abs(#{lon}-lon))/2 
+		from board where (userid!=#{userid}) 
+		or (userid!=#{userid} and doc_tf='O') 
+		order by (abs(#{lat}-lat)+abs(#{lon}-lon))/2 asc, doc_date desc)
 	</select>
 
 	<!-- 비디오 상세 조회 -->

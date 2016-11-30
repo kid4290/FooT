@@ -52,10 +52,10 @@ public class BoardController {
 	
 	//home 화면에 사진호출 남의 사진 
 	 @RequestMapping(value="index.do")
-	   public  @ResponseBody ModelAndView index(HttpSession session) {
+	   public  @ResponseBody ModelAndView index(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) {
 			String userid = (String) session.getAttribute("userid");
 
-			list = service.index(userid);
+			list = service.index(userid,lon,lat);
 
 			ModelAndView mv = new ModelAndView();
 			if (userid != null) {
@@ -107,10 +107,10 @@ public class BoardController {
 
 	/** 사진 리스트 조회요청 */
 	@RequestMapping("myPlace.do")
-	public @ResponseBody ModelAndView myPlace(HttpSession session) {
+	public @ResponseBody ModelAndView myPlace(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) {
 		String userid = (String) session.getAttribute("userid");
 
-		list = service.myPlace(userid);
+		list = service.myPlace(userid,lon,lat);
 
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
@@ -122,6 +122,24 @@ public class BoardController {
 		}
 		return mv;
 	}
+	
+//	/** 사진 리스트 조회요청 */
+//	@RequestMapping("myPlace.do")
+//	public @ResponseBody ModelAndView myPlace(HttpSession session) {
+//		String userid = (String) session.getAttribute("userid");
+//
+//		list = service.myPlace(userid);
+//
+//		ModelAndView mv = new ModelAndView();
+//		if (userid != null) {
+//			mv.addObject("list", list);
+//			mv.setViewName("board/myPlace");
+//		} else {
+//			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
+//			mv.setViewName("error/errorLogin");
+//		}
+//		return mv;
+//	}
 
 	@RequestMapping("imgLoad.do")
 	public @ResponseBody void imgLoad(HttpServletRequest request, HttpServletResponse response) {

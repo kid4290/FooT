@@ -2,6 +2,7 @@ package work.com.byebye.dao;
 
 import work.com.byebye.dto.BoardDto;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -45,14 +46,26 @@ public class BoardDao {
 	}
 	
 
-	// 사진조회
-	public List<BoardDto> myPlace(String userid) {
-		return sqlSession.selectList("myPlace", userid);
+//	// 사진조회
+//	public List<BoardDto> myPlace(String userid,Double lon, Double lat) {
+//		dto=new BoardDto(userid,lon,lat);
+//				sqlSession.selectList("myPlace", userid);
+//	}
+//	
+//	public List<BoardDto> myplace(String userid,Double lon, double lat) {
+//		dto = new BoardDto(userid,lon,lat);
+//		return sqlSession.selectList("myPlace",userid);
+//	}
+	
+	public List<BoardDto> myPlace(String userid,Double lon, double lat) {
+		dto = new BoardDto(userid,lon,lat);
+		return sqlSession.selectList("myPlace",dto);
 	}
 	
 	// 홈화면  남의 사진 조회
-	public List<BoardDto> index(String userid) {
-		return sqlSession.selectList("index", userid);
+	public List<BoardDto> index(String userid,Double lon,Double lat) {
+		dto = new BoardDto(userid,lon,lat);
+		return sqlSession.selectList("index", dto);
 	}
 
 
