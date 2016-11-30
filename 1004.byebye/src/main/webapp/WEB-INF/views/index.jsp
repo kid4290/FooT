@@ -60,7 +60,7 @@
 		<li><a href="fileBoardDtoFormView.do">INSERT</a></li>
 		<li><a href="myPlace.do">MYLIST</a></li>
 		<li><a href="beaconlist.do">BEACON</a></li>
-		<li><a href="myInfo.do">SETTING</a></li>
+		<li><a href="setting.do">SETTING</a></li>
 		         
 		<li class="box-label">Follow me</li>
 

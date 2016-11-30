@@ -139,10 +139,10 @@ public class UserController {
       return "redirect:index.do";
    }
    
-   @RequestMapping(value="myInfo.do")
+   @RequestMapping(value="setting.do")
    public ModelAndView getUser(HttpSession session) {
 	   String userid = (String) session.getAttribute("userid");
-	   System.out.println("userid : " + userid);
+	   
 	   ModelAndView mv = new ModelAndView();
 	   UserDto dto = userservice.getUser(userid);
 	   System.out.println("dto : " + dto);

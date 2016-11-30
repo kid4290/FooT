@@ -26,6 +26,8 @@ public class UserDao {
    public static UserDao getInstance() {
       return instance;
    }
+   
+   UserDto dto;
 
    /** 기본 생성자 */
    private UserDao() {}
@@ -67,7 +69,9 @@ public class UserDao {
    
    /** 회원 정보 조회 */
    public UserDto getUser(String userid) {
-	   return sqlSession.selectOne("getUser", userid);
+	   System.out.println("userid : " + userid);
+	   dto = sqlSession.selectOne("getUser", userid);
+	   return dto;
    }
    
    
