@@ -26,6 +26,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nhncorp.lucy.security.xss.XssPreventer;
+
 import work.com.byebye.dto.BoardDto;
 import work.com.byebye.exception.AuthenticationException;
 import work.com.byebye.service.BoardService;
@@ -82,10 +84,10 @@ public class BoardController {
 		MultipartFile multi = request.getFile("picFile");
 		String date = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 		String docTf = request.getParameter("docTf");
-		String docTle = request.getParameter("docTle");
-		String docCon = request.getParameter("docCon");
-		String docTag = request.getParameter("docTag");
-		String place = request.getParameter("place");
+		String docTle = XssPreventer.escape(request.getParameter("docTle"));
+		String docCon = XssPreventer.escape(request.getParameter("docCon"));
+		String docTag = XssPreventer.escape(request.getParameter("docTag"));
+		String place = XssPreventer.escape(request.getParameter("place"));
 		String userid = (String) session.getAttribute("userid");
 		String picFile = userid + "_" + date + ".jpg";
 

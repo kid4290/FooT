@@ -42,10 +42,9 @@
 
 html,
 body {
-    /* height: 100%; */
     font-family: 'Poppins', sans-serif;
     line-height: 1.8;
-    color: #999
+    color: #333;
 }
 
 .no-padding {
@@ -922,13 +921,8 @@ footer img {
     color: #777;
 }
 
-.top-bar p a {
-    color: #777;
-}
-
 .top-bar p a:hover,
 .top-bar p a:focus {
-    /* color: #555; */
     text-decoration: none;
 }
 
