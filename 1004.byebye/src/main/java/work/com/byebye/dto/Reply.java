@@ -31,6 +31,10 @@ public class Reply implements Serializable {
 		this.reNum = reNum;
 		this.reCon = reCon;
 	}
+	
+	public Reply(String reNum) {
+		this.reNum = reNum;
+	}
 
 	public String getReNum() {
 		return reNum;
