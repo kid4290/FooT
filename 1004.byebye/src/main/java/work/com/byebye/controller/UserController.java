@@ -132,7 +132,6 @@ public class UserController {
 			session.removeAttribute("userid");
 		}
 		session.invalidate();
-
 		return "login";
 	}
 	
@@ -150,7 +149,6 @@ public class UserController {
 			return "setting";
 		}
 		return "login";
-		
 	}
    
    
