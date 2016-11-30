@@ -87,6 +87,7 @@
          	<span id="jusoView" data-toggle="modal" data-target="#myModal">현재 위치를 찾고 있습니다.</span>
          </div>
          <h5>${nickname}님 환영합니다.</h5>
+        
       </div>
       </section>
       <!-- end box-intro -->

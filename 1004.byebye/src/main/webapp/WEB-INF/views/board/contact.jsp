@@ -21,6 +21,8 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    
+    
 
 </head>
 
@@ -122,8 +124,8 @@
             <div class="h-30"></div>
             <p>aa </p>
             <div class="contact-info">
-                <p><i class="ion-android-call"></i> 010 9295 4920</p>
-                <p><i class="ion-ios-email"></i> box@info.com</p>
+                <p><i class="ion-android-call"></i>010-1234-1234</p>
+                <p><i class="ion-ios-email"></i> place@footfoot.com</p>
             </div>
         </div>
 
