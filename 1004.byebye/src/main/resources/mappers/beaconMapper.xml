@@ -8,6 +8,7 @@
 		<result property="bSpotName" column="B_SPOTNAME" />
 		<result property="bLoaction" column="B_LOCACTION" />
 		<result property="bPage" column="B_PAGE" />
+		<result property="bImg" column="B_IMG" />
 	</resultMap>
 
 	<select id="getBeaconList" resultType="map">

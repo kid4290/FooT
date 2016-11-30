@@ -7,15 +7,17 @@ public class BeaconDto {
 	private String bSpotName;
 	private String bLoaction;
 	private String bPage;
+	private String bImg;
 	
 	public BeaconDto(){}
 	
-	public BeaconDto(int idx, String bId, String bSpotName, String bLoaction, String bPage) {
+	public BeaconDto(int idx, String bId, String bSpotName, String bLoaction, String bPage, String bImg) {
 		this.idx = idx;
 		this.bId = bId;
 		this.bSpotName = bSpotName;
 		this.bLoaction = bLoaction;
 		this.bPage = bPage;
+		this.bImg = bImg;
 	}
 
 	public int getIdx() {
@@ -58,10 +60,19 @@ public class BeaconDto {
 		this.bPage = bPage;
 	}
 
+	public String getbImg() {
+		return bImg;
+	}
+
+	public void setbImg(String bImg) {
+		this.bImg = bImg;
+	}
+
 	@Override
 	public String toString() {
 		return "BeaconDto [idx=" + idx + ", bId=" + bId + ", bSpotName=" + bSpotName + ", bLoaction=" + bLoaction
-				+ ", bPage=" + bPage + "]";
+				+ ", bPage=" + bPage + ", bImg=" + bImg + "]";
 	}
+
 	
 }

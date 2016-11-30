@@ -52,7 +52,7 @@
 		<h3>BEACON LIST</h3>
 		<div class="h-10"></div>
 		
-		<table border="1" cellspacing="0">
+		<table border="1">
 		<colgroup>
 			<col width="100">
 			<col width="100">
@@ -72,7 +72,7 @@
 			<c:forEach var="dto" items="${list}">
 			<tr>
 				<td class="bSpotName"><a href="beacon.do?BId=${dto.B_ID}"
-					data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}');">${dto.B_SPOTNAME}</a></td>
+					data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
 				<td class="bLoaction"><a type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
 			</c:forEach>
@@ -128,9 +128,9 @@
 			<h3 class="text-uppercase" id="bigName2">대 제목</h3>
 			<h5 id="bigName4">소 제목</h5>
 				<div class="h-30"></div>
-				<p>쿠폰 같은 사진넣을 자리</p>
+				<p><img id="imgSrc" src="img/lotte.png"></p>
 				<div class="contact-info">
-				<p><i class="ion-android-call"></i>전화번호 넣을자리</p>
+<!-- 				<p><i class="ion-android-call"></i>전화번호 넣을자리</p> -->
 				<i class="ion-ios-email"></i><p id="bigName3"></p>
 				</div>
 			</div>
@@ -143,11 +143,12 @@
 </div>
 <!-- /.modal -->
 <script type="text/javascript">
-function modalC(object1,object2,object3,object4){
+function modalC(object1,object2,object3,object4,object5){
 	$('#bigName1').html(object1);
 	$('#bigName2').html(object2);
 	$('#bigName3').html(object3);
 	$('#bigName4').html(object4);
+	$('#imgSrc').attr("src",object5);
 }
 </script>
 </body>

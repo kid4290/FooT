@@ -30,7 +30,7 @@ public class BeaconController {
         List<BeaconDto> list = beaconService.getBeaconList();
         ModelAndView mv = new ModelAndView("beacon/beaconList");
         mv.addObject("list", list);
-        
+        System.out.println(list);
         return mv;
     }
     
