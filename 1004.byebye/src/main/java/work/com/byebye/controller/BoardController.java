@@ -201,35 +201,36 @@ public class BoardController {
 	}
 
 	// 사진 수정 뷰 이동
-	@RequestMapping("updateContentView.do")
-	public ModelAndView updateContentView(HttpSession session, int seq, int seq2) {
-		BoardDto dto = new BoardDto();
-		String userid = (String) session.getAttribute("userid");
-		String docNum = String.valueOf(seq);
-		String userid2 = String.valueOf(seq2);
-		
-		dto = service.myPlaceContent(docNum);
-		ModelAndView mv = new ModelAndView();
-		if (userid == userid2) {
-			mv.addObject("docNum", dto.getDocNum());
-			mv.addObject("userid", dto.getUserid());
-			mv.addObject("lat", dto.getLat());
-			mv.addObject("lon", dto.getLon());
-			mv.addObject("picFile", dto.getPicFile());
-			mv.addObject("docTle", dto.getDocTle());
-			mv.addObject("docCon", dto.getDocCon());
-			mv.addObject("docDate", dto.getDocDate());
-			mv.addObject("docHit", dto.getDocHit());
-			mv.addObject("docTf", dto.getDocTf());
-			mv.addObject("docTag", dto.getDocTag());
-			mv.addObject("place", dto.getPlace());
-			mv.setViewName("board/myContentUpdate");
-		} else {
-			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-			mv.setViewName("error/errorLogin");
+		@RequestMapping("updateContentView.do")
+		public ModelAndView updateContentView(HttpSession session, int seq, HttpServletRequest request) {
+			BoardDto dto = new BoardDto();
+			String userid = (String) session.getAttribute("userid");
+			String docNum = String.valueOf(seq);
+//			String userid2 = (String) request.getParameter("seq2");
+//			String userid = (String) session.getAttribute("userid");
+			String userid2 = (String) request.getParameter("seq2");
+			dto = service.myPlaceContent(docNum);
+			ModelAndView mv = new ModelAndView();
+			if (userid.equals(userid2)) {
+				mv.addObject("docNum", dto.getDocNum());
+				mv.addObject("userid", dto.getUserid());
+				mv.addObject("lat", dto.getLat());
+				mv.addObject("lon", dto.getLon());
+				mv.addObject("picFile", dto.getPicFile());
+				mv.addObject("docTle", dto.getDocTle());
+				mv.addObject("docCon", dto.getDocCon());
+				mv.addObject("docDate", dto.getDocDate());
+				mv.addObject("docHit", dto.getDocHit());
+				mv.addObject("docTf", dto.getDocTf());
+				mv.addObject("docTag", dto.getDocTag());
+				mv.addObject("place", dto.getPlace());
+				mv.setViewName("board/myContentUpdate");
+			} else {
+				mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
+				mv.setViewName("error/errorLogin");
+			}
+			return mv;
 		}
-		return mv;
-	}
 
 	/**
 	 * 수정 : 수정하려고하는 것만 선택해서 수정할 수 있음 수정 불가한거는 readOnly 명시

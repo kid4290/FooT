@@ -99,7 +99,7 @@
             </ul>
 
 		<div class="col-md-12">
-                        <a href="updateContentView.do?seq=${docNum}"><input type="button"  value="수정"/></a>
+                        <a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input type="button"  value="수정"/></a>
         
         </div>
          <div class="col-md-12">
