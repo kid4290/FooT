@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-    <title>Box personal portfolio Template</title>
+    <title>수정 페이지</title>
     <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
     <!-- Bootstrap -->
@@ -23,6 +23,10 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    <script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript"
+		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+    
 
 </head>
 
@@ -36,35 +40,16 @@
          <a href="index.do">
          <img src="img/circlelogo.png" width="50" alt="Logo">
          </a>
+         <!-- 뒤로가기 버튼 -->
+         <span class="box-menu-text">
+        <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c" 			aria-hidden="true">이전</a>
+        </span>
       </div>
-            <!-- box-nav -->
-            <a class="box-primary-nav-trigger" href="#0">
-                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
-            </a>
         </header>
         <!-- end box-header -->
         </div>
         
         <div class="content"> 
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-                <li class="box-label">FootFoot</li>
-		         <li><a href="index.do">HOME</a></li>
-		         <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
-		         <li><a href="myPlace.do">MYLIST</a><i class="ion-ios-circle-filled color"></i></li>
-		         <li><a href="beaconlist.do">BEACON</a></li>
-		         <li><a href="setting.do">SETTING</a></li>
-
-                <li class="box-label">Follow me</li>
-
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
-        </nav>
-        <!-- end nav -->  
     </div>
     
     <div class="container main-container clearfix">
@@ -78,7 +63,7 @@
     <!-- Main container -->
      
         <div class="col-md-6">
-            <img src="http://localhost:8090/spring15/imgLoad.do?fileName=${picFile}" class="img-responsive" alt="" />
+            <img src="http://localhost:8090/spring15/imgLoad.do?fileName=${picFile}" class="img-responsive" />
         </div>
         <form action="updateContent.do?seq=${docNum}" method="POST">
         <div class="col-md-6">
@@ -89,15 +74,9 @@
 
             <p>with <input type="text" name="docTag" id="docTag" value="${docTag}"></p>
             <div class="h-10"></div>
-            <ul class="social-ul">
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
 
 		<div class="col-md-12">
-            <input type="submit" class="btn btn-box" value="확인"/>수정수정
+            <input type="submit"  value="확인"/>
         
         </div>
         </div>

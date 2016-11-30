@@ -24,6 +24,8 @@
 <!-- modernizr -->
 <script src="js/modernizr.js"></script>
 <script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript"
+		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
 
 </head>
 <body>
@@ -52,17 +54,15 @@
 		<h3>BEACON LIST</h3>
 		<div class="h-10"></div>
 		
-		<table border="1">
+		<table style="width:100%;border:1px solid;">
 		<colgroup>
-			<col width="100">
-			<col width="100">
-			<col width="110">
-			<col width="100">
-			<col width="100">
+			<col width="20%">
+			<col width="40%">
+			<col width="40%">
 		</colgroup>
 						
-		<thead>
-			<tr>
+		<thead style="width:100%;border:1px solid;">
+			<tr class="tl_theadtr">
 				<th scope="col">No.1</th>
 				<th scope="col">Beacon</th>
 				<th scope="col">Location</th>
@@ -72,13 +72,14 @@
 		<tbody>
 			<c:forEach var="dto" items="${list}">
 			<tr>
-				<td class="bId"><input readonly="readonly" value="${dto.B_ID}"></td>
+				<td class="bId"><a type="button" href="#">${dto.B_IDX}</a></td>
 				<td class="bSpotName"><a data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
 				<td class="bLoaction"><a type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
 			</c:forEach>
 		</tbody>
 		</table>
+		
 		</div>
 		<!-- end service-box -->
 	</div>
