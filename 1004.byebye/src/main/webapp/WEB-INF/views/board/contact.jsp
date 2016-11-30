@@ -66,7 +66,7 @@
    </div>
 
    <div class="col-md-8">
-   <form action="multiInsert.do" method="POST" enctype="multipart/form-data">
+   <form action="multiInsert.do" method="POST" enctype="multipart/form-data" id="frm">
    <div class="row">
    <div class="col-md-12">
    
@@ -116,7 +116,7 @@
       
       <br><br>
       <div class="col-md-6">
-         <input type="submit" value="등록" />
+         <a type="button" href="#" onclick="document.getElementById('frm').submit();">등록</a>
       </div>
       
    </div>
