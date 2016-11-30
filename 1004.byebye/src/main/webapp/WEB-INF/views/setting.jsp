@@ -25,6 +25,44 @@
 <script src="js/modernizr.js"></script>
 <script src="js/jindo_coo_ajax.js"></script>
 
+	<style>
+	input[type="buttonn" i], input[type="file" i]::-webkit-file-upload-button, button {
+		align-items: flex-start;
+		text-align: center;
+		color: buttontext;
+		background-color: buttonface;
+		box-sizing: border-box;
+	}
+	input[type="file" i] {
+		align-items: baseline;
+		color: inderit;
+		text-align: start;
+	}
+	.imagepart {
+		width: 100px;
+		height: 100px;
+	}
+	.myimage {
+		width: 150px;
+		height: 150px;
+		border:1px solid red;
+		float:left;
+	}
+	.tl_settingtable {
+		margin: 0px auto;
+		width: 90%;
+	}
+	.tl_trr {
+		text-align: center;
+	}
+	
+	.tl_tdd {
+		text-align: center;
+		height: 300; 
+		border: 1px solid blue;"
+	}
+	</style>
+
 </head>
 <body>
 
@@ -43,28 +81,50 @@
 		<p><a href="#">당신의 설정을 도와드립니다.</a></p>
 	</div>
 	<!-- end top bar -->
+<div class="tl_settingform">
+<table class="tl_settingtable">
+	<tr class="tl_trr">
+	<td class="tl_tdd">
+	<div class="myimage">
+		<button class="imagebtn" title="프로필 사진 바꾸기">
+			<img alt="프로필 사진 바꾸기" class="imagepart" src="img/sheep.png">
+		</button>
+		
+	<div class="myimage" style="width:150px;height:AUTO;border:1px solid red;float:left;">
+		<form>
+			<input type="file" accept="image/jpeg" class="imagefile">
+		</form>
+	</div>
 
-<table>
-	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid red;">로그인 계정정보</td>
+	</div>
+
+	</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid orange;">로그아웃</td>
+	<td class="tl_td" height="200" style="border: 1px solid green;">내가 쓴 댓글</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid yellow;">내가 쓴 댓글</td>
+	<td class="tl_td" height="50">
+		<a type="button" href="#">로그아웃</a>
+	</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid green;">알림 설정</td>
+	<td class="tl_td" height="50">
+		<a type="button" href="#">알림설정</a>
+	</td>
 	</tr>
 	
 	<tr class="tl_tr">
-	<td class="tl_td" height="150" style="border: 1px solid blue;">회원탈퇴</td>
+	<td class="tl_td" height="50">
+		<a type="button" href="#">회원탈퇴</a>
+	</td>
 	</tr>
 </table>
+</div>
+
 </div>
   
 <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
