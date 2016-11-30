@@ -114,12 +114,14 @@
    
       <div class="col-md-6">
          <div>
-         <input type="file" name="picFile">
+         <label for="name">picture</label>
+         <input type="file" name="picFile" accept="image/*;capture=camera"/>
          </div>
       </div>
       
+      <br><br>
       <div class="col-md-6">
-         <input type="submit" value="등록"/>
+         <input type="submit" value="등록" />
       </div>
       
    </div>

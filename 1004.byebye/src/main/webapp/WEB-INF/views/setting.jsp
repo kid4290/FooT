@@ -145,7 +145,8 @@
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="#">로그아웃</a>
+<!-- 		<a type="button" href="logout.do">로그아웃</a> -->
+			<input type="button" value="카카오톡로그아웃" onclick="kakaologout()">
 	</td>
 	</tr>
 	
@@ -178,6 +179,28 @@
 </div>
 
 <!-- div 종료 -->
+
+	<script type="text/javascript">
+//    Kakao.init('397aabd494fcce05ada8693f67c2c1fa');
+//    function loginWithKakao() {
+//     Kakao.Auth.login({
+//     success: function(authObj) {
+//     Kakao.API.request({
+//    url: '/v1/user/me',
+//      });
+//     },
+//     fail : function(err) {
+//        alert(JSON.stringfy(err));
+//     }
+//   });
+//  }
+   function kakaologout() {
+      Kakao.Auth.logout(function() {
+         console.log("logged out.");
+         location.replace("http://<%=request.getServerName()%>:8090/byebye/login.do"); 
+      });
+   }
+   </script>
 
 <!-- jQuery -->
 <script src="js/jquery-2.1.1.js"></script>
