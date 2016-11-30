@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-    <title>Box personal portfolio Template</title>
+    <title>수정 페이지</title>
     <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
     <!-- Bootstrap -->
@@ -36,35 +36,13 @@
          <a href="index.do">
          <img src="img/circlelogo.png" width="50" alt="Logo">
          </a>
+         
       </div>
-            <!-- box-nav -->
-            <a class="box-primary-nav-trigger" href="#0">
-                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
-            </a>
         </header>
         <!-- end box-header -->
         </div>
         
         <div class="content"> 
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-                <li class="box-label">FootFoot</li>
-		         <li><a href="index.do">HOME</a></li>
-		         <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
-		         <li><a href="myPlace.do">MYLIST</a><i class="ion-ios-circle-filled color"></i></li>
-		         <li><a href="beaconlist.do">BEACON</a></li>
-		         <li><a href="setting.do">SETTING</a></li>
-
-                <li class="box-label">Follow me</li>
-
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
-        </nav>
-        <!-- end nav -->  
     </div>
     
     <div class="container main-container clearfix">
