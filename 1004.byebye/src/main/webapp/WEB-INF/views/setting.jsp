@@ -54,8 +54,7 @@
 		border-radius: 50%;
 		box-sizing: border-box;
 		overflow: hidden;
-		
-		border: 1px solid red;
+		margin: 0px auto;
 	}
 	.imagepart {
 		width: 100%;
@@ -73,7 +72,6 @@
 	.myimage2 {
 		width: auto;
 		height: auto;
-		border: 1px solid red;
 		float: left;
 	}
 	.myimage {
@@ -84,8 +82,8 @@
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		flex-direction: column;
-
-		float:left;
+		margin-top: 20px;
+		float:center;
 	}
 	.tl_settingtable {
 		margin: 0px auto;
@@ -97,7 +95,6 @@
 	.tl_tdd {
 		text-align: center;
 		height: auto; 
-		border: 1px solid blue;"
 	}
 	</style>
 
@@ -129,9 +126,7 @@
 			<div class="imagebtn">
 			<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">
 			</div>
-		<div class="mh_profile" style="border:1px solid red;width:100%;height:100%;">
-			
-		</div>
+
 		</div>
 		
 	<div class="myimage2">
@@ -141,7 +136,6 @@
 	</div>
 
 	</div>
-
 	</td>
 	</tr>
 	
@@ -184,10 +178,6 @@
 </div>
 
 <!-- div 종료 -->
-
-<!-- back to top -->
-<a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
-<!-- end back to top -->
 
 <!-- jQuery -->
 <script src="js/jquery-2.1.1.js"></script>
