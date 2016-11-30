@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
     <title>등록 페이지</title>
 
     <!-- Bootstrap -->
@@ -23,7 +23,7 @@
     <script src="js/modernizr.js"></script>
     <script src="js/jindo_coo_ajax.js"></script>
 <script type="text/javascript"
-		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+      src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
     
 
 </head>
@@ -31,11 +31,11 @@
 <body>
 
 <div data-role="header" data-position="fixed">
-	<header class="box-header">
-	<div class="box-logo">
-	<a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
-	</div>
-	</header>
+   <header class="box-header">
+   <div class="box-logo">
+   <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
+   </div>
+   </header>
 </div>
 
     <!-- top bar -->
@@ -45,73 +45,74 @@
     </div>
     <!-- end top bar -->
 
-    <!-- main-container -->
-    <div class="container main-container">
-        <div class="col-md-6">
-            <form action="multiInsert.do" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-md-12">
-                        
-                   <div class="col-md-6">     
-                    <div data-role="fieldcontain">
-					    <label for="name">Place</label>
-					    <input type="text" name="place" />
-					</div>	
-					</div>       
-	                        
-	             <div class="col-md-6">           
-	                <div data-role="fieldcontain">
-				    <fieldset data-role="controlgroup">
-					   <input type="checkbox" name="docTf" id="checkbox-2" class="custom" />
-					   <label for="checkbox-2">공개</label>
-				    </fieldset>
-					</div>
-					</div>
-				
-                    <div class="col-md-6">
-	                    <div data-role="fieldcontain">
-						    <label for="name">Title</label>
-						    <input type="text" name="docTle" />
-						</div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div data-role="fieldcontain">
-						<label for="textarea">Textarea</label>
-							<textarea name="docCon" ></textarea>
-						</div>
-                    </div>
-                    
-                        <div data-role="fieldcontain">
-						    <label for="name">with who?</label>
-						    <input type="text" name="docTag" />
-						</div>
-                    </div>
-                    <div class="col-md-6">
-                        <div >
-                            <input type="file" name="picFile">
-                            <span>choice photo</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="submit" />등록
-                    </div>
-                </div>
-            </form>
-       	 </div>
-        
+<!-- main-container -->
+<div class="container main-container">
 
-        <div class="col-md-6">
-            <h3 class="text-uppercase"></h3>
-            <h5></h5>
-            <div class="h-30"></div>
-            <div class="contact-info">
-                <p><i class="ion-android-call"></i> 010 9295 4920</p>
-                <p><i class="ion-ios-email"></i> box@info.com</p>
-            </div>
-        </div>
-	</div>
+   <div class="col-md-4">
+      <h3 class="text-uppercase"></h3>
+      <h5>선택된 사진/이미지</h5>
+      <div class="contact-info" style="width:100%;height:300px;background-color:#333;">
+      <img src="" alt=""/>
+      </div>
+   </div>
 
+   <div class="col-md-8">
+   <form action="multiInsert.do" method="POST" enctype="multipart/form-data">
+   <div class="row">
+   <div class="col-md-12">
+   
+      <div class="col-md-10">    
+      <label for="name">Place</label> 
+         <div data-role="fieldcontain">
+         <input type="text" name="place" />
+         </div>   
+      </div>
+   
+      <div class="col-md-10">           
+         <div data-role="fieldcontain">
+         <fieldset data-role="controlgroup">
+         <input type="checkbox" name="docTf" id="checkbox-2" class="custom" />
+         <label for="checkbox-2">공개</label>
+         </fieldset>
+         </div>
+      </div>
+      
+      <div class="col-md-10">
+      <label for="name">Title</label>
+         <div data-role="fieldcontain">
+         <input type="text" name="docTle" />
+         </div>
+      </div>
+      
+      <div class="col-md-10">
+      <label for="textarea">Textarea</label>
+         <div data-role="fieldcontain">
+         <textarea name="docCon" ></textarea>
+         </div>
+      </div>
+      
+      <div class="col-md-10">
+      <label for="name">with who?</label>
+         <div data-role="fieldcontain">
+         <input type="text" name="docTag" />
+         </div>
+      </div>
+   
+      <div class="col-md-6">
+         <div>
+         <input type="file" name="picFile">
+         </div>
+      </div>
+      
+      <div class="col-md-6">
+         <input type="submit" value="등록"/>
+      </div>
+      
+   </div>
+   </div>
+</form>
+</div>
+</div>
     <!-- end main-container -->
 
     <!-- footer -->

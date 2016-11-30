@@ -126,7 +126,7 @@
 	<div class="myimage">
 		<div class="imagediv">
 			<div class="imagebtn">
-			<img alt="프로필 사진 바꾸기" class="imagepart" src="${userimg}">
+			<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">
 			</div>
 		<div class="mh_profile" style="border:1px solid red;width:100%;height:100%;">
 			

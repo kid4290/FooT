@@ -3,15 +3,11 @@ package work.com.byebye.controller;
 import java.io.UnsupportedEncodingException;
 
 import javax.annotation.Resource;
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import work.com.byebye.dto.UserDto;
@@ -33,11 +29,6 @@ public class UserController {
       return "login";
    }
 
- 
-   @RequestMapping(value="setting.do")
-   public String setting() {
-      return "setting";
-   }
 
    /** 네이버 로그인 시 아이디 중복 체크 후 로그인 및 회원등록 
     * @throws UnsupportedEncodingException */
@@ -147,4 +138,26 @@ public class UserController {
       }
       return "redirect:index.do";
    }
+   
+   @RequestMapping(value="myInfo.do")
+   public ModelAndView getUser(HttpSession session) {
+	   String userid = (String) session.getAttribute("userid");
+	   System.out.println("userid : " + userid);
+	   ModelAndView mv = new ModelAndView();
+	   UserDto dto = userservice.getUser(userid);
+	   System.out.println("dto : " + dto);
+	   if(dto != null) {
+		   mv.addObject("dto", dto);
+		   mv.setViewName("setting");
+	   } else {
+		   mv.addObject("message", "내정보 조회 오류");
+           mv.setViewName("index");
+	   }
+	   return mv;
+	   
+   }
+   
+   
+   
+   
 }

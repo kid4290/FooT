@@ -60,14 +60,7 @@
 		         <li><a href="fileBoardDtoFormView.do">INSERT</a></li>
 		         <li><a href="myPlace.do">MYLIST</a><i class="ion-ios-circle-filled color"></i></li>
 		         <li><a href="beaconlist.do">BEACON</a></li>
-		         <li><a href="setting.do">SETTING</a></li>
-
-                <li class="box-label">Follow me</li>
-
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
+		         <li><a href="myInfo.do">SETTING</a></li>
             </ul>
         </nav>
         <!-- end nav -->  

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import work.com.byebye.dao.UserDao;
+import work.com.byebye.dto.UserDto;
 
 @Service
 public class UserService {
@@ -31,5 +32,10 @@ public class UserService {
    public int insertFacebook(String userid, String nickname, String userimg, String grade) {
       return userdao.insertFacebook(userid, nickname, userimg, grade);
    }
+   
+   public UserDto getUser(String userid) {
+	   return userdao.getUser(userid);
+   }
+   
    
 }

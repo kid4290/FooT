@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import work.com.byebye.dto.UserDto;
+
 
 @Repository
 public class UserDao {
@@ -64,5 +66,23 @@ public class UserDao {
    }
    
    /** 회원 정보 조회 */
+   public UserDto getUser(String userid) {
+	   return sqlSession.selectOne("getUser", userid);
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
 }
