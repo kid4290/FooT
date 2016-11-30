@@ -72,7 +72,6 @@
 </nav>
 <!-- end nav -->
 </div>
-      
 
 	<div class="main-container portfolio-inner clearfix">
       <!-- box-intro -->
