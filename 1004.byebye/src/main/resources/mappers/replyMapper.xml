@@ -9,23 +9,28 @@
 		<result property="userid" column="user_id" />
 	</resultMap>
 
-	<!-- 사진 게시 insert -->
+	<!-- 댓글 게시 insert -->
 	<insert id="replyInsert" parameterType="Reply">
 		insert into reply
 		values
 		(seq_re_num.nextval,#{reCon},#{docNum},#{userid})
 	</insert>
 	
-	<!-- 사진 조회 -->
+	<!-- 댓글 조회 -->
 	<select id="replySearch" resultMap="replyResult" parameterType="String">
 		select * from Reply where user_id= #{userid}
 	</select>
 	
-	<!-- 사진수정 -->
+	<!-- 댓글수정 -->
 	<select id="replyUpdate" parameterType="Reply">
 		update reply set re_con=#{reCon} where re_num=#{reNum}
 	</select>	
-
+	
+	<!--  댓글 삭제  -->
+	<delete id="replyDelete" prameterType="String">
+		delete from reply where re_num = #{reNum}
+	
+	</delete>
 	
 
 </mapper>

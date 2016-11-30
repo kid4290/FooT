@@ -44,7 +44,12 @@ public class ReplyController {
 	public void setService(ReplyService service) {
 		this.service = service;
 	}
-
+	
+	@RequestMapping("replyzz.do")
+	public String replySearch() {
+		return "reply/replySearch";
+		
+	}
 	
 		
 	
@@ -112,10 +117,10 @@ public class ReplyController {
 		//view는 추가저긍로 만들어야 할것 , 
 		if(reList!=null) {
 			mv.addObject("list",reList);
-			mv.setViewName("");
+			mv.setViewName("reply/testReply");
 		} else {
 			mv.addObject("자신의 댓글 조회가 되지 않습니다. ");
-			mv.setViewName("");
+			mv.setViewName("reply/testReply");
 		}
 		
 		return mv; 
@@ -237,11 +242,17 @@ public class ReplyController {
 		return mv;
 	}
 	
-	@RequestMapping(value="replyDelete") 
-	public ModelAndView replyDelete(HttpSession session, HttpServletRequest request) {
-//		String 
-		ModelAndView mv = new ModelAndView();
-		return mv;
+	@RequestMapping(value="replyDelete.do") 
+	public String replyDelete(HttpSession session, HttpServletRequest request) {
+		String reNum = (String) request.getParameter("seq");
+		
+		int replyDel = service.replyDelete(reNum);
+		
+		if(replyDel>0) {
+			return "";
+		}
+		
+		return "";
 	}
 	
 	

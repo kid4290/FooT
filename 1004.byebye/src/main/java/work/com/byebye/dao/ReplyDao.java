@@ -61,5 +61,9 @@ public class ReplyDao {
 		return sqlSession.update("replyUpdate",dto);
 	}
 	
+	public int replyDelete(String reNum) {
+		return sqlSession.delete("replyDelete",reNum);
+	}
+	
 
 }
