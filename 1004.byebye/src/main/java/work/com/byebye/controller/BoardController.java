@@ -244,8 +244,8 @@ public class BoardController {
 		String docCon = (String) request.getParameter("docCon");
 		String docTag = (String) request.getParameter("docTag");
 		String place = (String) request.getParameter("place");
-
-		int upt = service.updateContent(docCon, docNum, docTag, place);
+		String docTle  = (String) request.getParameter("docTle");
+		int upt = service.updateContent(docCon, docNum, docTag, place,docTle);
 		ModelAndView mv = new ModelAndView();
 		if (upt > 0) {
 			mv.setViewName("board/myPlaceContent");

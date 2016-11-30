@@ -68,8 +68,8 @@ public class BoardService {
 		}
 
 	// 수정 서비스
-	public int updateContent(String docCon, String docNum, String docTag, String place) {
-		dpo = new BoardDto(docCon, docNum, docTag, place);
+	public int updateContent(String docCon, String docNum, String docTag, String place, String docTle) {
+		dpo = new BoardDto(docCon, docNum, docTag, place,docTle);
 		int upt = dao.updateContent(dpo);
 		return upt;
 	}

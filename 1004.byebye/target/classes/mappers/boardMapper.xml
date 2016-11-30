@@ -56,8 +56,8 @@
 
 	<!-- 내용 수정 -->
 	<update id="updateContent" parameterType="BoardDto">
-		update BOARD set doc_con = #{docCon}, doc_Tag = #{docTag} where doc_num =
-		#{docNum}
+		update BOARD set doc_con = #{docCon}, doc_Tag = #{docTag} , doc_Tle = #{docTle} , place=#{place} 
+		where doc_num = #{docNum}
 	</update>
 
 </mapper>

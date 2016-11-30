@@ -63,11 +63,12 @@ public class BoardDto implements Serializable {
 
 
 
-	   public BoardDto(String docCon, String docNum, String docTag,String place) {
+	   public BoardDto(String docCon, String docNum, String docTag,String place,String docTle) {
 	      this.docNum = docNum;
 	      this.docCon = docCon;
 	      this.docTag = docTag;
 	      this.place = place;
+	      this.docTle = docTle;
 	   }
 	   
 	   public BoardDto() {}

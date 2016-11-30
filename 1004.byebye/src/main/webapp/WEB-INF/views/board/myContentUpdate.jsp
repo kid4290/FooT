@@ -83,6 +83,7 @@
         <form action="updateContent.do?seq=${docNum}" method="POST">
         <div class="col-md-6">
            <h3 class="uppercase"><input type="text" name="docNum" id="docNum" value="${docNum}" readOnly> </h3>
+           <h5>Title : <input type="text" name="docTle" id="docTle" value="${docTle}"></h5>
            <h5>Where : <input type="text" name="place" id="place" value="${place}"></h5>
            <div class="h-30"></div>
             <p>Contents <input type="text" name="docCon" id="docCon" value="${docCon}"> </p>
