@@ -29,13 +29,10 @@ public class UserController {
       return "login";
    }
 
-
    /** 네이버 로그인 시 아이디 중복 체크 후 로그인 및 회원등록 
     * @throws UnsupportedEncodingException */
    @RequestMapping(value="naverLogin.do")
    public String naverLogin(String userid, String nickname, String userimg, HttpSession session) throws UnsupportedEncodingException {
-
-
       String grade = userservice.loginCheck(userid);
 
       ModelAndView mv = new ModelAndView();
