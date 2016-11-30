@@ -63,14 +63,16 @@
 						
 		<thead>
 			<tr>
-				<th scope="col">비콘이름</th>
-				<th scope="col">비콘위치</th>
+				<th scope="col">No.1</th>
+				<th scope="col">Beacon</th>
+				<th scope="col">Location</th>
 			</tr>
 		</thead>
 		
 		<tbody>
 			<c:forEach var="dto" items="${list}">
 			<tr>
+				<td class="bId"><input readonly="readonly" value="${dto.B_ID}"></td>
 				<td class="bSpotName"><a data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
 				<td class="bLoaction"><a type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
