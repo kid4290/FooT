@@ -87,17 +87,11 @@
             <p>with ${docTag}</p>
             <div class="h-10"></div>
    
-<<<<<<< HEAD
 		<div class="col-md-12">
                 <a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input type="button"  value="수정"/></a>
         </div>
          <div class="col-md-12">
             <a href="replyInsertView.do?seq=${docNum}"><input type="button" class="btn btn-box" value="REPLY"></a>
-=======
-      <div class="col-md-12">
->>>>>>> branch 'master' of https://github.com/kid4290/FooT.git
-                        <a href="updateContentView.do?seq=${docNum}&seq2=${userid}" type="button">수정</a>
-        
         </div>
         <div class="col-md-12">
         	<a href="replySearch.do"><input type="button" class="btn btn-box" value="replySearch"></a>

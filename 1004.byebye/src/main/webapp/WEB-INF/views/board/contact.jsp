@@ -21,13 +21,8 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
-<<<<<<< HEAD
-    
-=======
     <script src="js/jindo_coo_ajax.js"></script>
-<script type="text/javascript"
-      src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
->>>>>>> branch 'master' of https://github.com/kid4290/FooT.git
+	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
     
 
 </head>
