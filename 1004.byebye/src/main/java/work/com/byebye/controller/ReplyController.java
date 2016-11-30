@@ -96,7 +96,7 @@ public class ReplyController {
 		return mv;
 	}
 	
-	/**
+	/** 
 	 * 댓글 조회
 	 * userId 본인것 : 조회 기능, 삭제 
 	 * userId 남의것 : 조회
