@@ -55,8 +55,7 @@
     <div class="container main-container clearfix">
     <!-- Top bar -->
     <div class="top-bar">
-        <h1>내 프로필 정도?</h1>
-        <p><a href="#">Home 링크</a> / About me</p>
+        <h1>Post</h1>
     </div>
     <!-- end Top bar -->
     

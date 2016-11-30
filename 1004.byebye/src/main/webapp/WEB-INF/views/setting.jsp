@@ -113,7 +113,6 @@
 	<!-- top bar -->
 	<div class="top-bar">
 		<h1>Setting</h1>
-		<p><a href="#">당신의 설정을 도와드립니다.</a></p>
 	</div>
 	<!-- end top bar -->
 	

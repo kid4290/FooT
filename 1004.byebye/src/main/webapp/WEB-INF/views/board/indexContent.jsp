@@ -43,6 +43,10 @@
          <a href="index.do">
          <img src="img/circlelogo.png" width="50" alt="Logo">
          </a>
+         <!-- 뒤로가기 버튼 -->
+         <span class="box-menu-text">
+        <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c" 			aria-hidden="true">이전</a>
+        </span>
       </div>
         </header>
         <!-- end box-header -->
@@ -54,8 +58,7 @@
     <div class="container main-container clearfix">
     <!-- Top bar -->
     <div class="top-bar">
-        <h1>내 컨텐츠</h1>
-        <p><a href="#">Home 링크</a> / About me</p>
+        <h1>Posts</h1>
     </div>
     <!-- end Top bar -->
     
@@ -69,15 +72,7 @@
            <h5>Where : ${place}</h5>
            <div class="h-30"></div>
             <p>${docCon} </p>
-
             <p>with ${docTag}</p>
-            <div class="h-10"></div>
-            <ul class="social-ul">
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
 
 		<div class="col-md-12">
                         <a href="updateContentView.do?seq=${docNum}&&seq1=${userid}"><input type="button"  value="수정"/></a>

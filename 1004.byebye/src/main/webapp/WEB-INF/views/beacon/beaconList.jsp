@@ -41,9 +41,7 @@
 <div class="container main-container">
 	<!-- top bar -->
 	<div class="top-bar">
-		${mac}
 		<h1>BEACON</h1>
-		<p><a href="#">Home</a> / BEACON</p>
 	</div>
 	<!-- end top bar -->
 
@@ -130,7 +128,7 @@
 			<h3 class="text-uppercase" id="bigName2">대 제목</h3>
 			<h5 id="bigName4">소 제목</h5>
 				<div class="h-30"></div>
-				<p><img id="imgSrc" src="img/lotte.png"></p>
+				<p><img id="imgSrc" style="width:100%;"></p>
 				<div class="contact-info">
 <!-- 				<p><i class="ion-android-call"></i>전화번호 넣을자리</p> -->
 				<i class="ion-ios-email"></i><p id="bigName3"></p>

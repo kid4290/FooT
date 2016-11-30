@@ -42,7 +42,6 @@
     <!-- top bar -->
     <div class="top-bar">
         <h1>Insert</h1>
-        <p><a href="#">Home </a> /</p>
     </div>
     <!-- end top bar -->
 
