@@ -42,20 +42,16 @@ public class UserController {
 
          if(result > 0) {
             session.setAttribute("userid", userid);
-            mv.addObject("nickname",nickname);
-
-            mv.setViewName("index");
+            session.setAttribute("nickname", nickname);
          } else {
             mv.addObject("message", "로그인 오류");
             mv.setViewName("error");
          }
       } else {
          session.setAttribute("userid", userid);
-         mv.addObject("nickname",nickname);
-
-         mv.setViewName("index");
+         session.setAttribute("nickname", nickname);
       }
-      return "index";
+      return "redirect:index.do";
    }
 
    /** 카카오 로그인 시 아이디 중복 체크 후 로그인 및 회원등록
@@ -69,18 +65,16 @@ public class UserController {
          int result = userservice.insertKakao(userid, nickname, userimg, "kakao");
          if(result > 0) {
             session.setAttribute("userid", userid);
-            mv.addObject("nickname",nickname);
-            mv.setViewName("index");
+            session.setAttribute("nickname", nickname);
          } else {
             mv.addObject("message", "로그인 오류");
             mv.setViewName("error");
          }
       } else {
          session.setAttribute("userid", userid);
-         mv.addObject("nickname",nickname);
-         mv.setViewName("index");
+         session.setAttribute("nickname", nickname);
       }
-      return "index";
+      return "redirect:index.do";
    }
 
    /** facebook login */
@@ -92,16 +86,14 @@ public class UserController {
          int result = userservice.insertKakao(userid, nickname, userimg, "facebook");
          if(result > 0) {
             session.setAttribute("userid", userid);
-            mv.addObject("nickname",nickname);
-            mv.setViewName("index");
+            session.setAttribute("nickname", nickname);
          } else {
             mv.addObject("message", "로그인 오류");
             mv.setViewName("error");
          }
       } else {
          session.setAttribute("userid", userid);
-         mv.addObject("nickname",nickname);
-         mv.setViewName("index");
+         session.setAttribute("nickname", nickname);
       }
       return "redirect:index.do";
    }

@@ -107,7 +107,7 @@
       
       <br><br>
       <div class="col-md-6">
-         <input type="submit" value="등록" style="width:100px;"/>
+         <input type="submit" value="등록" />
       </div>
       
    </div>
