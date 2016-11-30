@@ -256,5 +256,23 @@ public class BoardController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("deletePlace.do")
+	public String deletePlace(HttpSession session, HttpServletRequest request) {
+		String docNum = (String) request.getParameter("seq");
+		String userid = (String) session.getAttribute("userid");
+		String userid2 = (String) request.getParameter("seq1");
+		
+		if(userid.equals(userid2)) {
+			int delPlace = service.deletePlace(docNum);
+			if(delPlace>0) {
+				return "";
+			} else {
+				return"";
+			}
+		}
+		
+		return"";
+	}
 
 }
