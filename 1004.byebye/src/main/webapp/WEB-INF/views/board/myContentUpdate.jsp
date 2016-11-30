@@ -23,6 +23,10 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    <script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript"
+		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+    
 
 </head>
 
@@ -36,7 +40,10 @@
          <a href="index.do">
          <img src="img/circlelogo.png" width="50" alt="Logo">
          </a>
-         
+         <!-- 뒤로가기 버튼 -->
+         <span class="box-menu-text">
+        <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c" 			aria-hidden="true">이전</a>
+        </span>
       </div>
         </header>
         <!-- end box-header -->
@@ -56,7 +63,7 @@
     <!-- Main container -->
      
         <div class="col-md-6">
-            <img src="http://localhost:8090/spring15/imgLoad.do?fileName=${picFile}" class="img-responsive" alt="" />
+            <img src="http://localhost:8090/spring15/imgLoad.do?fileName=${picFile}" class="img-responsive" />
         </div>
         <form action="updateContent.do?seq=${docNum}" method="POST">
         <div class="col-md-6">
@@ -67,15 +74,9 @@
 
             <p>with <input type="text" name="docTag" id="docTag" value="${docTag}"></p>
             <div class="h-10"></div>
-            <ul class="social-ul">
-                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
-            </ul>
 
 		<div class="col-md-12">
-            <input type="submit" class="btn btn-box" value="확인"/>수정수정
+            <input type="submit"  value="확인"/>
         
         </div>
         </div>

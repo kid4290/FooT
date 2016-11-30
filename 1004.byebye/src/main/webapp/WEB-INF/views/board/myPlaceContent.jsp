@@ -26,6 +26,10 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    <script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript"
+		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+    
 
 </head>
 
@@ -90,10 +94,9 @@
 
             <p>with ${docTag}</p>
             <div class="h-10"></div>
-
-		<div class="col-md-4">
-                        <a href="updateContentView.do?seq=${docNum}" type="button" >수정</a>
-                         <a href="replyInsertView.do?seq=${docNum}" type="button" >답글</a>
+   
+		<div class="col-md-12">
+                        <a href="updateContentView.do?seq=${docNum}&seq2=${userid}" type="button">수정</a>
         
         </div>
         </div>

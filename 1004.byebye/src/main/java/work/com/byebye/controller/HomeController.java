@@ -1,6 +1,7 @@
 package work.com.byebye.controller;
 
 import java.text.DateFormat;
+
 import java.util.Date;
 import java.util.Locale;
 
@@ -34,6 +35,6 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
-	}
+	} 
 	
 }

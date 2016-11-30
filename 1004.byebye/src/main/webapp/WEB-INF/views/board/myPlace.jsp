@@ -22,6 +22,10 @@
 
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
+    <script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript"
+		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+    
     
 </head>
 
