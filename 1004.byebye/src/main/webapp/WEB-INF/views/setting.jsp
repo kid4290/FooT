@@ -41,7 +41,6 @@
 	}
 	.imagebtn {
 		border: 0;
-		cursor: pointer;
 		height: 100%;
 		width: 100%;
 		padding: 0;
@@ -71,6 +70,12 @@
 		vertical-align: baseline;
 		text-align: center;
 	}
+	.myimage2 {
+		width: auto;
+		height: auto;
+		border: 1px solid red;
+		float: left;
+	}
 	.myimage {
 		flex-shrink: 0;
 		align-items: stretch;
@@ -79,7 +84,7 @@
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		flex-direction: column;
-		
+
 		float:left;
 	}
 	.tl_settingtable {
@@ -121,11 +126,14 @@
 	<div class="myimage">
 		<div class="imagediv">
 			<div class="imagebtn">
-			<img alt="프로필 사진 바꾸기" class="imagepart" src="<%=user.getUserimg()%>">
+			<img alt="프로필 사진 바꾸기" class="imagepart" src="${userimg}">
 			</div>
+		<div class="mh_profile" style="border:1px solid red;width:100%;height:100%;">
+			
+		</div>
 		</div>
 		
-	<div class="myimage" style="width:150px;height:AUTO;border:1px solid red;float:left;">
+	<div class="myimage2">
 		<form>
 			<input type="file" accept="image/jpeg" class="imagefile">
 		</form>
