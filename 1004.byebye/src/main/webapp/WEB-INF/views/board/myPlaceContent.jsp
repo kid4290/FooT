@@ -65,28 +65,7 @@
         </nav>
         <!-- end nav -->  
     </div>
-<<<<<<< HEAD
-=======
-    
-    <div class="container main-container clearfix">
-    <!-- Top bar -->
-    <div class="top-bar">
-        <h1>My Post</h1>
-    </div>
-    <!-- end Top bar -->
-    
-    <!-- Main container -->
-     
-        <div class="col-md-6">
-            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
-        </div>
-        <div class="col-md-6">
-           <h3 class="uppercase">${docNum} </h3>http://localhost:8090/byebye/imgLoad.do?fileName=1161828247265129_20161201011007.jpg
-           <h5>Where : ${place}</h5>
-           <div class="h-30"></div>
-            <p>${docCon} </p>
 
-<<<<<<< HEAD
 	<div class="container main-container clearfix">
 		<!-- Top bar -->
 		<div class="top-bar">
@@ -95,18 +74,8 @@
 				<a href="#">Home 링크</a> / About me
 			</p>
 		</div>
-		<!-- end Top bar -->
-            <p>with ${docTag}</p>
-            <div class="h-10"></div>
-   
-		<div class="col-md-12">
-                <a href="updateContentView.do?seq=${docNum}&seq2=${userid}" type="button" >Modify</a>
-        </div>
-        <span class="col-md-12">
-        	<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" type="button" >Delete</a>
-        </span>
-         <div class="col-md-12">
-            <a href="replyInsertView.do?seq=${docNum}" type="button" class="btn btn-box" >Reply</a>
+
+  
         </div>
 
 		<!-- Main container -->
@@ -197,6 +166,7 @@
     <!--  custom script -->
     <script src="js/custom.js"></script>
     
+    <!-- 댓글 조회 -->
     <script type="text/javascript">
  // 호출하는 URL이 현재 페이지의 URL과 다른 경우, CORS 방식으로 호출한다. XHR2 객체 또는 IE8,9는 XDomainRequest를 사용한다.
     var oAjax = new jindo.$Ajax('replySearch.do?docNum=${docNum}', {
@@ -216,6 +186,12 @@
     });
     oAjax.request();
     </script>
+  <!-- 댓글조회 끝 -->  
+  
+  <script type="text/javascript">
+  
+  </script>
+    
     
 
 </body>

@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -71,7 +72,7 @@ public class ReplyController {
 
 	
 	@RequestMapping(value = "reply.do", method = RequestMethod.POST)
-	public ModelAndView replyInsert(HttpSession session, HttpServletRequest request) {
+	public void replyInsert(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 //		String reNum = (String) request.getParameter("reNum");
 		String reCon = (String) request.getParameter("reCon");
@@ -83,18 +84,17 @@ public class ReplyController {
 		
 		int replyInsert = service.replyInsert(reCon, docNum, userId,nickname);
 
-		ModelAndView mv = new ModelAndView();
+		response.setContentType( "text/json; charset=utf-8");
+        response.setHeader("Cache-Control", "no-cache");
+        
+        PrintWriter out = response.getWriter();
 
 		if (replyInsert > 0) {
-
-			mv.setViewName("index");
+	        out.write("{'result':'true'}");
 		} else {
-
-			mv.setViewName("login");
-			// 임시방편
+			out.write("{'result':'false'}");
 		}
-
-		return mv;
+		out.flush();
 	}
 	
 	/** 
@@ -244,19 +244,30 @@ public class ReplyController {
 	}
 	
 	@RequestMapping(value="replyDelete.do") 
-	public String replyDelete(HttpSession session, HttpServletRequest request) {
+	public void replyDelete(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String reNum = (String) request.getParameter("seq");
 		String userid2 = (String) request.getParameter("seq2");
 		String userid = (String) session.getAttribute("userid");
-		
-	if(userid.equals(userid2)) {	
-		int replyDel = service.replyDelete(reNum);
-		System.out.println("replydel"+replyDel);
-		if(replyDel>0) {
-			return "index";
+
+		response.setContentType( "text/json; charset=utf-8");
+		response.setHeader("Cache-Control", "no-cache");
+
+		PrintWriter out = response.getWriter();
+
+
+
+		if(userid.equals(userid2)) {	
+			int replyDel = service.replyDelete(reNum);
+			System.out.println("replydel"+replyDel);
+			if(replyDel>0) {
+				out.write("{'result':'true'}");
+			} else {
+				out.write("{'result':'false'}");
+			}
 		}
-	}	
-		return "contact";
+		
+		out.flush();
+
 	}
 	
 	
