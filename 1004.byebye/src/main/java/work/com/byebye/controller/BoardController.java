@@ -44,12 +44,6 @@ public class BoardController {
 		this.service = service;
 	}
 
-	// /** 업로드 등록 요청 페이지 */
-	// @RequestMapping("BoardDtoView.do")
-	// public String BoardDtoView() {
-	// return "BoardDto";
-	// }
-	
 	//home 화면에 사진호출 남의 사진 
 	 @RequestMapping(value="index.do")
 	   public  @ResponseBody ModelAndView index(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) {
@@ -62,8 +56,8 @@ public class BoardController {
 				mv.addObject("list", list);
 				mv.setViewName("index");
 			} else {
-				mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-				mv.setViewName("error/errorLogin");
+				mv.addObject("message", "Error go back to the Back page.");
+				mv.setViewName("error/errorPage");
 			}
 			return mv;
 	  }
@@ -74,13 +68,11 @@ public class BoardController {
 		return "board/contact";
 	}
 
-	// 사진 업로드 부분 Controller
 	private String BoardDtoPath = "c://temp//BoardDto";
 
 	@RequestMapping(value = "multiInsert.do", method = RequestMethod.POST)
-	public String BoardDtoByMultipart(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat, MultipartHttpServletRequest request, Model model,
+	public ModelAndView BoardDtoByMultipart(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat, MultipartHttpServletRequest request, Model model,
 			HttpSession session) throws IOException, AuthenticationException {
-		System.out.println("들어옴");
 		ModelAndView mv = new ModelAndView();
 		MultipartFile multi = request.getFile("picFile");
 		String date = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -92,17 +84,17 @@ public class BoardController {
 		String userid = (String) session.getAttribute("userid");
 		String picFile = userid + "_" + date + ".jpg";
 
-		System.out.println("lat : " + lat);
-		System.out.println("lon : " + lon);
 		int result = service.insertBoard(userid, lat, lon, picFile, docTf, docTle, docCon, docTag, place);
+		System.out.println("result : " + result);
 		if (result == 1) {
 			File file = new File(BoardDtoPath, picFile);
 			multi.transferTo(file);
-			return "redirect:myPlace.do";
+			mv.setViewName("redirect:myPlace.do");
 		} else {
-			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-			return "error/errorLogin";
+			mv.addObject("message", "Insert Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
 		}
+		return mv;
 	}
 
 	/** 사진 리스트 조회요청 */
@@ -117,29 +109,12 @@ public class BoardController {
 			mv.addObject("list", list);
 			mv.setViewName("board/myPlace");
 		} else {
-			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-			mv.setViewName("error/errorLogin");
+			mv.addObject("message", "Search Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
 		}
 		return mv;
 	}
 	
-//	/** 사진 리스트 조회요청 */
-//	@RequestMapping("myPlace.do")
-//	public @ResponseBody ModelAndView myPlace(HttpSession session) {
-//		String userid = (String) session.getAttribute("userid");
-//
-//		list = service.myPlace(userid);
-//
-//		ModelAndView mv = new ModelAndView();
-//		if (userid != null) {
-//			mv.addObject("list", list);
-//			mv.setViewName("board/myPlace");
-//		} else {
-//			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-//			mv.setViewName("error/errorLogin");
-//		}
-//		return mv;
-//	}
 
 	@RequestMapping("imgLoad.do")
 	public @ResponseBody void imgLoad(HttpServletRequest request, HttpServletResponse response) {
@@ -183,8 +158,8 @@ public class BoardController {
 			mv.addObject("place", dto.getPlace());
 			mv.setViewName("board/myPlaceContent");
 		} else {
-			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-			mv.setViewName("error/errorLogin");
+			mv.addObject("message", "Search Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
 		}
 		return mv;
 	}
@@ -213,8 +188,8 @@ public class BoardController {
 			mv.addObject("place", dto.getPlace());
 			mv.setViewName("board/myPlaceContent");
 		} else {
-			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-			mv.setViewName("error/errorLogin");
+			mv.addObject("message", "Search Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
 		}
 		return mv;
 	}
@@ -248,8 +223,8 @@ public class BoardController {
 				mv.addObject("place", dto.getPlace());
 				mv.setViewName("board/myContentUpdate");
 			} else {
-				mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-				mv.setViewName("error/errorLogin");
+				mv.addObject("message", "Update Error go back to the Back page.");
+				mv.setViewName("error/errorPage");
 			}
 			return mv;
 		}
@@ -269,8 +244,8 @@ public class BoardController {
 		if (upt > 0) {
 			mv.setViewName("board/myPlaceContent");
 		} else {
-			mv.addObject("message", "로그인 정보를 다시 확인하시기 바랍니다.");
-			mv.setViewName("error/errorLogin");
+			mv.addObject("message", "Update Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
 		}
 		return mv;
 	}
@@ -286,7 +261,8 @@ public class BoardController {
 			if(delPlace>0) {
 				return "index";
 			} else {
-				return"contact";
+				request.setAttribute("message", "Delete Error go back to the Back page");
+				return"error/errorPage";
 			}
 		}
 		

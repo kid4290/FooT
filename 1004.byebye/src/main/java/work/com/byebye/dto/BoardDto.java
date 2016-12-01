@@ -21,6 +21,7 @@ public class BoardDto implements Serializable {
 	   private String place;
 	   
 	   
+	   public BoardDto() {}
 	   
 	   public BoardDto(String docNum, String userid,Double lat,Double lon,String picFile,String movFile,String docTle,String docCon,String docDate,int docHit,String docTf,String docTag,String place) {
 	      this.docNum = docNum;
@@ -36,9 +37,8 @@ public class BoardDto implements Serializable {
 	      this.docTag = docTag;
 	      this.picFile = picFile;
 	      this.place = place;
-	      
-	      
 	   }
+	   
 	   
 	   public BoardDto(String userid,String docNum,String docTag,String docCon,String docTle,String picFile,String place) {
 	      this.userid = userid;
@@ -67,7 +67,6 @@ public class BoardDto implements Serializable {
 	   }
 
 
-
 	   public BoardDto(String docCon, String docNum, String docTag,String place,String docTle) {
 	      this.docNum = docNum;
 	      this.docCon = docCon;
@@ -76,101 +75,117 @@ public class BoardDto implements Serializable {
 	      this.docTle = docTle;
 	   }
 	   
-	   public BoardDto() {}
 
-	   public BoardDto(String userid) {
-	      this.userid=userid;
-	   }
-
-	   public String getPicFile() {
-	      return picFile;
-	   }
+   public BoardDto(String userid) {
+      this.userid=userid;
+   }
 
 
-	   public void setPicFile(String picFile) {
-	      this.picFile = picFile;
-	   }
+   public String getDocNum() {
+		return docNum;
+	}
 
+	public void setDocNum(String docNum) {
+		this.docNum = docNum;
+	}
 
-	   public String getUserid() {
-	      return userid;
-	   }
-	   public void setUserid(String userid) {
-	      this.userid = userid;
-	   }
-	   public Double getLat() {
-	      return lat;
-	   }
-	   public void setLat(Double lat) {
-	      this.lat = lat;
-	   }
-	   public Double getLon() {
-	      return lon;
-	   }
-	   public void setLon(Double lon) {
-	      this.lon = lon;
-	   }
-	   public String getMovFile() {
-	      return movFile;
-	   }
-	   public void setMovFile(String movFile) {
-	      this.movFile = movFile;
-	   }
-	   public String getDocTle() {
-	      return docTle;
-	   }
-	   public void setDocTle(String docTle) {
-	      this.docTle = docTle;
-	   }
-	   public String getDocCon() {
-	      return docCon;
-	   }
-	   public void setDocCon(String docCon) {
-	      this.docCon = docCon;
-	   }
-	   public String getDocDate() {
-	      return docDate;
-	   }
-	   public void setDocDate(String docDate) {
-	      this.docDate = docDate;
-	   }
-	   public int getDocHit() {
-	      return docHit;
-	   }
-	   public void setDocHit(int docHit) {
-	      this.docHit = docHit;
-	   }
-	   public String getDocTf() {
-	      return docTf;
-	   }
-	   public void setDocTf(String docTf) {
-	      this.docTf = docTf;
-	   }
-	   public String getDocTag() {
-	      return docTag;
-	   }
-	   public void setDocTag(String docTag) {
-	      this.docTag = docTag;
-	   }
-	   
-	   public String getDocNum() {
-	      return docNum;
-	   }
-	   public void setDocNum(String docNum) {
-	      this.docNum = docNum;
-	   }
+	public String getUserid() {
+		return userid;
+	}
 
-	   
-	   @Override
-	   public String toString() {
-	      return "Upload [docNum=" + docNum + ", userid=" + userid + ", lat=" + lat + ", lon=" + lon + ", movFile="
-	            + movFile + ", docTle=" + docTle + ", docCon=" + docCon + ", docDate=" + docDate + ", docHit=" + docHit
-	            + ", docTf=" + docTf + ", docTag=" + docTag + ", picFile=" + picFile + "]";
-	   }
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
 
-	   @Override
+	public Double getLat() {
+		return lat;
+	}
+
+	public void setLat(Double lat) {
+		this.lat = lat;
+	}
+
+	public Double getLon() {
+		return lon;
+	}
+
+	public void setLon(Double lon) {
+		this.lon = lon;
+	}
+
+	public String getMovFile() {
+		return movFile;
+	}
+
+	public void setMovFile(String movFile) {
+		this.movFile = movFile;
+	}
+
+	public String getDocTle() {
+		return docTle;
+	}
+
+	public void setDocTle(String docTle) {
+		this.docTle = docTle;
+	}
+
+	public String getDocCon() {
+		return docCon;
+	}
+
+	public void setDocCon(String docCon) {
+		this.docCon = docCon;
+	}
+
+	public String getDocDate() {
+		return docDate;
+	}
+
+	public void setDocDate(String docDate) {
+		this.docDate = docDate;
+	}
+
+	public int getDocHit() {
+		return docHit;
+	}
+
+	public void setDocHit(int docHit) {
+		this.docHit = docHit;
+	}
+
+	public String getDocTf() {
+		return docTf;
+	}
+
+	public void setDocTf(String docTf) {
+		this.docTf = docTf;
+	}
+
+	public String getDocTag() {
+		return docTag;
+	}
+
+	public void setDocTag(String docTag) {
+		this.docTag = docTag;
+	}
+
+	public String getPicFile() {
+		return picFile;
+	}
+
+	public void setPicFile(String picFile) {
+		this.picFile = picFile;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardDto [docNum=" + docNum + ", userid=" + userid + ", lat=" + lat + ", lon=" + lon + ", movFile="
+				+ movFile + ", docTle=" + docTle + ", docCon=" + docCon + ", docDate=" + docDate + ", docHit=" + docHit
+				+ ", docTf=" + docTf + ", docTag=" + docTag + ", picFile=" + picFile + ", place=" + place + "]";
+	}
+
+	@Override
 	   public int hashCode() {
-//	      final int prime = 31;
 	      int result = 1;
 	      return result;
 	   }

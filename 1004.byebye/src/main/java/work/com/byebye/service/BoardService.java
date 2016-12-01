@@ -35,6 +35,7 @@ public class BoardService {
 
 		BoardDto dto = new BoardDto(null, userid, lat, lon, picFile, movFile, docTle, docCon, docDate, docHit, docTf,
 				docTag, place);
+		System.out.println("보드 dto : " + dto);
 		int join = dao.insertBoard(dto);
 
 		return join;
