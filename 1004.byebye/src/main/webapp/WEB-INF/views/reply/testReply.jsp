@@ -6,7 +6,7 @@
 		<div class="name-reply-post">${dto.nickname}</div>
 		<div class="text-reply-post">${dto.reCon }
 		<c:if test="${dto.userid eq sessionScope.userid }">
-			<a href="replyDelete.do?seq=${dto.reNum}&seq2=${dto.userid}">[삭제]</a>
+			<a onclick="deleteReply('${dto.reNum}','${dto.userid}')">[삭제]</a>
 			</c:if>
 		</div>
 	</div> 

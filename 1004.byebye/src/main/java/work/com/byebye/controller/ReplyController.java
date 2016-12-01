@@ -71,14 +71,14 @@ public class ReplyController {
 	}
 
 	
-	@RequestMapping(value = "reply.do", method = RequestMethod.POST)
+	@RequestMapping(value = "reply.do", method = RequestMethod.GET)
 	public void replyInsert(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 //		String reNum = (String) request.getParameter("reNum");
 		String reCon = (String) request.getParameter("reCon");
 		String docNum = (String) request.getParameter("docNum");
 		String userId = (String) session.getAttribute("userid");
-		String nickname = (String) request.getParameter("nickname");
+		String nickname = (String) session.getAttribute("nickname");
 		
 		System.out.println("test CON "  + reCon + docNum + userId + nickname);
 		

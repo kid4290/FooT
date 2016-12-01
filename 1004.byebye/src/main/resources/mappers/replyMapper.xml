@@ -12,7 +12,7 @@
 
 	<!-- 댓글 게시 insert -->
 	<insert id="replyInsert" parameterType="Reply">
-		insert into reply
+		insert into reply (re_num,re_con,doc_num,user_id,nickname) 
 		values
 		(seq_re_num.nextval,#{reCon},#{docNum},#{userid},#{nickname})
 	</insert>
