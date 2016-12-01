@@ -126,7 +126,13 @@
 	<div class="myimage">
 		<div class="imagediv">
 			<div class="imagebtn">
-			<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">
+			<c:if test="${!empty dto.userimg}">
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">
+			</c:if>
+			<c:if test="${empty dto.userimg}">
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">
+			</c:if>
+			
 			</div>
 
 		</div>
@@ -148,7 +154,11 @@
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
 <!-- 		<a type="button" href="logout.do">로그아웃</a> -->
-			<input type="button" value="로그아웃" onclick="kakaologout()">
+			<input type="button" value="로그아웃" onClick="kakaologout()">
+			<c:if test="${userid!=null}">
+				<button type="submit" class="btn">FACEBOOK LOGOUT</button>
+				<input type="hidden" name="_csrf" value="${_csrf.token}">
+			</c:if>
 	</td>
 	</tr>
 	
