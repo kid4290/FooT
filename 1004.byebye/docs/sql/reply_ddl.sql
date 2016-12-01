@@ -6,3 +6,5 @@ RE_CON VARCHAR2(100),
 DOC_NUM VARCHAR2(40),
 USER_ID VARCHAR2(40)
 );
+
+alter table reply add(nickname varchar2(30));
