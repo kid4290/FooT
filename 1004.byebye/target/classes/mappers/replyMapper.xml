@@ -18,7 +18,7 @@
 	
 	<!-- 댓글 조회 -->
 	<select id="replySearch" resultMap="replyResult" parameterType="String">
-		select * from Reply where user_id= #{userid}
+		select * from Reply where doc_num= #{docNum}
 	</select>
 	
 	<!-- 댓글수정 -->

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jindo_coo_ajax.js"></script>
     <title>Box personal portfolio Template</title>
     <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
@@ -64,71 +65,80 @@
         </nav>
         <!-- end nav -->  
     </div>
-    
-    <div class="container main-container clearfix">
-    <!-- Top bar -->
-    <div class="top-bar">
-        <h1>내 컨텐츠</h1>
-        <p><a href="#">Home 링크</a> / About me</p>
-    </div>
-    <!-- end Top bar -->
-    
-    <!-- Main container -->
-     
-        <div class="col-md-6">
-            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
-        </div>
-        <div class="col-md-6">
-           <h3 class="uppercase">${docNum} </h3>http://localhost:8090/byebye/imgLoad.do?fileName=1161828247265129_20161201011007.jpg
-           <h5>Where : ${place}</h5>
-           <div class="h-30"></div>
-            <p>${docCon} </p>
 
-            <p>with ${docTag}</p>
-            <div class="h-10"></div>
-   
-		<div class="col-md-12">
-                <a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input type="button"  value="수정"/></a>
-        </div>
-         <div class="col-md-12">
-            <a href="replyInsertView.do?seq=${docNum}"><input type="button" class="btn btn-box" value="REPLY"></a>
-        </div>
-        <div class="col-md-12">
-        	<a href="replySearch.do"><input type="button" class="btn btn-box" value="replySearch"></a>
-        </div>
-        </div>
+	<div class="container main-container clearfix">
+		<!-- Top bar -->
+		<div class="top-bar">
+			<h1>내 컨텐츠</h1>
+			<p>
+				<a href="#">Home 링크</a> / About me
+			</p>
+		</div>
+		<!-- end Top bar -->
 
-<!-- comment -->
-                   <div class="col-md-12">
-                       <div class="image-reply-post"></div>
-                       <div class="name-reply-post">Igor vlademir</div>
-                       <div class="text-reply-post">Awesome mockup, i like it very much ! It will help me for my website i was looking for since few days. Thank you a lot.</div>
-                   </div>
-                    
-                    <div class="col-md-12">
-                       <div class="image-reply-post-2"></div>
-                       <div class="name-reply-post-2">Nathan Shaw</div>
-                       <div class="text-reply-post-2">Well done ! I like the way you did it. Awesome ! </div>
-                   </div>
-                    
-                   <div class="col-md-12">
-                       <div id="main-post-send"> 
-                            <div id="title-post-send">Add your comment</div>
-                     <form id="contact" method="post" action="/onclickprod/formsubmit_op.asp">
-                         <fieldset>
-                           <p><textarea id="message" name="message" maxlength="500" placeholder="Votre Message" tabindex="5" cols="30" rows="4"></textarea></p>
-                        </fieldset>
-                        <div style="text-align:center;"><input type="submit" name="envoi" value="Envoyer" /></div>
-                       </form>
-                        </div>
-               </div>
-<!-- END comment -->        
-    </div>
-    <!-- end Main container -->
-    
+		<!-- Main container -->
+
+		<div class="col-md-6">
+			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
+		</div>
+		<div class="col-md-6">
+			<h3 class="uppercase">${docTle}</h3>
+			
+			<h5>Where : ${place}</h5>
+			<div class="h-30"></div>
+			<p>${docCon}</p>
+
+			<p>with ${docTag}</p>
+			<div class="h-10"></div>
+
+			<div class="col-md-12">
+				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input
+					type="button" value="수정" /></a>
+			</div>
+		</div>
+
+		<!-- comment -->
+		<div id="replyajax">
+			<div class="col-md-12">
+				<div class="image-reply-post"></div>
+				<div class="name-reply-post">Igor vlademir</div>
+				<div class="text-reply-post">Awesome mockup, i like it very
+					much ! It will help me for my website i was looking for since few
+					days. Thank you a lot.</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="image-reply-post"></div>
+				<div class="name-reply-post">Nathan Shaw</div>
+				<div class="text-reply-post">Well done ! I like the way you
+					did it. Awesome !</div>
+			</div>
+</div>
+			<div class="col-md-12">
+				<div id="main-post-send">
+					<div id="title-post-send">Add your comment</div>
+					<form id="contact" method="post"
+						action="/onclickprod/formsubmit_op.asp">
+						<fieldset>
+							<p>
+								<textarea id="message" name="message" maxlength="500"
+									placeholder="Votre Message" tabindex="5" cols="30" rows="4"></textarea>
+							</p>
+						</fieldset>
+						<div style="text-align: center;">
+							<input type="submit" name="envoi" value="Envoyer" />
+						</div>
+					</form>
+				
+			</div>
+		</div>
+		<!-- END comment -->
+	</div>
+	<!-- end Main container -->
 
 
-    <!-- footer -->
+
+	<!-- footer -->
     <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
   <div data-role="navbar" >
    <ul>
@@ -153,6 +163,26 @@
 
     <!--  custom script -->
     <script src="js/custom.js"></script>
+    
+    <script type="text/javascript">
+ // 호출하는 URL이 현재 페이지의 URL과 다른 경우, CORS 방식으로 호출한다. XHR2 객체 또는 IE8,9는 XDomainRequest를 사용한다.
+    var oAjax = new jindo.$Ajax('replySearch.do?docNum=${docNum}', {
+        type : 'xhr',
+        method : 'get',     // GET 방식으로 통신
+        onload : function(res){ // 요청이 완료되면 실행될 콜백 함수
+          $('#replyajax').html(res.text());
+        },
+        timeout : 0,      // 3초 이내에 요청이 완료되지 않으면 ontimeout 실행 (생략 시 0)
+        ontimeout : function(){ // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
+          alert("Timeout!");
+        },
+        onerror : function(){ // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
+          alert("error");
+        },
+        async : true      // 비동기로 호출하는 경우, 생략하면 true
+    });
+    oAjax.request();
+    </script>
     
 
 </body>
