@@ -113,7 +113,6 @@ public class BoardController {
 		}
 		return mv;
 	}
-	
 
 	@RequestMapping("imgLoad.do")
 	public @ResponseBody void imgLoad(HttpServletRequest request, HttpServletResponse response) {
