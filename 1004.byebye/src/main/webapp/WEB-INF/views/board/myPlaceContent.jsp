@@ -90,11 +90,16 @@
 
 			<p>with ${docTag}</p>
 			<div class="h-10"></div>
-
+<c:if test="${sessionScope.userid eq userid }">
 			<div class="col-md-12">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input
 					type="button" value="수정" /></a>
 			</div>
+			<div class="col-md-12">
+				<a href="deletePlace.do?seq=${docNum}&seq1=${userid}"><input
+					type="button" value="삭제" /></a>
+			</div>
+			</c:if>
 		</div>
 
 		<!-- comment -->
