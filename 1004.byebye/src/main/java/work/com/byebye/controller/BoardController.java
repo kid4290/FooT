@@ -95,6 +95,7 @@ public class BoardController {
 		System.out.println("lat : " + lat);
 		System.out.println("lon : " + lon);
 		int result = service.insertBoard(userid, lat, lon, picFile, docTf, docTle, docCon, docTag, place);
+		
 		if (result == 1) {
 			File file = new File(BoardDtoPath, picFile);
 			multi.transferTo(file);
@@ -111,7 +112,7 @@ public class BoardController {
 		String userid = (String) session.getAttribute("userid");
 
 		list = service.myPlace(userid,lon,lat);
-
+		
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("list", list);

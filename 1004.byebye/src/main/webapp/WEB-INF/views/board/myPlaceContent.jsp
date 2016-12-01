@@ -85,7 +85,6 @@
            <h5>Where : ${place}</h5>
            <div class="h-30"></div>
             <p>${docCon} </p>
->>>>>>> branch 'master' of https://github.com/kid4290/FooT.git
 
 <<<<<<< HEAD
 	<div class="container main-container clearfix">
@@ -97,7 +96,6 @@
 			</p>
 		</div>
 		<!-- end Top bar -->
-=======
             <p>with ${docTag}</p>
             <div class="h-10"></div>
    
@@ -110,7 +108,6 @@
          <div class="col-md-12">
             <a href="replyInsertView.do?seq=${docNum}" type="button" class="btn btn-box" >Reply</a>
         </div>
->>>>>>> branch 'master' of https://github.com/kid4290/FooT.git
 
 		<!-- Main container -->
 

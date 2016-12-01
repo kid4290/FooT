@@ -24,10 +24,10 @@ public class ReplyService {
    List<Reply> reList = new ArrayList<Reply>(); 
    Reply dto = new Reply();
    
-   public int replyInsert(String reCon,String docNum, String userId){
-		System.out.println("test SER "  + reCon + docNum + userId);
+   public int replyInsert(String reCon,String docNum, String userId,String nickname){
+		System.out.println("test SER "  + reCon + docNum + userId +  nickname);
 
-	   int replyInsert =replydao.replyInsert(reCon,docNum,userId);
+	   int replyInsert =replydao.replyInsert(reCon,docNum,userId,nickname);
 	   
 	   return replyInsert;
    }
