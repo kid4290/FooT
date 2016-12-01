@@ -65,7 +65,29 @@
         </nav>
         <!-- end nav -->  
     </div>
+<<<<<<< HEAD
+=======
+    
+    <div class="container main-container clearfix">
+    <!-- Top bar -->
+    <div class="top-bar">
+        <h1>My Post</h1>
+    </div>
+    <!-- end Top bar -->
+    
+    <!-- Main container -->
+     
+        <div class="col-md-6">
+            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
+        </div>
+        <div class="col-md-6">
+           <h3 class="uppercase">${docNum} </h3>http://localhost:8090/byebye/imgLoad.do?fileName=1161828247265129_20161201011007.jpg
+           <h5>Where : ${place}</h5>
+           <div class="h-30"></div>
+            <p>${docCon} </p>
+>>>>>>> branch 'master' of https://github.com/kid4290/FooT.git
 
+<<<<<<< HEAD
 	<div class="container main-container clearfix">
 		<!-- Top bar -->
 		<div class="top-bar">
@@ -75,6 +97,20 @@
 			</p>
 		</div>
 		<!-- end Top bar -->
+=======
+            <p>with ${docTag}</p>
+            <div class="h-10"></div>
+   
+		<div class="col-md-12">
+                <a href="updateContentView.do?seq=${docNum}&seq2=${userid}" type="button" >Modify</a>
+        </div>
+        <span class="col-md-12">
+        	<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" type="button" >Delete</a>
+        </span>
+         <div class="col-md-12">
+            <a href="replyInsertView.do?seq=${docNum}" type="button" class="btn btn-box" >Reply</a>
+        </div>
+>>>>>>> branch 'master' of https://github.com/kid4290/FooT.git
 
 		<!-- Main container -->
 

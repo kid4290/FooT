@@ -148,7 +148,7 @@
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
 <!-- 		<a type="button" href="logout.do">로그아웃</a> -->
-			<input type="button" value="카카오톡로그아웃" onclick="kakaologout()">
+			<input type="button" value="로그아웃" onclick="kakaologout()">
 	</td>
 	</tr>
 	
