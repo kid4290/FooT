@@ -74,9 +74,7 @@
 				<a href="#">Home 링크</a> / About me
 			</p>
 		</div>
-
-  
-        </div>
+		<!-- end Top bar -->
 
 		<!-- Main container -->
 
@@ -119,8 +117,7 @@
 			<div class="col-md-12">
 				<div id="main-post-send">
 					<div id="title-post-send">Add your comment</div>
-					<form id="contact" method="post"
-						action="/onclickprod/formsubmit_op.asp">
+					<form id="contact" method="post">
 						<fieldset>
 							<p>
 								<textarea id="message" name="message" maxlength="500"
@@ -166,7 +163,7 @@
     <!--  custom script -->
     <script src="js/custom.js"></script>
     
-    <!-- 댓글 조회 -->
+    <!-- 댓글 조회 시작 -->
     <script type="text/javascript">
  // 호출하는 URL이 현재 페이지의 URL과 다른 경우, CORS 방식으로 호출한다. XHR2 객체 또는 IE8,9는 XDomainRequest를 사용한다.
     var oAjax = new jindo.$Ajax('replySearch.do?docNum=${docNum}', {
@@ -186,13 +183,11 @@
     });
     oAjax.request();
     </script>
-  <!-- 댓글조회 끝 -->  
-  
-  <script type="text/javascript">
-  
-  </script>
-    
-    
+    <!-- 댓글 조회 끝 -->
+	<!-- 댓글 등록 시작 -->
+	<script type="text/javascript">
+	
+	</script>
 
 </body>
 
