@@ -41,8 +41,8 @@ public class ReplyDao {
 	 * @param dto
 	 * @return
 	 */
-	public int replyInsert(String reCon, String docNum, String userId) {
-		dto = new Reply(reCon, docNum, userId);
+	public int replyInsert(String reCon, String docNum, String userId,String nickname) {
+		dto = new Reply(reCon, docNum, userId,nickname);
 
 		return sqlSession.insert("replyInsert", dto);
 	}

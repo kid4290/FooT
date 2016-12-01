@@ -77,10 +77,11 @@ public class ReplyController {
 		String reCon = (String) request.getParameter("reCon");
 		String docNum = (String) request.getParameter("docNum");
 		String userId = (String) session.getAttribute("userid");
+		String nickname = (String) request.getParameter("nickname");
 		
-		System.out.println("test CON "  + reCon + docNum + userId);
+		System.out.println("test CON "  + reCon + docNum + userId + nickname);
 		
-		int replyInsert = service.replyInsert(reCon, docNum, userId);
+		int replyInsert = service.replyInsert(reCon, docNum, userId,nickname);
 
 		ModelAndView mv = new ModelAndView();
 

@@ -7,13 +7,14 @@
 		<result property="reCon" column="re_con" />
 		<result property="docNum" column="doc_Num" />
 		<result property="userid" column="user_id" />
+		<result property="nickname" column="nickname"/>
 	</resultMap>
 
 	<!-- 댓글 게시 insert -->
 	<insert id="replyInsert" parameterType="Reply">
 		insert into reply
 		values
-		(seq_re_num.nextval,#{reCon},#{docNum},#{userid})
+		(seq_re_num.nextval,#{reCon},#{docNum},#{userid},#{nickname})
 	</insert>
 	
 	<!-- 댓글 조회 -->
