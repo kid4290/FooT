@@ -5,14 +5,6 @@
 * behance : https://www.behance.net/3essa
 */
 
-/* taelym css */
-.tl_tr {
-	text-align: center;
-}
-
-.tl_td {
-	text-align: center;
-}
 
 /* Table of Content
 ==================================================
@@ -39,6 +31,14 @@
 
 /* General
 ==================================================*/
+
+html,
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    color: #999
+}
 
 .no-padding {
     padding-left: 0;
@@ -424,7 +424,7 @@ h5 {
 .box-intro {
     text-align: center;
     display: table;
-    height: 50vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -890,9 +890,9 @@ footer img {
 
 .top-bar {
     color: #333;
-    padding: 50px 0 50px;
-    background: -webkit-linear-gradient( rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(../img/light.jpg);
-    background: linear-gradient( rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(../img/light.jpg);
+    padding: 150px 0 150px;
+    background: -webkit-linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/01.jpg);
+    background: linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/01.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -914,8 +914,13 @@ footer img {
     color: #777;
 }
 
+.top-bar p a {
+    color: #777;
+}
+
 .top-bar p a:hover,
 .top-bar p a:focus {
+    color: #555;
     text-decoration: none;
 }
 
@@ -1019,21 +1024,6 @@ footer img {
     font-size: 14px;
     color: #9a9a9a;
 }
-
-.input-contact input[type="file"] {
-    height: 100%;
-    width: 100%;
-    border: 0;
-    padding: 0 20px;
-    float: left;
-    position: relative;
-    background-color: transparent;
-    z-index: 2;
-    font-size: 14px;
-    color: #9a9a9a;
-}
-
-
 
 .input-contact > span {
     position: absolute;

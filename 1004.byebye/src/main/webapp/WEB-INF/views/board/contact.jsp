@@ -29,14 +29,33 @@
 
 <body>
 
+        <!-- box header -->
+        <header class="box-header">
+            <div class="box-logo">
+                <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
+            </div>
+            <!-- box-nav -->
+            <a class="box-primary-nav-trigger" href="#0">
+                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
+            </a>
+            <!-- box-primary-nav-trigger -->
+        </header>
+        <!-- end box header -->
+
+        <!-- nav -->
+        <nav>
+            <ul class="box-primary-nav">
+                <li class="box-label">MENU</li>           
+				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
+				<li><a href="fileBoardDtoFormView.do">Insert</a></li>
+				<li><a href="myPlace.do">MyList</a></li>
+				<li><a href="beaconlist.do">Beacon</a></li>
+				<li><a href="setting.do">Setting</a></li>
+            </ul>
+        </nav>
+        <!-- end nav -->
+
 <div data-role="page">
-<div data-role="header" data-position="fixed">
-   <header class="box-header">
-   <div class="box-logo">
-   <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
-   </div>
-   </header>
-</div>
 
  <div data-role="content">
     <!-- top bar -->
@@ -117,20 +136,6 @@
 </div>
     <!-- end main-container -->
     </div>
-
-    <!-- footer -->
-    <div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
-  <div data-role="navbar" >
-   <ul>
-    <li><a href="index.do" data-icon="home" class="">Home</a></li>
-    <li><a href="fileBoardDtoFormView.do" data-icon="star">Insert</a></li>
-    <li><a href="myPlace.do" data-icon="search" >MyList</a></li>
-    <li><a href="beaconlist.do" data-icon="check" >Beacon</a></li>
-    <li><a href="setting.do" data-icon="gear">Setting</a></li>
-   </ul>
-  </div>
- </div>
-    <!-- end footer -->
 
     <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
