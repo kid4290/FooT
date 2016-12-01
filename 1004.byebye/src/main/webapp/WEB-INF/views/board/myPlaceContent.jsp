@@ -90,11 +90,16 @@
 
 			<p>with ${docTag}</p>
 			<div class="h-10"></div>
-
+<c:if test="${sessionScope.userid eq userid }">
 			<div class="col-md-12">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input
 					type="button" value="수정" /></a>
 			</div>
+			<div class="col-md-12">
+				<a href="deletePlace.do?seq=${docNum}&seq1=${userid}"><input
+					type="button" value="삭제" /></a>
+			</div>
+			</c:if>
 		</div>
 
 		<!-- comment -->
@@ -125,7 +130,7 @@
 							</p>
 						</fieldset>
 						<div style="text-align: center;">
-							<input type="submit" name="envoi" value="Envoyer" />
+							<input type="button" id="insertReply" name="envoi" onclick="insertFunc();" value="Envoyer" />
 						</div>
 					</form>
 				
@@ -166,7 +171,8 @@
     <!-- 댓글 조회 시작 -->
     <script type="text/javascript">
  // 호출하는 URL이 현재 페이지의 URL과 다른 경우, CORS 방식으로 호출한다. XHR2 객체 또는 IE8,9는 XDomainRequest를 사용한다.
-    var oAjax = new jindo.$Ajax('replySearch.do?docNum=${docNum}', {
+ function loadReply() {   
+ var loadAjax = new jindo.$Ajax('replySearch.do?docNum=${docNum}', {
         type : 'xhr',
         method : 'get',     // GET 방식으로 통신
         onload : function(res){ // 요청이 완료되면 실행될 콜백 함수
@@ -177,15 +183,56 @@
           alert("Timeout!");
         },
         onerror : function(){ // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
-          alert("error");
+          alert("댓글조회error");
         },
         async : true      // 비동기로 호출하는 경우, 생략하면 true
     });
-    oAjax.request();
+    loadAjax.request();
+ }
     </script>
     <!-- 댓글 조회 끝 -->
 	<!-- 댓글 등록 시작 -->
 	<script type="text/javascript">
+	
+	function insertFunc() {
+		var insertAjax = new jindo.$Ajax('reply.do?reCon='+$('#message').val()+'&docNum=${docNum}', {
+		    type : 'xhr',
+		    method : 'get',
+		    onload : function(res){ // 요청이 완료되면 실행될 콜백 함수
+		    	loadReply();
+		    },
+		    timeout : 3,      // 3초 이내에 요청이 완료되지 않으면 ontimeout 실행 (생략 시 0)
+		    ontimeout : function(){ // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
+		      alert("Timeout!");
+		    },
+		    async : true      // 비동기로 호출하는 경우, 생략하면 true
+		});
+		
+		insertAjax.request();
+	}
+	
+	loadReply();
+	</script>
+	<!-- 댓글등록 끝 -->
+	
+	<!-- 댓글삭제 시작 -->
+	<script type="text/javascript">
+	function deleteReply(object1, object2){
+		var insertAjax = new jindo.$Ajax('replyDelete.do?seq='+object1+'&seq2='+object2, {
+		    type : 'xhr',
+		    method : 'get',
+		    onload : function(res){ // 요청이 완료되면 실행될 콜백 함수
+		    	loadReply();
+		    },
+		    timeout : 3,      // 3초 이내에 요청이 완료되지 않으면 ontimeout 실행 (생략 시 0)
+		    ontimeout : function(){ // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
+		      alert("Timeout!");
+		    },
+		    async : true      // 비동기로 호출하는 경우, 생략하면 true
+		});
+		
+		insertAjax.request();
+	}
 	
 	</script>
 

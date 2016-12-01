@@ -13,38 +13,34 @@ public class Reply implements Serializable {
 	
 	public Reply(){}
 	
-	public Reply(String reNum, String reCon, String docNum, String userid){
-		this.docNum = docNum;
-		this.reCon = reCon;
-		this.reNum = reNum;
-		this.userid = userid;
-		
-	}
 	
+	
+	
+
+	public Reply(String reCon, String docNum, String userid, String nickname) {
+		super();
+		this.reCon = reCon;
+		this.docNum = docNum;
+		this.userid = userid;
+		this.nickname = nickname;
+	}
+
+
+
+
+
 	public Reply(String reNum, String reCon, String docNum, String userid, String nickname) {
+		super();
 		this.reNum = reNum;
 		this.reCon = reCon;
 		this.docNum = docNum;
 		this.userid = userid;
-		this.docNum = docNum ; 
-		
+		this.nickname = nickname;
 	}
-	
-	public Reply(String reCon,String docNum, String userid) {
-		this.reCon = reCon;
-		this.docNum = docNum;
-		this.userid = userid;
-	
-	}
-	
-	public Reply(String reNum,String reCon) {
-		this.reNum = reNum;
-		this.reCon = reCon;
-	}
-	
-	public Reply(String reNum) {
-		this.reNum = reNum;
-	}
+
+
+
+
 
 	public String getReNum() {
 		return reNum;
@@ -87,6 +83,8 @@ public class Reply implements Serializable {
 	public void setuserid(String userid) {
 		this.userid = userid;
 	}
+	
+	
 
 	@Override
 	public String toString() {
