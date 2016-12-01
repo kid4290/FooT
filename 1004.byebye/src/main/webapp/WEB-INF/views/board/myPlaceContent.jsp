@@ -53,8 +53,7 @@
     <div data-role="content">    
     <!-- Top bar -->
     <div class="top-bar">
-        <h1>내 컨텐츠</h1>
-        <p><a href="#">Home 링크</a> / About me</p>
+        <h1>My Post</h1>
     </div>
     <!-- end Top bar -->
     
@@ -73,17 +72,17 @@
             <div class="h-10"></div>
    
 		<div class="col-md-12">
-                <a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input type="button"  value="수정"/></a>
-        </div>
-         <div class="col-md-12">
-            <a href="replyInsertView.do?seq=${docNum}"><input type="button" class="btn btn-box" value="REPLY"></a>
+                <a href="updateContentView.do?seq=${docNum}&seq2=${userid}" type="button" >Modify</a>
         </div>
         <span class="col-md-12">
-        	<a href="deletePlace.do?seq=${docNum}&&seq1=${userid}"><input type="button"  value="삭제"/></a>
+        	<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" type="button" >Delete</a>
         </span>
-        <div class="col-md-12">
-        	<a href="replySearch.do"><input type="button" class="btn btn-box" value="replySearch"></a>
+         <div class="col-md-12">
+            <a href="replyInsertView.do?seq=${docNum}" type="button" class="btn btn-box" >Reply</a>
         </div>
+<!--         <div class="col-md-12"> -->
+<!--         	<a href="replySearch.do" type="button" class="btn btn-box" >replySearch</a> -->
+<!--         </div> -->
         </div>
         </div>
 
