@@ -64,7 +64,7 @@
             <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
         </div>
         <div class="col-md-6">
-           <h3 class="uppercase">${docNum} </h3>
+           <h3 class="uppercase">${docNum} </h3>http://localhost:8090/byebye/imgLoad.do?fileName=1161828247265129_20161201011007.jpg
            <h5>Where : ${place}</h5>
            <div class="h-30"></div>
             <p>${docCon} </p>

@@ -284,9 +284,9 @@ public class BoardController {
 		if(userid.equals(userid2)) {
 			int delPlace = service.deletePlace(docNum);
 			if(delPlace>0) {
-				return "";
+				return "index";
 			} else {
-				return"";
+				return"contact";
 			}
 		}
 		
