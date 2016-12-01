@@ -9,6 +9,7 @@ public class Reply implements Serializable {
 	private String reCon;
 	private String docNum;
 	private String userid;
+	private String nickname;
 	
 	public Reply(){}
 	
@@ -17,6 +18,15 @@ public class Reply implements Serializable {
 		this.reCon = reCon;
 		this.reNum = reNum;
 		this.userid = userid;
+		
+	}
+	
+	public Reply(String reNum, String reCon, String docNum, String userid, String nickname) {
+		this.reNum = reNum;
+		this.reCon = reCon;
+		this.docNum = docNum;
+		this.userid = userid;
+		this.docNum = docNum ; 
 		
 	}
 	
@@ -38,6 +48,16 @@ public class Reply implements Serializable {
 
 	public String getReNum() {
 		return reNum;
+	}
+
+	
+	
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public void setReNum(String reNum) {
