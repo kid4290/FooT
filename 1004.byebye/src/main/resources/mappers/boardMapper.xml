@@ -42,9 +42,9 @@
 		order by (abs(#{lat}-lat)+abs(#{lon}-lon))/2 asc, doc_date desc)
    </select>
 	
-	<!-- 홈 화면 남의 사진 조회 -->
+	<!-- 홈 화면 남의 사진 조회 --> 
 	<select id="index" resultMap="boardResult" parameterType="BoardDto">
-				select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag 
+		select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag 
 		from 
 		(select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag,
 		(abs(#{lat}-lat)+abs(#{lon}-lon))/2 
