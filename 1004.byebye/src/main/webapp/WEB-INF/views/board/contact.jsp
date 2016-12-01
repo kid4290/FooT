@@ -48,13 +48,6 @@
 <!-- main-container -->
 <div class="container main-container">
 
-        <div class="col-md-6">
-            <h3 class="text-uppercase"></h3>
-            <div class="contact-info">
-                <p><i class="ion-android-call"></i>010-1234-1234</p>
-                <p><i class="ion-ios-email"></i> place@footfoot.com</p>
-            </div>
-        </div>
    <div class="col-md-4">
       <h3 class="text-uppercase"></h3>
       <h5>선택된 사진/이미지</h5>

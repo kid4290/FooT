@@ -13,3 +13,6 @@ values('user01', '유저원', null, 'kakao');
 insert into users  
 values('user02', '유저투', null, 'naver');
 
+select * from users;
+
+delete from users where userid ='user01';

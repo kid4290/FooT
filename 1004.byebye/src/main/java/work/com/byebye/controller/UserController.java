@@ -38,6 +38,7 @@ public class UserController {
       ModelAndView mv = new ModelAndView();
       if(grade == null) {
          nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
+         System.out.println("userimg" + userimg);
          int result = userservice.insertKakao(userid, nickname, userimg, "naver");
 
          if(result > 0) {
@@ -62,6 +63,7 @@ public class UserController {
       ModelAndView mv = new ModelAndView();
       if(grade == null) {
          nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
+         System.out.println("userimg" + userimg);
          int result = userservice.insertKakao(userid, nickname, userimg, "kakao");
          if(result > 0) {
             session.setAttribute("userid", userid);
