@@ -20,11 +20,15 @@
 
 </head>
 <body>
-<div class="tl_container">
-   <div class="card card-container">
-   <img id="profile-img" class="profile-img-card" src="img/circlelogo.png" />
-   <p id="profile-name" class="profile-name-card"></p>
-   <form class="form-signin">
+<div class="wrapper">
+<div class="container">
+
+   <img class="profile-img-card" src="img/circlelogo.png" />
+
+<h1>Welcome</h1>
+
+<form class="form">
+
    <!-- Kakao Login Api -->
    <tr class="tl_formtr">
    <td class="tl_formtd">
@@ -64,8 +68,6 @@
    </script>
    </td>
    </tr>
-   
-   <hr style="width:150px; height:3px; border:none; color:#F7F7F7; background-color:#F7F7F7;">
    
    <!-- Naver Login Api -->
    <tr class="tl_formtr">
@@ -137,8 +139,6 @@
     }
    </script>
    
-   <hr style="width:150px; height:3px; border:none; color:#F7F7F7; background-color:#F7F7F7;">
-
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" v="2" size="xlarge">
 페북으로 로그인
 </fb:login-button>
@@ -151,11 +151,7 @@
    
    
    </form>
-   </div>
-
-<!-- script -->
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
+</div>
 </div>
 </body>
 </html>
