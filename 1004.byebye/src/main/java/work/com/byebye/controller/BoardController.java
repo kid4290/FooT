@@ -73,6 +73,7 @@ public class BoardController {
 	@RequestMapping(value = "multiInsert.do", method = RequestMethod.POST)
 	public ModelAndView BoardDtoByMultipart(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat, MultipartHttpServletRequest request, Model model,
 			HttpSession session) throws IOException, AuthenticationException {
+		System.out.println("등록 페이지 오류");
 		ModelAndView mv = new ModelAndView();
 		MultipartFile multi = request.getFile("picFile");
 		String date = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
