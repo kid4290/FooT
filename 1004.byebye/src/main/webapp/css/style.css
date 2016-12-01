@@ -5,6 +5,14 @@
 * behance : https://www.behance.net/3essa
 */
 
+/* taelym add */
+span.tlspan {
+	background-color: #;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    line-height: 1.7
+}
 
 /* Table of Content
 ==================================================
@@ -424,7 +432,7 @@ h5 {
 .box-intro {
     text-align: center;
     display: table;
-    height: 100vh;
+    height: 30vh;
     width: 100%;
 }
 
@@ -890,9 +898,10 @@ footer img {
 
 .top-bar {
     color: #333;
-    padding: 150px 0 150px;
-    background: -webkit-linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/01.jpg);
-    background: linear-gradient( rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(../img/01.jpg);
+    padding: 50px 0 50px;
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -903,7 +912,7 @@ footer img {
     font-size: 60px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #999;
+    color: #fff;
     line-height: 50px;
 }
 

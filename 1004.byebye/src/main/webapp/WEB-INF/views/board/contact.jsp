@@ -3,54 +3,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>등록 페이지</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>등록 페이지</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+<link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
-    <!-- main css -->
-    <link href="css/style.css" rel="stylesheet">
+<!-- main css -->
+<link href="css/style.css" rel="stylesheet">
 
-    <!-- modernizr -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/jindo_coo_ajax.js"></script>
-	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
-    
+<!-- modernizr -->
+<script src="js/modernizr.js"></script>
+<script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
 
 </head>
 
 <body>
+	<!-- box header -->
+	<header class="box-header">
+	    <div class="box-logo">
+	        <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
+	    </div>
+	    <!-- box-nav -->
+	<a class="box-primary-nav-trigger" href="#0">
+	    <span class="box-menu-text">MENU</span><span class="box-menu-icon"></span>
+	</a>
+	<!-- box-primary-nav-trigger -->
+	</header>
+	<!-- end box header -->
 
-        <!-- box header -->
-        <header class="box-header">
-            <div class="box-logo">
-                <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
-            </div>
-            <!-- box-nav -->
-            <a class="box-primary-nav-trigger" href="#0">
-                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
-            </a>
-            <!-- box-primary-nav-trigger -->
-        </header>
-        <!-- end box header -->
-
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-                <li class="box-label">MENU</li>           
-				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
-				<li><a href="fileBoardDtoFormView.do">Insert</a></li>
-				<li><a href="myPlace.do">MyList</a></li>
-				<li><a href="beaconlist.do">Beacon</a></li>
-				<li><a href="setting.do">Setting</a></li>
-            </ul>
-        </nav>
-        <!-- end nav -->
+	<!-- nav -->
+	<nav>
+		<ul class="box-primary-nav">
+			<li class="box-label">MENU</li>           
+			<li><a href="index.do">Home</a></li>
+			<li><a href="fileBoardDtoFormView.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
+			<li><a href="myPlace.do">MyList</a></li>
+			<li><a href="beaconlist.do">Beacon</a></li>
+			<li><a href="setting.do">Setting</a></li>
+		</ul>
+	</nav>
+	<!-- end nav -->
 
 <div data-role="page">
 
@@ -67,20 +65,20 @@
    <div class="col-md-4">
       <h3 class="text-uppercase"></h3>
       <h5>선택된 사진/이미지</h5>
-      <div class="contact-info" style="width:100%;height:300px;background-color:#333;">
+      <div class="contact-info" style="width:100%;height:300px;background-color:#cdcdcd;">
       <img src="" alt="" id="prevImg" style="width:100%;height:100%;"/>
       </div>
    </div>
 
-   <div class="col-md-8">
+   <div class="col-md-8" style="border:1px solid red;">
    <form action="multiInsert.do" method="POST" enctype="multipart/form-data" id="frm">
    <div class="row">
-   <div class="col-md-12">
+   <div class="col-md-10" style="border:1px solid blue;">
    
       <div class="col-md-10">    
       <label for="name">Place</label> 
          <div data-role="fieldcontain">
-         <input type="text" name="place" />
+         <input type="text" name="place" class="col-md-10"/>
          </div>   
       </div>
    
@@ -96,21 +94,21 @@
       <div class="col-md-10">
       <label for="name">Title</label>
          <div data-role="fieldcontain">
-         <input type="text" name="docTle" />
+         <input type="text" name="docTle" class="col-md-10"/>
          </div>
       </div>
       
       <div class="col-md-10">
       <label for="textarea">Textarea</label>
          <div data-role="fieldcontain">
-         <textarea name="docCon" ></textarea>
+         <textarea name="docCon" class="col-md-10"></textarea>
          </div>
       </div>
       
       <div class="col-md-10">
       <label for="name">with who?</label>
          <div data-role="fieldcontain">
-         <input type="text" name="docTag" />
+         <input type="text" name="docTag" class="col-md-10"/>
          </div>
       </div>
    

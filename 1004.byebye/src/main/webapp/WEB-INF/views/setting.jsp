@@ -78,7 +78,8 @@
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		flex-direction: column;
-		margin-top: 20px;
+/* 		margin-top: 10px; */
+		margin-bottom: 10px;
 		float:center;
 	}
 	.tl_settingtable {
@@ -149,12 +150,6 @@
 			</div>
 
 		</div>
-		
-	<div class="myimage2">
-		<form>
-			<input type="file" accept="image/jpeg" class="imagefile">
-		</form>
-	</div>
 
 	</div>
 	</td>
@@ -166,12 +161,7 @@
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-<!-- 		<a type="button" href="logout.do">로그아웃</a> -->
-			<input type="button" value="로그아웃" onClick="kakaologout()">
-			<c:if test="${userid!=null}">
-				<button type="submit" class="btn">FACEBOOK LOGOUT</button>
-				<input type="hidden" name="_csrf" value="${_csrf.token}">
-			</c:if>
+		<a type="button" href="logout.do">로그아웃</a>
 	</td>
 	</tr>
 	
@@ -191,42 +181,8 @@
 </div>
 
 </div>
-  
-<div data-role="footer" data-id="persistFooter" data-position="fixed" data-theme="c">
-<div data-role="navbar" >
-	<ul>
-	<li><a href="index.do" data-icon="home" >Home</a></li>
-	<li><a href="fileBoardDtoFormView.do" data-icon="star">Insert</a></li>
-	<li><a href="myPlace.do" data-icon="search" >MyList</a></li>
-	<li><a href="beaconlist.do" data-icon="check" >Beacon</a></li>
-	<li><a href="setting.do" data-icon="gear">Setting</a></li>
-	</ul>
-</div>
-</div>
 
 <!-- div 종료 -->
-
-	<script type="text/javascript">
-//    Kakao.init('397aabd494fcce05ada8693f67c2c1fa');
-//    function loginWithKakao() {
-//     Kakao.Auth.login({
-//     success: function(authObj) {
-//     Kakao.API.request({
-//    url: '/v1/user/me',
-//      });
-//     },
-//     fail : function(err) {
-//        alert(JSON.stringfy(err));
-//     }
-//   });
-//  }
-   function kakaologout() {
-      Kakao.Auth.logout(function() {
-         console.log("logged out.");
-         location.replace("http://<%=request.getServerName()%>:8090/byebye/login.do"); 
-      });
-   }
-   </script>
 
 <!-- jQuery -->
 <script src="js/jquery-2.1.1.js"></script>
