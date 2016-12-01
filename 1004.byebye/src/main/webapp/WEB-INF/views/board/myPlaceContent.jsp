@@ -94,10 +94,6 @@
         </span>
          <div class="col-md-12">
             <a href="replyInsertView.do?seq=${docNum}" type="button" class="btn btn-box" >Reply</a>
-            
-<!--         <div class="col-md-12"> -->
-<!--         	<a href="replySearch.do" type="button" class="btn btn-box" >replySearch</a> -->
-<!--         </div> -->
         </div>
 
 <!-- comment -->
