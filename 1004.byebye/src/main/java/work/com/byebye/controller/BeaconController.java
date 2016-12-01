@@ -28,8 +28,14 @@ public class BeaconController {
     @RequestMapping(value = "beaconlist.do")
     public ModelAndView getBeaconList() {
         List<BeaconDto> list = beaconService.getBeaconList();
-        ModelAndView mv = new ModelAndView("beacon/beaconList");
-        mv.addObject("list", list);
+        ModelAndView mv = new ModelAndView();
+        if(list != null) {
+        	mv.addObject("list", list);
+        	mv.setViewName("beacon/beaconList");
+        } else {
+        	mv.addObject("message", "Error go back to the Back page.");
+        	mv.setViewName("error/errorPage");
+        }
         return mv;
     }
     
@@ -61,9 +67,14 @@ public class BeaconController {
 		}
 		System.out.println(macList);
 		List<BeaconDto> list = beaconService.getBeaconResult(macList);
-		ModelAndView mv = new ModelAndView("beacon/list");
-        mv.addObject("list", list);
-        
+		ModelAndView mv = new ModelAndView();
+		if(list != null) {
+	        mv.addObject("list", list);
+	        mv.setViewName("beacon/beaconList");
+		} else {
+        	mv.addObject("message", list);
+        	mv.setViewName("error/errorPage");
+        }
         return mv;
     }
 }
