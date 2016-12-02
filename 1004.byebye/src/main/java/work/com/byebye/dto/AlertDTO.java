@@ -2,20 +2,22 @@
 
 package work.com.byebye.dto;
 
+import org.json.simple.JSONObject;
+
 public class AlertDTO {
 private String userid;
 private String picFile;
 private String alertDate;
 private String docDate;
 private double distance;
-private int doc_num;
+private int docNum;
 
 public int getDoc_num() {
-	return doc_num;
+	return docNum;
 }
 
 public void setDoc_num(int doc_num) {
-	this.doc_num = doc_num;
+	this.docNum = doc_num;
 }
 
 public AlertDTO(){}
@@ -62,21 +64,16 @@ public void setDistance(double distance) {
 
 @Override
 public String toString() {
-	StringBuilder builder = new StringBuilder();
-	builder.append("AlertDTO [userid=");
-	builder.append(userid);
-	builder.append(", picFile=");
-	builder.append(picFile);
-	builder.append(", alertDate=");
-	builder.append(alertDate);
-	builder.append(", docDate=");
-	builder.append(docDate);
-	builder.append(", distance=");
-	builder.append(distance);
-	builder.append(", doc_num=");
-	builder.append(doc_num);
-	builder.append("]");
-	return builder.toString();
+	JSONObject json = new JSONObject();
+	
+	json.put("userid", userid);
+	json.put("picFile", picFile);
+	json.put("alertDate", alertDate);
+	json.put("docDate", docDate);
+	json.put("distance", distance);
+	json.put("docNum", docNum);
+	
+	return json.toString();
 }
 
 
