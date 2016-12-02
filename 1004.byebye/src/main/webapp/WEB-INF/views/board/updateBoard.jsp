@@ -46,9 +46,9 @@
         <nav>
             <ul class="box-primary-nav">
                 <li class="box-label">MENU</li>           
-				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
+				<li><a href="index.do">Home</a></li>
 				<li><a href="insertBoard.do">Insert</a></li>
-				<li><a href="myBoardList.do">MyList</a></li>
+				<li><a href="myBoardList.do">MyList</a><i class="ion-ios-circle-filled color"></i></li>
 				<li><a href="beaconlist.do">Beacon</a></li>
 				<li><a href="setting.do">Setting</a></li>
             </ul>
