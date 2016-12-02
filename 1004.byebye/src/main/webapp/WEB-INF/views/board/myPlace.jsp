@@ -45,8 +45,8 @@
 		<ul class="box-primary-nav">
 			<li class="box-label">MENU</li>           
 			<li><a href="index.do">Home</a></li>
-			<li><a href="fileBoardDtoFormView.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
-			<li><a href="myPlace.do">MyList</a></li>
+			<li><a href="fileBoardDtoFormView.do">Insert</a></li>
+			<li><a href="myPlace.do">MyList</a><i class="ion-ios-circle-filled color"></i></li>
 			<li><a href="beaconlist.do">Beacon</a></li>
 			<li><a href="setting.do">Setting</a></li>
 		</ul>
@@ -69,7 +69,6 @@
                 <!-- portfolio_container -->
                 <div class="no-padding portfolio_container clearfix">
                     <!-- single work -->
-                    //사진 갯수가 없으면 띄울꺼!!!! 아래 jstl 부분 활용 : css 부탁해~~~~
                     <c:if test="${requestScope.list eq null or fn:length(requestScope.list) eq 0}">
                  <h1>조회결과없음</h1>
                  </c:if>
