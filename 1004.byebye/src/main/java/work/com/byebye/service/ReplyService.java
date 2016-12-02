@@ -70,10 +70,9 @@ public class ReplyService {
 //	   return replyUpdate;
 //   }
    
-   public int replyDelete(String reNum) {
-	   System.out.println("reply del test" + reNum);
-	   int replyDel = replydao.replyDelete(reNum);
-	   return replyDel;
+   public int replyDelete(String reNum,String userid) {
+	   System.out.println("reply del test" + reNum + userid);
+	   return replydao.replyDelete(reNum,userid);
    }
    
 }

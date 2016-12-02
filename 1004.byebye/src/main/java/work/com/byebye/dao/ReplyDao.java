@@ -66,9 +66,12 @@ public class ReplyDao {
 //		return sqlSession.update("replyUpdate",dto);
 //	}
 	
-	public int replyDelete(String reNum) {
+	public int replyDelete(String reNum,String userid) {
 		System.out.println("reply test dao " + reNum);
-		return sqlSession.delete("replyDelete",reNum);
+		HashMap<String,String> map = new HashMap<String,String>();
+		map.put("reNum", reNum);
+		map.put("userif", userid);
+		return sqlSession.delete("replyDelete",map);
 
 	}
 	
