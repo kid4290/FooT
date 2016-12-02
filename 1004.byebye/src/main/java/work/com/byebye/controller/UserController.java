@@ -28,122 +28,147 @@ public class UserController {
    public String login() {
       return "login";
    }
+   
+   public int newLogin(String userid, String nickname, String userimg, String grade, HttpSession session){
+      session.setAttribute("userid", userid);
+      session.setAttribute("nickname", nickname);
+      session.setAttribute("userimg", userimg);
+      session.setAttribute("grade", grade);
+      return userservice.newLogin(userid, nickname, userimg, grade);
+   }
 
    /** 네이버 로그인 시 아이디 중복 체크 후 로그인 및 회원등록 
     * @throws UnsupportedEncodingException */
    @RequestMapping(value="naverLogin.do")
    public String naverLogin(String userid, String nickname, String userimg, HttpSession session) throws UnsupportedEncodingException {
-      String grade = userservice.loginCheck(userid);
-
-      ModelAndView mv = new ModelAndView();
-      if(grade == null) {
-         nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
-         System.out.println("userimg" + userimg);
-         int result = userservice.insertKakao(userid, nickname, userimg, "naver");
-
-         if(result > 0) {
-            session.setAttribute("userid", userid);
-            session.setAttribute("nickname", nickname);
-         } else {
-            mv.addObject("message", "로그인 오류");
-            mv.setViewName("error");
-         }
+//      String grade = userservice.loginCheck(userid);
+//
+//      ModelAndView mv = new ModelAndView();
+//      if(grade == null) {
+//         nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
+//         System.out.println("userimg" + userimg);
+//         int result = userservice.insertKakao(userid, nickname, userimg, "naver");
+//
+//         if(result > 0) {
+//            session.setAttribute("userid", userid);
+//            session.setAttribute("nickname", nickname);
+//         } else {
+//            mv.addObject("message", "로그인 오류");
+//            mv.setViewName("error");
+//         }
+//      } else {
+//         session.setAttribute("userid", userid);
+//         session.setAttribute("nickname", nickname);
+//      }
+      
+      if(newLogin(userid, nickname, userimg, "naver", session) == 1){
+         return "redirect:index.do";
       } else {
-         session.setAttribute("userid", userid);
-         session.setAttribute("nickname", nickname);
+         return "redirect:/";
       }
-      return "redirect:index.do";
+      
    }
 
    /** 카카오 로그인 시 아이디 중복 체크 후 로그인 및 회원등록
     * @throws UnsupportedEncodingException */
    @RequestMapping(value="kakaoLogin.do")
    public String kakaoLogin(String userid, String nickname, String userimg, HttpSession session) throws UnsupportedEncodingException {
-      String grade = userservice.loginCheck(userid);
-      ModelAndView mv = new ModelAndView();
-      if(grade == null) {
-         nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
-         System.out.println("userimg" + userimg);
-         int result = userservice.insertKakao(userid, nickname, userimg, "kakao");
-         if(result > 0) {
-            session.setAttribute("userid", userid);
-            session.setAttribute("nickname", nickname);
-         } else {
-            mv.addObject("message", "로그인 오류");
-            mv.setViewName("error");
-         }
+//      String grade = userservice.loginCheck(userid);
+//      ModelAndView mv = new ModelAndView();
+//      if(grade == null) {
+////         nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
+//         System.out.println("userimg" + userimg);
+//         int result = userservice.insertKakao(userid, nickname, userimg, "kakao");
+//         if(result > 0) {
+//            session.setAttribute("userid", userid);
+//            session.setAttribute("nickname", nickname);
+//         } else {
+//            mv.addObject("message", "로그인 오류");
+//            mv.setViewName("error");
+//         }
+//      } else {
+//         session.setAttribute("userid", userid);
+//         session.setAttribute("nickname", nickname);
+//      }
+//      return "redirect:index.do";
+      if(newLogin(userid, nickname, userimg, "kakao", session) == 1){
+         return "redirect:index.do";
       } else {
-         session.setAttribute("userid", userid);
-         session.setAttribute("nickname", nickname);
+         return "redirect:/";
       }
-      return "redirect:index.do";
    }
 
    /** facebook login */
    @RequestMapping(value="facebookLogin.do")
    public String facebookLogin(String userid, String nickname, String userimg, HttpSession session) {
-      String grade = userservice.loginCheck(userid);
-      ModelAndView mv = new ModelAndView();
-      if(grade == null) {
-         int result = userservice.insertKakao(userid, nickname, userimg, "facebook");
-         if(result > 0) {
-            session.setAttribute("userid", userid);
-            session.setAttribute("nickname", nickname);
-         } else {
-            mv.addObject("message", "로그인 오류");
-            mv.setViewName("error");
-         }
+//      String grade = userservice.loginCheck(userid);
+//      ModelAndView mv = new ModelAndView();
+//      if(grade == null) {
+//         int result = userservice.insertKakao(userid, nickname, userimg, "facebook");
+//         if(result > 0) {
+//            session.setAttribute("userid", userid);
+//            session.setAttribute("nickname", nickname);
+//         } else {
+//            mv.addObject("message", "로그인 오류");
+//            mv.setViewName("error");
+//         }
+//      } else {
+//         session.setAttribute("userid", userid);
+//         session.setAttribute("nickname", nickname);
+//      }
+//      return "redirect:index.do";
+      if(newLogin(userid, nickname, userimg, "facebook", session) == 1){
+         return "redirect:index.do";
       } else {
-         session.setAttribute("userid", userid);
-         session.setAttribute("nickname", nickname);
+         return "redirect:/";
       }
-      return "redirect:index.do";
    }
+   
    
    /** setting(내정보 보기) 페이지 */
    @RequestMapping(value="setting.do")
    public ModelAndView getUser(HttpSession session) {
-	   String userid = (String) session.getAttribute("userid");
-	   
-	   ModelAndView mv = new ModelAndView();
-	   UserDto dto = userservice.getUser(userid);
-	   System.out.println("dto : " + dto);
-	   if(dto != null) {
-		   mv.addObject("dto", dto);
-		   mv.setViewName("setting");
-	   } else {
-		   mv.addObject("message", "내정보 조회 오류");
+      String userid = (String) session.getAttribute("userid");
+      
+      ModelAndView mv = new ModelAndView();
+      UserDto dto = userservice.getUser(userid);
+      System.out.println("dto : " + dto);
+      if(dto != null) {
+         mv.addObject("dto", dto);
+         mv.setViewName("setting");
+      } else {
+         mv.addObject("message", "내정보 조회 오류");
            mv.setViewName("index");
-	   }
-	   return mv;
-	   
+      }
+      return mv;
+      
    }
    
    /** 로그아웃 요청 */
-	@RequestMapping("logout.do")
-	public String logout(HttpSession session) {
-		if (session.getAttribute("userid") != null) {
-			session.removeAttribute("userid");
-		}
-		session.invalidate();
-		return "login";
-	}
-	
-	/** 회원 탈퇴 */
-	@RequestMapping("deleteUser.do")
-	public String delete(HttpSession session) {
-		String userid = (String) session.getAttribute("userid");
-		int result = userservice.deleteUser(userid);
-		if(result > 0) {
-			if (session.getAttribute("userid") != null) {
-				session.removeAttribute("userid");
-			}
-			session.invalidate();
-		} else {
-			return "setting";
-		}
-		return "login";
-	}
+   @RequestMapping("logout.do")
+   public String logout(HttpSession session) {
+      if (session.getAttribute("userid") != null) {
+         session.removeAttribute("userid");
+      }
+      session.invalidate();
+      return "login";
+   }
+   
+   /** 회원 탈퇴 */
+   @RequestMapping("deleteUser.do")
+   public String delete(HttpSession session) {
+      String userid = (String) session.getAttribute("userid");
+      int result = userservice.deleteUser(userid);
+      if(result > 0) {
+         if (session.getAttribute("userid") != null) {
+            session.removeAttribute("userid");
+         }
+         session.invalidate();
+      } else {
+         return "setting";
+      }
+      return "login";
+   }
    
    
 }

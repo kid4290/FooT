@@ -115,11 +115,11 @@
         <nav>
             <ul class="box-primary-nav">
                 <li class="box-label">MENU</li>           
-				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
+				<li><a href="index.do">Home</a></li>
 				<li><a href="fileBoardDtoFormView.do">Insert</a></li>
 				<li><a href="myPlace.do">MyList</a></li>
 				<li><a href="beaconlist.do">Beacon</a></li>
-				<li><a href="setting.do">Setting</a></li>
+				<li><a href="setting.do">Setting</a><i class="ion-ios-circle-filled color"></i></li>
             </ul>
         </nav>
         <!-- end nav -->
@@ -161,13 +161,13 @@
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="logout.do">로그아웃</a>
+		<a type="button" href="logout.do" class="btn btn-box">로그아웃</a>
 	</td>
 	</tr>
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="#">회원탈퇴</a>
+		<a type="button" href="#" class="btn btn-box">회원탈퇴</a>
 	</td>
 	</tr>
 </table>

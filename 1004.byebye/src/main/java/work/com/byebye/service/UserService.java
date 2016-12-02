@@ -20,6 +20,10 @@ public class UserService {
    public String loginCheck(String userid) {
       return userdao.loginCheck(userid);
    }
+   
+   public int newLogin(String userid, String nickname, String userimg, String grade) {
+	   return userdao.newLogin(userid, nickname, userimg, grade);
+   }
 
    public int insertKakao(String userid, String nickname, String userimg, String grade) {
       return userdao.insertKakao(userid, nickname, userimg, grade);

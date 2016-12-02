@@ -38,6 +38,7 @@
 </style>
 </head>
 <body>
+<div class="top-bars">
         <!-- box header -->
         <header class="box-header">
             <div class="box-logo">
@@ -69,20 +70,21 @@
 	<section class="box-intro">
 	<div class="table-cell">
 	<div class="tl_locationborder col-md-12">
-		<a type="button" class="btn btn-default btn-xs">재탐색</a>
-		<a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">수동수정</a>
+		<a type="button" class="btn btn-default btn-sm">재탐색</a>
+		<a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">수동수정</a>
 	</div>
 	
 	<div class="tl_locationborder col-md-12">
-		<span id="jusoView" class="tlspan" data-toggle="modal" data-target="#myModal">현재 위치를 찾고 있습니다.</span>
+	<span id="jusoView" class="tlspan" data-toggle="modal" data-target="#myModal">현재 위치를 찾고 있습니다.</span>
 	</div>
 	
 	<div class="tl_locationborder col-md-12">
-		<h5>${nickname}님 환영합니다.</h5>
+		<h5 style="font-size:14px;">${nickname}님 환영합니다.</h5>
 	</div>
 	</div>
 	</section>
 	<!-- end box-intro -->
+</div>
 </div>
 
 <!-- main container -->
