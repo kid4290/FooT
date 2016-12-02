@@ -78,7 +78,6 @@
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		flex-direction: column;
-/* 		margin-top: 10px; */
 		margin-bottom: 10px;
 		float:center;
 	}
@@ -93,6 +92,31 @@
 		text-align: center;
 		height: auto; 
 	}
+	.tl_tr {
+		text-align: center;
+	}
+	.tl_td {
+		text-align: center;
+	}
+	
+	.tl_span1 {
+		color: #fff;
+		font-weight: 900;
+	}
+	.tl_span2 {
+		color: #333;
+	}
+	.tl_tablediv {
+		margin: 0px auto;
+		margin-left: 5%;
+		margin-right: 5%;
+		background: #ffbf00;
+		color: #333;
+	}
+	.main-containers {
+		padding-top: 0;
+		margin-bottom: 50px;
+    }
 	</style>
 
 </head>
@@ -124,15 +148,14 @@
         </nav>
         <!-- end nav -->
 
-<div data-role="content">
 
 	<!-- top bar -->
 	<div class="top-bar">
 		<h1>Setting</h1>
 	</div>
 	<!-- end top bar -->
-	
-	<div class="main-container portfolio-inner clearfix">
+<div class="main-containers">
+<div class="portfolio-inner clearfix">
 <div class="tl_settingform">
 <table class="tl_settingtable">
 	<tr class="tl_trr">
@@ -146,18 +169,21 @@
 			<c:if test="${empty dto.userimg}">
 				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">
 			</c:if>
-			
 			</div>
-
 		</div>
-
 	</div>
 	</td>
 	</tr>
-	
-	<tr class="tl_tr">
-	<td class="tl_td" height="200" style="border: 1px solid green;">내가 쓴 댓글</td>
-	</tr>
+
+	<tr class="tl_trr">
+	<td class="tl_td" height="100">
+	<div class="tl_tablediv">
+	<span class="tl_span1">${dto.nickname}</span> 님 반갑습니다. <i class="ion-happy-outline"></i>
+	<br/>
+	<span class="tl_span2">FootFoot</span> 이 당신의 설정<i class="ion-android-settings"></i>을 도와드립니다.
+	</div>
+	</td>
+	</tr>	
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
@@ -173,9 +199,7 @@
 </table>
 </div>
 </div>
-
 </div>
-
 <!-- div 종료 -->
 
 <!-- jQuery -->
