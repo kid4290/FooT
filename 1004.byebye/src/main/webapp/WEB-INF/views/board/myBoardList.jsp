@@ -45,8 +45,8 @@
 		<ul class="box-primary-nav">
 			<li class="box-label">MENU</li>           
 			<li><a href="index.do">Home</a></li>
-			<li><a href="fileBoardDtoFormView.do">Insert</a></li>
-			<li><a href="myPlace.do">MyList</a><i class="ion-ios-circle-filled color"></i></li>
+			<li><a href="insertBoard.do">Insert</a></li>
+			<li><a href="myBoardList.do">MyList</a><i class="ion-ios-circle-filled color"></i></li>
 			<li><a href="beaconlist.do">Beacon</a></li>
 			<li><a href="setting.do">Setting</a></li>
 		</ul>
@@ -74,7 +74,7 @@
                  </c:if>
                     <c:forEach var="dto" items="${requestScope.list}"> 
                     <div class="col-md-4 col-sm-6  fashion logo">
-                        <a href="myPlacePicContent.do?seq=${dto.getDocNum()}" class="portfolio_item">
+                        <a href="boardDetail.do?seq=${dto.getDocNum()}" class="portfolio_item">
                             <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
                            />
                             <div class="portfolio_item_hover">

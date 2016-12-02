@@ -64,7 +64,7 @@ public class BoardController {
 	  }
 	   
 	
-	@RequestMapping("fileBoardDtoFormView.do")
+	@RequestMapping("insertBoard.do")
 	public String BoardDtoView() {
 		return "board/insertBoard";
 	}
@@ -72,7 +72,7 @@ public class BoardController {
 	private String BoardDtoPath = "c://temp//BoardDto";
 
 	@RequestMapping(value = "multiInsert.do", method = RequestMethod.POST)
-	public ModelAndView BoardDtoByMultipart(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat, MultipartHttpServletRequest request, Model model,
+	public ModelAndView multiInsert(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat, MultipartHttpServletRequest request, Model model,
 			HttpSession session) throws IOException, AuthenticationException {
 		System.out.println("등록 페이지 오류");
 		ModelAndView mv = new ModelAndView();
@@ -90,7 +90,7 @@ public class BoardController {
 		if (result == 1) {
 			File file = new File(BoardDtoPath, picFile);
 			multi.transferTo(file);
-			mv.setViewName("redirect:myPlace.do");
+			mv.setViewName("redirect:myBoardList.do");
 		} else {
 			mv.addObject("message", "Insert Error go back to the Back page.");
 			mv.setViewName("error/errorPage");
@@ -99,8 +99,8 @@ public class BoardController {
 	}
 
 	/** 사진 리스트 조회요청 */
-	@RequestMapping("myPlace.do")
-	public @ResponseBody ModelAndView myPlace(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) {
+	@RequestMapping("myBoardList.do")
+	public @ResponseBody ModelAndView myBoardList(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) {
 		String userid = (String) session.getAttribute("userid");
 
 		list = service.myPlace(userid,lon,lat);
@@ -153,7 +153,7 @@ public class BoardController {
 	}
 
 	/** 사진 상세조회 */
-	@RequestMapping("myPlacePicContent.do")
+	@RequestMapping("boardDetail.do")
 	public ModelAndView myPlaceContent(HttpSession session, int seq) {
 		BoardDto dto = new BoardDto();
 		String userid = (String) session.getAttribute("userid");
@@ -183,7 +183,7 @@ public class BoardController {
 	}
 	
 	/** 남의 사진 상세조회 */
-	@RequestMapping("indexPicContent.do")
+	@RequestMapping("otherBoardDetail.do")
 	public ModelAndView indexContent(HttpSession session, int seq) {
 		BoardDto dto = new BoardDto();
 		String userid = (String) session.getAttribute("userid");
