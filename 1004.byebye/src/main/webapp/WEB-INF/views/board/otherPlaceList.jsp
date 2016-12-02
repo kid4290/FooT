@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum=scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <title>Box personal portfolio Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>my photo</title>
     <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
-    
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
@@ -17,15 +17,12 @@
     <!-- main css -->
     <link href="css/style.css" rel="stylesheet">
 
-	
-
     <!-- modernizr -->
     <script src="js/modernizr.js"></script>
     <script src="js/jindo_coo_ajax.js"></script>
 <script type="text/javascript"
 		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
     
-
 </head>
 
 <body>
@@ -53,50 +50,64 @@
 				<li><a href="setting.do">Setting</a></li>
             </ul>
         </nav>
-        <!-- end nav -->    
-
+        <!-- end nav -->
+        
 <!-- 뒤로가기 버튼 -->
 <!--  <span class="box-menu-text"> -->
-<!-- <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c" 			aria-hidden="true">이전</a> -->
+<!-- <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c"          aria-hidden="true">이전</a> -->
 <!-- </span> -->
-
+        
 <div data-role="content">
-    
-    <!-- Top bar -->
+ 
+    <!-- top bar -->
     <div class="top-bar">
-        <h1>Posts</h1>
+        <h1>Who r u?</h1>
     </div>
-    <!-- end Top bar -->
-    
-    <!-- Main container -->
-     <div class="container main-container">
-        <div class="col-md-6">
-            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" alt="" />
+    <!-- end top bar -->
+
+    <!-- main container -->
+    <div class="main-container portfolio-inner clearfix">
+        <!-- portfolio div -->
+        <div class="portfolio-div">
+            <div class="portfolio">
+
+                <!-- portfolio_container -->
+                <div class="no-padding portfolio_container clearfix">
+                    <!-- single work -->
+                    <c:forEach var="dto" items="${requestScope.list}"> 
+                    <div class="col-md-4 col-sm-6  fashion logo">
+                        <a href="myPlacePicContent.do?seq=${dto.getDocNum()}" class="portfolio_item">
+                            <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
+                           />
+                            <div class="portfolio_item_hover">
+                                <div class="portfolio-border clearfix">
+                                    <div class="item_info">
+                                        <span>${dto.getPlace()}</span>
+                                        <p>${dto.getDocNum()}
+                                        <em>${dto.getPlace()}</em>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </a>
+                    </div>
+                    </c:forEach>
+                    <!-- end single work -->
+                </div>
+                <!-- end portfolio_container -->
+            </div>
+            <!-- portfolio -->
         </div>
-        <div class="col-md-6">
-           <h3 class="uppercase">${docNum} </h3>
-           <h5>Where : ${place}</h5>
-           <div class="h-30"></div>
-            <p>${docCon} </p>
-            <p>with ${docTag}</p>
-            
-		<div class="col-md-12">
-			<a href="otherPlaceList.do?id=${userid}"><input type="button" value="남의것조회"/></a>
-		</div>
-		<div class="col-md-12">
-            <a href="updateContentView.do?seq=${docNum}&&seq1=${userid}"><input type="button"  value="수정"/></a>
-        </div>
-        <span class="col-md-12">
-        	<a href="deletePlace.do?seq=${docNum}&&seq1=${userid}"><input type="button"  value="삭제"/></a>
-        </span>
-        </div>
+        <!-- end portfolio div -->
     </div>
-    <!-- end Main container -->
+    <!-- end main container -->
 </div>
-    
+
+
     <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
     <!-- end back to top -->
+
 
 
     <!-- jQuery -->
@@ -107,9 +118,9 @@
     <script src="js/animated-headline.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
 
+
     <!--  custom script -->
     <script src="js/custom.js"></script>
-    
 
 </body>
 

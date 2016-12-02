@@ -114,7 +114,25 @@ public class BoardController {
 		}
 		return mv;
 	}
+	
+	/** 남의사진 리스트 조회요청 */
+	@RequestMapping("otherPlaceList.do")
+	public @ResponseBody ModelAndView otherPlaceList(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session,HttpServletRequest request) {
+		String userid = (String) request.getParameter("id");
 
+		list = service.myPlace(userid,lon,lat);
+		
+		ModelAndView mv = new ModelAndView();
+		if (userid != null) {
+			mv.addObject("list", list);
+			mv.setViewName("board/myPlace");
+		} else {
+			mv.addObject("message", "Search Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
+		}
+		return mv;
+	}
+	
 	@RequestMapping("imgLoad.do")
 	public @ResponseBody void imgLoad(HttpServletRequest request, HttpServletResponse response) {
 		String path = "c://temp//BoardDto/" + request.getParameter("fileName");
@@ -185,7 +203,7 @@ public class BoardController {
 			mv.addObject("docTf", dto.getDocTf());
 			mv.addObject("docTag", dto.getDocTag());
 			mv.addObject("place", dto.getPlace());
-			mv.setViewName("board/myPlaceContent");
+			mv.setViewName("board/indexContent");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
 			mv.setViewName("error/errorPage");

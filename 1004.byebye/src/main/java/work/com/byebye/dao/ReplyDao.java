@@ -56,7 +56,7 @@ public class ReplyDao {
 	}
 	
 	public int replyUpdate(String reNum,String reCon) {
-		dto = new Reply(reNum,reCon);
+//		dto = new Reply(reNum,reCon);
 		
 		return sqlSession.update("replyUpdate",dto);
 	}
