@@ -16,6 +16,7 @@
 		<result property="docTf" column="doc_Tf" />
 		<result property="docTag" column="doc_Tag" />
 		<result property="place" column="place" />
+		<result property="distance" column="distance" />
 	</resultMap>
 
 	<!-- 사진 게시 insert -->
@@ -56,19 +57,19 @@
 	<!-- 비디오 상세 조회 -->
 	<select id="myPlaceMovContent" resultType="BoardDto"
 		parameterType="String">
-		select * from BOARD where doc_num= #{docNum}
+		select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag from BOARD where doc_num= #{docNum}
 	</select>
 
 	<!-- 사진 상세 조회 -->
 	<select id="myPlaceContent" resultMap="boardResult"
 		parameterType="String">
-		select * from BOARD where doc_num= #{docNum}
+		select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag from BOARD where doc_num= #{docNum}
 	</select>
 
 	<!-- 남의 사진 상세 조회 -->
 	<select id="indexContent" resultMap="boardResult"
 		parameterType="String">
-		select * from BOARD where doc_num= #{docNum}
+		select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag from BOARD where doc_num= #{docNum}
 	</select>
 
 	<!-- 내용 수정 -->

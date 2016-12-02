@@ -19,9 +19,18 @@ public class BoardDto implements Serializable {
 	   private String picFile;
 //	   private MultipartFile bfile12;
 	   private String place;
+	   private Double distance;
 	   
 	   
-	   public BoardDto() {}
+	   public Double getDistance() {
+		return distance;
+	}
+
+	public void setDistance(Double distance) {
+		this.distance = distance;
+	}
+
+	public BoardDto() {}
 	   
 	   public BoardDto(String docNum, String userid,Double lat,Double lon,String picFile,String movFile,String docTle,String docCon,String docDate,int docHit,String docTf,String docTag,String place) {
 	      this.docNum = docNum;
