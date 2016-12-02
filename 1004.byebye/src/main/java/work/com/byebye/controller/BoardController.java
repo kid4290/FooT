@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nhncorp.lucy.security.xss.XssPreventer;
+import work.com.byebye.exception.RequiredException;
 
 import work.com.byebye.dto.BoardDto;
 import work.com.byebye.exception.AuthenticationException;
@@ -46,7 +47,7 @@ public class BoardController {
 
 	//home 화면에 사진호출 남의 사진 
 	 @RequestMapping(value="index.do")
-	   public  @ResponseBody ModelAndView index(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) {
+	   public  @ResponseBody ModelAndView index(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session) throws RequiredException {
 			String userid = (String) session.getAttribute("userid");
 
 			list = service.index(userid,lon,lat);
@@ -264,8 +265,18 @@ public class BoardController {
 				return"error/errorPage";
 			}
 		}
-		
 		return"";
 	}
+	
+	
+	@ExceptionHandler
+	public ModelAndView commonException(RequiredException e) {
+		
+		ModelAndView mnv = new ModelAndView();
+		mnv.addObject("message", "필수 항목 미입력");
+		mnv.setViewName("error/errorPage");
+		return mnv;
+	}
+
 
 }

@@ -22,7 +22,11 @@
 <script src="js/jindo_coo_ajax.js"></script>
 <script type="text/javascript"
 		src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
-
+<style type="text/css">
+.mhdiv {
+margin:0px auto;
+}
+</style>
 </head>
 <body>
 
@@ -52,10 +56,6 @@
         </nav>
         <!-- end nav -->
 
-<!-- 뒤로가기 버튼 -->
-<!--  <span class="box-menu-text"> -->
-<!-- <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c" 			aria-hidden="true">이전</a> -->
-<!-- </span> -->
 
 <div data-role="content">
 
@@ -69,20 +69,16 @@
 	<div class="clearfix">
 		<!-- service-box -->
 		<div class="col-md-4 service-box">
-		<i class="ion-android-favorite-outline size-50"></i>
-		<h3>Error</h3>
-		<div class="h-10"></div>
+		<h3>Error Page</h3>
 		
-	<div class="container main-container">	
-<!-- 		Insert Error go back to the Back page -->
-		${message}
+	<div class="container main-container mhdiv" >	
+		<h4>${message} 이전페이지로 이동 </h4>
+		<a href="#" onclick="history.back();" class="btn btn-box">Return</a>
 		</div>
-		<!-- end service-box -->
 	</div>
 </div>
 </div>
 
-<!-- div 종료 -->
 
 <!-- back to top -->
 <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
