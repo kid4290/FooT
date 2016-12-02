@@ -50,9 +50,7 @@
 	</nav>
 	<!-- end nav -->
 
-<div data-role="page">
 
- <div data-role="content">
     <!-- top bar -->
     <div class="top-bar">
         <h1>Insert</h1>
@@ -61,82 +59,64 @@
 
 <!-- main-container -->
 <div class="container main-container">
+<div class="col-md-6">
 
-   <div class="col-md-4">
-      <h3 class="text-uppercase"></h3>
-      <h5>선택된 사진/이미지</h5>
-      <div class="contact-info" style="width:100%;height:300px;background-color:#cdcdcd;">
-      <img src="" alt="" id="prevImg" style="width:100%;height:100%;"/>
-      </div>
-   </div>
+<form action="multiInsert.do" method="POST" enctype="multipart/form-data" id="frm">
 
-   <div class="col-md-8" style="border:1px solid red;">
-   <form action="multiInsert.do" method="POST" enctype="multipart/form-data" id="frm">
-   <div class="row">
-   <div class="col-md-10" style="border:1px solid blue;">
-   
-      <div class="col-md-10">    
-      <label for="name">Place</label> 
-         <div data-role="fieldcontain">
-         <input type="text" name="place" class="col-md-10"/>
-         </div>   
-      </div>
-   
-      <div class="col-md-10">           
-         <div data-role="fieldcontain">
-         <fieldset data-role="controlgroup">
-         <input type="checkbox" name="docTf" id="checkbox-2" class="custom" />
-         <label for="checkbox-2">공개</label>
-         </fieldset>
-         </div>
-      </div>
-      
-      <div class="col-md-10">
-      <label for="name">Title</label>
-         <div data-role="fieldcontain">
-         <input type="text" name="docTle" class="col-md-10"/>
-         </div>
-      </div>
-      
-      <div class="col-md-10">
-      <label for="textarea">Textarea</label>
-         <div data-role="fieldcontain">
-         <textarea name="docCon" class="col-md-10"></textarea>
-         </div>
-      </div>
-      
-      <div class="col-md-10">
-      <label for="name">with who?</label>
-         <div data-role="fieldcontain">
-         <input type="text" name="docTag" class="col-md-10"/>
-         </div>
-      </div>
-   
-      <div class="col-md-6">
-         <div>
-         <label for="name">picture</label>
-         <input type="file" name="picFile" id="picFile" accept="image/*;capture=camera"/>
-         </div>
-      </div>
-      
-      <br><br>
-      <div class="col-md-6">
-         <a type="button" href="#" onclick="document.getElementById('frm').submit();">등록</a>
-      </div>
-      
-   </div>
-   </div>
+<div class="row">
+<div class="col-md-6">
+<div class="input-contact">
+<input type="text" name="place" class="col-md-10"/>
+<span></span>
+</div>
+</div>
+<div class="col-md-6">
+<div class="input-contact">
+<input type="checkbox" name="docTf" id="checkbox-2" class="custom" />
+<label for="checkbox-2">공개</label>
+</div>
+</div>
+<div class="col-md-6">
+<div class="input-contact">
+<input type="text" name="docTle" class="col-md-10"/>
+<span>Title</span>
+</div>
+</div>
+<div class="col-md-12">
+<div class="textarea-contact">
+<textarea name="docCon"></textarea>
+<span>Textarea</span>
+</div>
+</div>
+<br>
+<div class="col-md-6">
+<div class="input-contact">
+<input type="text" name="docTag" class="col-md-10"/>
+<span>with who?</span>
+</div>
+</div>
+<div class="col-md-12">
+<div class="input-contact">
+<input type="file" name="picFile" accept="image/*;capture=camera"/>
+<span></span>
+</div>
+</div>
+<div class="col-md-12">
+<a href="#" onclick="document.getElementById('frm').submit();" class="btn btn-box">Send</a>
+</div>
+</div>
 </form>
 </div>
+
+
+
 </div>
-    <!-- end main-container -->
-    </div>
+<!-- end main-container -->
 
     <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
     <!-- end back to top -->
 
-</div>
 
 
     <!-- jQuery -->
