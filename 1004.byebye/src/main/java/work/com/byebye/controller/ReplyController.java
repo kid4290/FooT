@@ -242,32 +242,26 @@ public class ReplyController {
 //		
 //		return mv;
 //	}
-	
+
+
+	//댓글 삭제 부분 
 	@RequestMapping(value="replyDelete.do") 
 	public void replyDelete(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String reNum = (String) request.getParameter("seq");
-		String userid2 = (String) request.getParameter("seq2");
 		String userid = (String) session.getAttribute("userid");
-
+		
 		response.setContentType( "text/json; charset=utf-8");
 		response.setHeader("Cache-Control", "no-cache");
 
 		PrintWriter out = response.getWriter();
-
-
-
-		if(userid.equals(userid2)) {	
-			int replyDel = service.replyDelete(reNum);
-			System.out.println("replydel"+replyDel);
-			if(replyDel>0) {
+		int replyDel = service.replyDelete(reNum,userid);
+		System.out.println("replydel"+replyDel);
+		if(replyDel>0) {	
 				out.write("{'result':'true'}");
 			} else {
 				out.write("{'result':'false'}");
-			}
 		}
-		
 		out.flush();
-
 	}
 	
 	
