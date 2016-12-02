@@ -186,7 +186,7 @@
 	<!-- 댓글삭제 시작 -->
 	<script type="text/javascript">
 	function deleteReply(object1, object2){
-		var insertAjax = new jindo.$Ajax('replyDelete.do?seq='+object1+'&seq2='+object2, {
+		var insertAjax = new jindo.$Ajax('replyDelete.do?seq='+object1, {
 		    type : 'xhr',
 		    method : 'get',
 		    onload : function(res){ // 요청이 완료되면 실행될 콜백 함수

@@ -85,12 +85,15 @@ public class BoardDto implements Serializable {
 	   }
 	   
 
-   public BoardDto(String userid) {
-      this.userid=userid;
-   }
+	@Override
+	public String toString() {
+		return "BoardDto [docNum=" + docNum + ", userid=" + userid + ", lat=" + lat + ", lon=" + lon + ", movFile="
+				+ movFile + ", docTle=" + docTle + ", docCon=" + docCon + ", docDate=" + docDate + ", docHit=" + docHit
+				+ ", docTf=" + docTf + ", docTag=" + docTag + ", picFile=" + picFile + ", place=" + place
+				+ ", distance=" + distance + "]";
+	}
 
-
-   public String getDocNum() {
+	public String getDocNum() {
 		return docNum;
 	}
 
@@ -184,13 +187,6 @@ public class BoardDto implements Serializable {
 
 	public void setPicFile(String picFile) {
 		this.picFile = picFile;
-	}
-
-	@Override
-	public String toString() {
-		return "BoardDto [docNum=" + docNum + ", userid=" + userid + ", lat=" + lat + ", lon=" + lon + ", movFile="
-				+ movFile + ", docTle=" + docTle + ", docCon=" + docCon + ", docDate=" + docDate + ", docHit=" + docHit
-				+ ", docTf=" + docTf + ", docTag=" + docTag + ", picFile=" + picFile + ", place=" + place + "]";
 	}
 
 	@Override

@@ -94,9 +94,8 @@
 		<div class="portfolio_item_hover">
 			<div class="portfolio-border clearfix">
 				<div class="item_info">
-				<span>${dto.getPlace()}</span>
-				<p>${dto.getDocNum()}</p>
-				<p>${dto.getPlace()}</p>
+<%-- 				<span>${dto.getPlace()}</span> --%>
+<%-- 				<p>${dto.getPlace()}</p> --%>
 				<em>${dto.getPlace()}</em>
 				</div>
 			</div>
