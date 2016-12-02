@@ -80,10 +80,10 @@
 		<div class="col-md-6">
 <!-- 제목 주석처리함 -->		
 <%-- 				<h3 class="uppercase">${docTle}</h3> --%>
-				<h5 class="uppercase">Where : ${place}</h5><hr>
+				<h5 class="uppercase" style="color:inherit;">Where : ${place}</h5><hr>
 				<h4 class="uppercase">${docCon}</h4>
 				<div class="h-30"></div>
-				<h5 class="uppercase">with ${docTag}</h5>
+				<h5 class="uppercase" style="color:inherit;">with ${docTag}</h5>
 			<c:if test="${sessionScope.userid eq userid }">
 			<hr><div class="col-md-12" style="text-align: right;">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
