@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum=scale=1.0,minimum-scale=1.0,user-scalable=no">
     <script type="text/javascript" src="js/jindo_coo_ajax.js"></script>
-    <title>Box personal portfolio Template</title>
+    <title>상세내용</title>
     <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
     <!-- Bootstrap -->
@@ -59,9 +59,17 @@
 
 
     <!-- top bar -->
-    <div class="top-bar">
-        <h1>IN MY LIST</h1>
-    </div>
+    <c:if test="${sessionScope.userid eq userid }">
+    	<div class="top-bar">
+        	<h1>IN MY LIST</h1>
+    	</div>
+    </c:if>
+    
+    <c:if test="${sessionScope.userid ne userid }">
+    	<div class="top-bar">
+        	<h1>I Wonder</h1>
+    	</div>
+    </c:if>
     <!-- end top bar -->
 
 <!-- main-container -->
@@ -79,7 +87,7 @@
 
 			<p>with ${docTag}</p>
 			<div class="h-10"></div>
-<c:if test="${sessionScope.userid eq userid }">
+<c:if test="${sessionScope.userid ne userid }">
 			<div class="col-md-12">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
 					type="button" >수정</a>
