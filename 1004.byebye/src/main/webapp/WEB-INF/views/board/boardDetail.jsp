@@ -61,32 +61,33 @@
     <!-- top bar -->
     <c:if test="${sessionScope.userid eq userid }">
     	<div class="top-bar">
-        	<h1>IN MY LIST</h1>
+        	<h1>My Content</h1>
     	</div>
     </c:if>
     
     <c:if test="${sessionScope.userid ne userid }">
     	<div class="top-bar">
-        	<h1>I Wonder</h1>
+        	<h1>Others Content</h1>
     	</div>
     </c:if>
 	<!-- end top bar -->
 
 <!-- main-container -->
-<div class="container main-container">
-
+<!-- <div class="container main-container"> -->
+		<br/>
 		<div class="col-md-6">
-			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
+			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
 		</div>
 		<div class="col-md-6">
-				<h3 class="uppercase">${docTle}</h3>
-				<h5>Where : ${place}</h5>
+<!-- 제목 주석처리함 -->		
+<%-- 				<h3 class="uppercase">${docTle}</h3> --%>
+				<h5>Where : ${place}</h5><hr>
+<!-- 				<div class="h-30"></div> -->
+				<h4 class="uppercase">${docCon}</h4>
 				<div class="h-30"></div>
-				<p>${docCon}</p>
 				<h5>with ${docTag}</h5>
-				<div class="h-10"></div>
-<c:if test="${sessionScope.userid eq userid }">
-			<div class="col-md-12">
+			<c:if test="${sessionScope.userid eq userid }">
+			<hr><div class="col-md-12" style="text-align: right;">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
 					type="button" >수정</a>  
 					<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" class="btn btn-box"
@@ -109,13 +110,13 @@
 					<form id="contact" method="post">
 						<fieldset>
 							<p>
-								<textarea id="message" maxlength="500" placeholder="댓글 입력" cols="30" rows="3"></textarea>
+								<textarea id="message" maxlength="500" placeholder="댓글 입력" cols="650" rows="2"></textarea>
 							</p>
 						</fieldset>
 						
-						<div style="text-align: reft;">
-							<input type="button" id="insertReply" class="btn btn-box" onclick="insertFunc();" value="댓글" />
-							<a type="button" class="btn btn-box" onclick="history.back();" >목록</a>
+						<div style="float:right;margin-right:2%;">
+		<input type="button" id="insertReply" class="btn btn-box" onclick="insertFunc();" value="댓글등록"/>
+		<a type="button" class="btn btn-box" onclick="history.back();" >목록</a>
 						</div>
 					</form>
 				
@@ -124,7 +125,7 @@
 		<!-- END comment -->
 	</div>
 	<!-- end Main container -->
-	</div>
+<!-- 	</div> -->
 	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
