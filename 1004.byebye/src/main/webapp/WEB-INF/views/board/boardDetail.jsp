@@ -81,7 +81,6 @@
 <!-- 제목 주석처리함 -->		
 <%-- 				<h3 class="uppercase">${docTle}</h3> --%>
 				<h5>Where : ${place}</h5><hr>
-<!-- 				<div class="h-30"></div> -->
 				<h4 class="uppercase">${docCon}</h4>
 				<div class="h-30"></div>
 				<h5>with ${docTag}</h5>

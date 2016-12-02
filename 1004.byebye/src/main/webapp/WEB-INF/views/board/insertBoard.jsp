@@ -110,7 +110,7 @@
 </div>
 </div>
 
-<br/><div class="col-md-6">
+<br/><div class="col-md-6"><label for="checkbox-2">공개여부 : &nbsp;</label>
 <input type="checkbox" name="docTf"  />
 <label for="checkbox-2">공개</label>
 </div>
