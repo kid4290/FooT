@@ -218,8 +218,6 @@ public class BoardController {
 			BoardDto dto = new BoardDto();
 			String userid = (String) session.getAttribute("userid");
 			String docNum = String.valueOf(seq);
-//			String userid2 = (String) request.getParameter("seq2");
-//			String userid = (String) session.getAttribute("userid");
 			String userid2 = (String) request.getParameter("seq2");
 			
 			System.out.println("test update contentview" + userid + userid2);
