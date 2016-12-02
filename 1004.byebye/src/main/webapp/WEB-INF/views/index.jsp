@@ -102,7 +102,8 @@
 				<div class="item_info">
 				<span>${dto.getPlace()}</span>
 				<p>${dto.getDocNum()}</p>
-				<em>check my place</em>
+				<p>${dto.getPlace()}</p>
+				<em>${dto.getPlace()}</em>
 				</div>
 			</div>
 		</div>
