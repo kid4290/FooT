@@ -71,43 +71,43 @@
 			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
 		</div>
 		<div class="col-md-6">
-			<h3 class="uppercase">${docTle}</h3>
-			
-			<h5>Where : ${place}</h5>
-			<div class="h-30"></div>
-			<p>${docCon}</p>
-
-			<p>with ${docTag}</p>
-			<div class="h-10"></div>
+				<h3 class="uppercase">${docTle}</h3>
+				<h5>Where : ${place}</h5>
+				<div class="h-30"></div>
+				<p>${docCon}</p>
+				<h5>with ${docTag}</h5>
+				<div class="h-10"></div>
 <c:if test="${sessionScope.userid eq userid }">
 			<div class="col-md-12">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
-					type="button" >수정</a>
-			</div>
-			<div class="col-md-12">
-				<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" class="btn btn-box"
+					type="button" >수정</a>  
+					<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" class="btn btn-box"
 					type="button" >삭제</a>
 			</div>
 			</c:if>
-		</div>
+		</div><br/>
 
-		<!-- comment -->
-		<div id="replyajax">
-		
-		</div>
+		<!-- comment --><h5>댓글</h5>
+		<div class="textarea-contact">
+			<div id="replyajax">
+			
+			
+			</div>
+		</div><br/>
 		
 		<div class="col-md-12">
 				<div id="main-post-send">
-					<div id="title-post-send">Add your comment</div>
+					<div class="">
 					<form id="contact" method="post">
 						<fieldset>
 							<p>
-								<textarea id="message" name="message" maxlength="500"
-									placeholder="Votre Message" tabindex="5" cols="30" rows="4"></textarea>
+								<textarea id="message" maxlength="500" placeholder="댓글 입력" cols="30" rows="3"></textarea>
 							</p>
 						</fieldset>
-						<div style="text-align: center;">
+						
+						<div style="text-align: reft;">
 							<input type="button" id="insertReply" class="btn btn-box" onclick="insertFunc();" value="댓글" />
+							<a type="button" class="btn btn-box" onclick="history.back();" >목록</a>
 						</div>
 					</form>
 				
@@ -116,6 +116,7 @@
 		<!-- END comment -->
 	</div>
 	<!-- end Main container -->
+	</div>
 	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
