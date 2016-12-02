@@ -39,5 +39,17 @@
    <delete id="deleteUser" parameterType="String">
       delete users where userid =#{userid}
    </delete>
+   
+   <!-- insert or update -->
+	<update id="newLogin" parameterType="hashmap">
+	<![CDATA[
+		merge into users using dual alias on (userid = #{userid})
+		when matched then update set
+		nickname=#{nickname},
+		userimg=#{userimg}
+		when not matched then insert (userid, nickname, userimg, grade) values
+		(#{userid}, #{nickname}, #{userimg}, #{grade})
+		]]>
+	</update>
 
 </mapper>

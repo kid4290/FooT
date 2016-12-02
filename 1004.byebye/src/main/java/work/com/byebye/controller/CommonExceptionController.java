@@ -17,7 +17,7 @@ public class CommonExceptionController {
 		logger.info(e.getMessage());
 		
 		ModelAndView mnv = new ModelAndView("error/errorPage");
-		mnv.addObject("message", "잘못된 접근 입니다.");
+		mnv.addObject("message", "미입력 오류 입니다.");
 		return mnv;
 	}
 	

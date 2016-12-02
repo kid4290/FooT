@@ -79,6 +79,15 @@ public class UserDao {
    public int deletUser(String userid) {
 	   return sqlSession.delete("deleteUser", userid);
    }
+
+public int newLogin(String userid, String nickname, String userimg, String grade) {
+	HashMap<String, String> map = new HashMap<String, String>();
+    map.put("userid", userid);
+    map.put("nickname", nickname);
+    map.put("userimg", userimg);
+    map.put("grade", grade);
+    return sqlSession.insert("newLogin", map);
+}
    
    
    
