@@ -43,7 +43,7 @@ public class ReplyDao {
 	 */
 	public int replyInsert(String reCon, String docNum, String userId,String nickname) {
 		dto = new Reply(reCon, docNum, userId,nickname);
-
+ 
 		return sqlSession.insert("replyInsert", dto);
 	}
 
