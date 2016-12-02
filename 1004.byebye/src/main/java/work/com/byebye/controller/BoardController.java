@@ -66,7 +66,7 @@ public class BoardController {
 	
 	@RequestMapping("fileBoardDtoFormView.do")
 	public String BoardDtoView() {
-		return "board/contact";
+		return "board/insertBoard";
 	}
 
 	private String BoardDtoPath = "c://temp//BoardDto";
@@ -108,7 +108,7 @@ public class BoardController {
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("list", list);
-			mv.setViewName("board/myPlace");
+			mv.setViewName("board/myBoardList");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
 			mv.setViewName("error/errorPage");
@@ -126,7 +126,7 @@ public class BoardController {
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("list", list);
-			mv.setViewName("board/myPlace");
+			mv.setViewName("board/myBoardList");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
 			mv.setViewName("error/errorPage");
@@ -174,7 +174,7 @@ public class BoardController {
 			mv.addObject("docTf", dto.getDocTf());
 			mv.addObject("docTag", dto.getDocTag());
 			mv.addObject("place", dto.getPlace());
-			mv.setViewName("board/myPlaceContent");
+			mv.setViewName("board/boardDetail");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
 			mv.setViewName("error/errorPage");
@@ -204,7 +204,7 @@ public class BoardController {
 			mv.addObject("docTf", dto.getDocTf());
 			mv.addObject("docTag", dto.getDocTag());
 			mv.addObject("place", dto.getPlace());
-			mv.setViewName("board/indexContent");
+			mv.setViewName("board/boardDetail");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
 			mv.setViewName("error/errorPage");
@@ -239,7 +239,7 @@ public class BoardController {
 				mv.addObject("docTf", dto.getDocTf());
 				mv.addObject("docTag", dto.getDocTag());
 				mv.addObject("place", dto.getPlace());
-				mv.setViewName("board/myContentUpdate");
+				mv.setViewName("board/updateBoard");
 			} else {
 				mv.addObject("message", "Update Error go back to the Back page.");
 				mv.setViewName("error/errorPage");
@@ -260,7 +260,7 @@ public class BoardController {
 		int upt = service.updateContent(docCon, docNum, docTag, place,docTle);
 		ModelAndView mv = new ModelAndView();
 		if (upt > 0) {
-			mv.setViewName("board/myPlaceContent");
+			mv.setViewName("board/boardDetail");
 		} else {
 			mv.addObject("message", "Update Error go back to the Back page.");
 			mv.setViewName("error/errorPage");
