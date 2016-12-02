@@ -31,50 +31,41 @@
 </head>
 
 <body>
+	<!-- box header -->
+	<header class="box-header">
+	    <div class="box-logo">
+	        <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
+	    </div>
+	    <!-- box-nav -->
+	<a class="box-primary-nav-trigger" href="#0">
+	    <span class="box-menu-text">MENU</span><span class="box-menu-icon"></span>
+	</a>
+	<!-- box-primary-nav-trigger -->
+	</header>
+	<!-- end box header -->
 
-        <!-- box header -->
-        <header class="box-header">
-            <div class="box-logo">
-                <a href="index.do"><img src="img/circlelogo.png" width="50" alt="Logo"></a>
-            </div>
-            <!-- box-nav -->
-            <a class="box-primary-nav-trigger" href="#0">
-                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
-            </a>
-            <!-- box-primary-nav-trigger -->
-        </header>
-        <!-- end box header -->
+	<!-- nav -->
+	<nav>
+		<ul class="box-primary-nav">
+			<li class="box-label">MENU</li>           
+			<li><a href="index.do">Home</a></li>
+			<li><a href="fileBoardDtoFormView.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
+			<li><a href="myPlace.do">MyList</a></li>
+			<li><a href="beaconlist.do">Beacon</a></li>
+			<li><a href="setting.do">Setting</a></li>
+		</ul>
+	</nav>
+	<!-- end nav -->
 
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-                <li class="box-label">MENU</li>           
-				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
-				<li><a href="fileBoardDtoFormView.do">Insert</a></li>
-				<li><a href="myPlace.do">MyList</a></li>
-				<li><a href="beaconlist.do">Beacon</a></li>
-				<li><a href="setting.do">Setting</a></li>
-            </ul>
-        </nav>
-        <!-- end nav -->   
 
-<!-- 뒤로가기 버튼 -->
-<!--  <span class="box-menu-text"> -->
-<!-- <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c"          aria-hidden="true">이전</a> -->
-<!-- </span> -->
-        
+    <!-- top bar -->
+    <div class="top-bar">
+        <h1>IN MY LIST</h1>
+    </div>
+    <!-- end top bar -->
 
-	<div class="container main-container clearfix">
-		<!-- Top bar -->
-		<div class="top-bar">
-			<h1>내 컨텐츠</h1>
-			<p>
-				<a href="#">Home 링크</a> / About me
-			</p>
-		</div>
-		<!-- end Top bar -->
-
-		<!-- Main container -->
+<!-- main-container -->
+<div class="container main-container">
 
 		<div class="col-md-6">
 			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" />
@@ -125,7 +116,7 @@
 		<!-- END comment -->
 	</div>
 	<!-- end Main container -->
-
+	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
     <!--  plugins -->
