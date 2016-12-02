@@ -62,13 +62,13 @@ public class ReplyService {
 	   return dto;
    }
    
-   public int replyUpdate(String reNum,String reCon) {
-	   System.out.println("replyUpdate Test " + reCon);
-	   
-	   int replyUpdate = replydao.replyUpdate(reNum,reCon);
-	   
-	   return replyUpdate;
-   }
+//   public int replyUpdate(String reNum,String reCon) {
+//	   System.out.println("replyUpdate Test " + reCon);
+//	   
+//	   int replyUpdate = replydao.replyUpdate(reNum,reCon);
+//	   
+//	   return replyUpdate;
+//   }
    
    public int replyDelete(String reNum) {
 	   System.out.println("reply del test" + reNum);

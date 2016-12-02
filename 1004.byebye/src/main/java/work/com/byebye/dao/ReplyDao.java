@@ -60,6 +60,11 @@ public class ReplyDao {
 		
 		return sqlSession.update("replyUpdate",dto);
 	}
+//	public int replyUpdate(String reNum,String reCon) {
+//		dto = new Reply(reNum,reCon);
+//		
+//		return sqlSession.update("replyUpdate",dto);
+//	}
 	
 	public int replyDelete(String reNum) {
 		System.out.println("reply test dao " + reNum);

@@ -223,25 +223,25 @@ public class ReplyController {
 		return mv;
 	}
 	
-	@RequestMapping(value="replyUpdate.do")
-	public ModelAndView replyUpdate(HttpSession session, HttpServletRequest request) {
-		String reNum = (String) request.getParameter("seq");
-		String reCon = (String) request.getParameter("reCon");
-		String docNum = (String) request.getParameter("docNum");
-		String userid = (String) request.getParameter("userid");
-		
-		ModelAndView mv = new ModelAndView();
-		
-		int replyUpdate = service.replyUpdate(reNum,reCon);
-		
-		if(replyUpdate>0) {
-			mv.setViewName("");
-		} else {
-			mv.setViewName("");
-		}
-		
-		return mv;
-	}
+//	@RequestMapping(value="replyUpdate.do")
+//	public ModelAndView replyUpdate(HttpSession session, HttpServletRequest request) {
+//		String reNum = (String) request.getParameter("seq");
+//		String reCon = (String) request.getParameter("reCon");
+//		String docNum = (String) request.getParameter("docNum");
+//		String userid = (String) request.getParameter("userid");
+//		
+//		ModelAndView mv = new ModelAndView();
+//		
+//		int replyUpdate = service.replyUpdate(reNum,reCon);
+//		
+//		if(replyUpdate>0) {
+//			mv.setViewName("");
+//		} else {
+//			mv.setViewName("");
+//		}
+//		
+//		return mv;
+//	}
 	
 	@RequestMapping(value="replyDelete.do") 
 	public void replyDelete(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
