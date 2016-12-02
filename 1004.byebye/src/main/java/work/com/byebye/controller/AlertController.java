@@ -22,6 +22,11 @@ public class AlertController {
    public void setService(AlertService service){
       this.service = service;
    }
+   
+   @RequestMapping("alerttest.do")
+   public String alerttest(){
+	   return "alerttest";
+   }
 
    @RequestMapping("alert.do")
    public ModelAndView alert(ModelAndView mv, @CookieValue(value="lon", defaultValue="0") String lon , @CookieValue(value="lat", defaultValue="0") String lat, HttpSession session){
