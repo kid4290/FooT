@@ -55,6 +55,11 @@ public class ReplyDao {
 		return sqlSession.selectOne("replyContent", reNum);
 	}
 	
+	public int replyUpdate(String reNum,String reCon) {
+//		dto = new Reply(reNum,reCon);
+		
+		return sqlSession.update("replyUpdate",dto);
+	}
 //	public int replyUpdate(String reNum,String reCon) {
 //		dto = new Reply(reNum,reCon);
 //		

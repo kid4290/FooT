@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,6 +75,10 @@
                 <!-- portfolio_container -->
                 <div class="no-padding portfolio_container clearfix">
                     <!-- single work -->
+                    //사진 갯수가 없으면 띄울꺼!!!! 아래 jstl 부분 활용 : css 부탁해~~~~
+                    <c:if test="${requestScope.list eq null or fn:length(requestScope.list) eq 0}">
+                 <h1>조회결과없음</h1>
+                 </c:if>
                     <c:forEach var="dto" items="${requestScope.list}"> 
                     <div class="col-md-4 col-sm-6  fashion logo">
                         <a href="myPlacePicContent.do?seq=${dto.getDocNum()}" class="portfolio_item">
@@ -92,6 +97,7 @@
                         </a>
                     </div>
                     </c:forEach>
+                    
                     <!-- end single work -->
                 </div>
                 <!-- end portfolio_container -->
