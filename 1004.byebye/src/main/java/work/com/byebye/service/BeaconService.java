@@ -26,7 +26,6 @@ public class BeaconService {
 	public BeaconDto getBeacon(String BId) {
 		return dao.getBeacon(BId);
 	}
-	
 
 	public List<BeaconDto> getBeaconResult(ArrayList<String> macList) {
 		return dao.getBeaconResult(macList);
