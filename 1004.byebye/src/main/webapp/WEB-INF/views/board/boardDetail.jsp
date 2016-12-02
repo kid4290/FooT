@@ -11,10 +11,10 @@
 <title>상세내용</title>
 <link rel="icon" href="img/circlelogo.png" type="image/x-icon">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="css/comment.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="css/comment.css" rel="stylesheet">
 
     <!-- main css -->
     <link href="css/style.css" rel="stylesheet">
