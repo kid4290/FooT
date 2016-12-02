@@ -46,9 +46,9 @@
         <nav>
             <ul class="box-primary-nav">
                 <li class="box-label">MENU</li>           
-				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
+				<li><a href="index.do">Home</a></li>
 				<li><a href="insertBoard.do">Insert</a></li>
-				<li><a href="myBoardList.do">MyList</a></li>
+				<li><a href="myBoardList.do">MyList</a><i class="ion-ios-circle-filled color"></i></li>
 				<li><a href="beaconlist.do">Beacon</a></li>
 				<li><a href="setting.do">Setting</a></li>
             </ul>
@@ -64,37 +64,48 @@
      
     <!-- Top bar -->
     <div class="top-bar">
-        <h1>Post</h1>
+        <h1>Update</h1>
     </div>
     <!-- end Top bar -->
     
     <!-- Main container -->
-     <div class="container main-container clearfix">
+     <div class="container main-container">
         <div class="col-md-6">
-            <img src="http://localhost:8090/spring15/imgLoad.do?fileName=${picFile}" class="img-responsive" />
+           <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
         </div>
+        <h5 class="uppercase" >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
+        <div class="h-30"></div>
         <form action="updateContent.do?seq=${docNum}" method="POST">
+		<h5>&nbsp;&nbsp;&nbsp;Title :</h5>       
         <div class="col-md-6">
-           <h3 class="uppercase"><input type="text" name="docNum" id="docNum" value="${docNum}" readOnly> </h3>
-           <h5>Title : <input type="text" name="docTle" id="docTle" value="${docTle}"></h5>
-           <h5>Where : <input type="text" name="place" id="place" value="${place}"></h5>
-           <div class="h-30"></div>
-            <p>Contents <input type="text" name="docCon" id="docCon" value="${docCon}"> </p>
-
-            <p>with <input type="text" name="docTag" id="docTag" value="${docTag}"></p>
-            <div class="h-10"></div>
-
-		<div class="col-md-12">
-            <input type="submit"  value="확인"/>
-        
+        <div class="input-contact">
+           <input type="text" name="docTle" id="docTle" value="${docTle}">
+		</div>
+		</div>
+		
+		<h5>&nbsp;&nbsp;&nbsp;Contents :</h5>
+        <div class="col-md-12">
+		<div class="textarea-contact">
+           <textarea name="docCon" id="docCon" >${docCon}</textarea>
+		</div>
+		</div>
+		
+		<br/><h5>&nbsp;&nbsp;&nbsp;With :</h5>
+		<div class="col-md-6">
+		<div class="input-contact">
+            <input type="text" name="docTag" id="docTag" value="${docTag}">
         </div>
+		</div>   
+
+		<div class="col-md-12" style="float:right;margin-right:2%;">
+            <input type="submit" class="btn btn-box" value="확인"/>
+        	<a type="button" class="btn btn-box" onclick="history.back();" >취소</a>
         </div>
         </form>
     </div>
     <!-- end Main container -->
 </div>
     
-    <!-- back to top -->
     <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
     <!-- end back to top -->
 

@@ -27,9 +27,14 @@ public class AlertController {
    public ModelAndView alert(ModelAndView mv, @CookieValue(value="lon", defaultValue="0") String lon , @CookieValue(value="lat", defaultValue="0") String lat, HttpSession session){
       String userid = (String) session.getAttribute("userid");
       AlertDTO dto = service.alert(lat, lon, userid);
+      if(dto != null){
       mv.addObject("result", dto);
       System.out.println(dto);
-      mv.setViewName("test");
+      } else {
+    	  mv.addObject("result","{}");
+    	  System.out.println("alert dto null::lon:"+lon+",userid:"+userid+",lat:"+lat);
+      }
+      mv.setViewName("json");
       return mv;
    }
 }

@@ -49,8 +49,8 @@
 		<ul class="box-primary-nav">
 			<li class="box-label">MENU</li>           
 			<li><a href="index.do">Home</a></li>
-			<li><a href="insertBoard.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
-			<li><a href="myBoardList.do">MyList</a></li>
+			<li><a href="insertBoard.do">Insert</a></li>
+			<li><a href="myBoardList.do">MyList</a><i class="ion-ios-circle-filled color"></i></li>
 			<li><a href="beaconlist.do">Beacon</a></li>
 			<li><a href="setting.do">Setting</a></li>
 		</ul>
@@ -82,7 +82,7 @@
 <%-- 				<h3 class="uppercase">${docTle}</h3> --%>
 				<h5 class="uppercase" style="color:inherit;">Where : ${place}</h5><hr>
 				<h4 class="uppercase">${docCon}</h4>
-				<div class="h-30"></div>
+				<div class="h-100"></div>
 				<h5 class="uppercase" style="color:inherit;">with ${docTag}</h5>
 			<c:if test="${sessionScope.userid eq userid }">
 			<hr><div class="col-md-12" style="text-align: right;">
