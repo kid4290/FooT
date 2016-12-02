@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 .profile-img-card {
-    width: 96px;
-    height: 96px;
+    width: 100px;
+    height: 50px;
     margin: 0 auto 10px;
     display: block;
     -moz-border-radius: 50%;
