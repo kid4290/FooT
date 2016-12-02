@@ -58,12 +58,6 @@
         </nav>
         <!-- end nav -->   
 
-<!-- 뒤로가기 버튼 -->
-<!--  <span class="box-menu-text"> -->
-<!-- <a href="#" onClick="history.back()" style="width:70px;float:right;" data-role="button" data-icon="back" data-theme="c"          aria-hidden="true">이전</a> -->
-<!-- </span> -->
-        
-
 	<div class="container main-container clearfix">
 		<!-- Top bar -->
 		<div class="top-bar">
@@ -90,12 +84,12 @@
 			<div class="h-10"></div>
 <c:if test="${sessionScope.userid eq userid }">
 			<div class="col-md-12">
-				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}"><input
-					type="button" value="수정" /></a>
+				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
+					type="button" >수정</a>
 			</div>
 			<div class="col-md-12">
-				<a href="deletePlace.do?seq=${docNum}&seq1=${userid}"><input
-					type="button" value="삭제" /></a>
+				<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" class="btn btn-box"
+					type="button" >삭제</a>
 			</div>
 			</c:if>
 		</div>
@@ -116,7 +110,7 @@
 							</p>
 						</fieldset>
 						<div style="text-align: center;">
-							<input type="button" id="insertReply" name="envoi" onclick="insertFunc();" value="Envoyer" />
+							<input type="button" id="insertReply" class="btn btn-box" onclick="insertFunc();" value="댓글" />
 						</div>
 					</form>
 				

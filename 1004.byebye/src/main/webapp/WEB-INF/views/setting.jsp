@@ -161,13 +161,13 @@
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="logout.do">로그아웃</a>
+		<a type="button" href="logout.do" class="btn btn-box">로그아웃</a>
 	</td>
 	</tr>
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="#">회원탈퇴</a>
+		<a type="button" href="#" class="btn btn-box">회원탈퇴</a>
 	</td>
 	</tr>
 </table>
