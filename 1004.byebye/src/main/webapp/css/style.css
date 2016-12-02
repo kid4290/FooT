@@ -5,13 +5,38 @@
 * behance : https://www.behance.net/3essa
 */
 
+/* main color
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+*/
+
 /* taelym add */
 span.tlspan {
-	background-color: #;
+	background-color: #fff;
+	border: none;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	cursor: pointer;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: #999;
-    line-height: 1.7
+    line-height: 1.7;
+    width: 80%;
+}
+
+.top-bars {
+    padding: 5px 0 5px;
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 /* Table of Content
@@ -453,10 +478,9 @@ b i:last-child {
 .box-intro h5 {
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #999;
-    line-height: 1.7
+    color: #333;
+    line-height: 1.7;
 }
-
 
 /* mouse effect */
 
