@@ -160,6 +160,7 @@ public class BoardController {
 		String docNum = String.valueOf(seq);
 
 		dto = service.myPlaceContent(docNum);
+		
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("docNum", dto.getDocNum());

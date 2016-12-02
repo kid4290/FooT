@@ -45,13 +45,10 @@
             <div class="box-logo">
                 <a href="index.do"><img src="img/circlelogo.png" width="100" alt="Logo"></a>
             </div>
-            <!-- box-nav -->
             <a class="box-primary-nav-trigger" href="#0">
                 <span class="box-menu-text">MENU</span><span class="box-menu-icon"></span>
             </a>
-            <!-- box-primary-nav-trigger -->
         </header>
-        <!-- end box header -->
 
         <!-- nav -->
         <nav>
@@ -64,10 +61,8 @@
 				<li><a href="setting.do">Setting</a></li>
             </ul>
         </nav>
-        <!-- end nav -->
 
 <div class="main-container portfolio-inner clearfix">
-	<!-- box-intro -->
 	<section class="box-intro">
 	<div class="table-cell">
 	<div class="tl_locationborder col-md-12">
@@ -84,16 +79,12 @@
 	</div>
 	</div>
 	</section>
-	<!-- end box-intro -->
 </div>
 </div>
 
-<!-- main container -->
-<!-- portfolio div -->
 <div class="portfolio-div">
 <div class="portfolio">
 
-<!-- portfolio_container -->
 <div class="no-padding portfolio_container clearfix">
 	<!-- single work -->
 	<c:forEach var="dto" items="${requestScope.list}"> 
@@ -103,9 +94,8 @@
 		<div class="portfolio_item_hover">
 			<div class="portfolio-border clearfix">
 				<div class="item_info">
-				<span>${dto.getPlace()}</span>
-				<p>${dto.getDocNum()}</p>
-				<p>${dto.getPlace()}</p>
+<%-- 				<span>${dto.getPlace()}</span> --%>
+<%-- 				<p>${dto.getPlace()}</p> --%>
 				<em>${dto.getPlace()}</em>
 				</div>
 			</div>
@@ -116,17 +106,16 @@
 </div>
 
 </div>
-<!-- end main container -->
 </div>
 
-<!-- jQuery -->
+<a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
+
+
 <script src="js/jquery-2.1.1.js"></script>
-<!--  plugins -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/animated-headline.js"></script>
 <script src="js/isotope.pkgd.min.js"></script>
-<!--  custom script -->
 <script src="js/custom.js"></script>
 
 <!-- 현재 위치를 고칠 수 있는 지도 모달 시작 + 스크립트랑 같이 다녀야 함-->

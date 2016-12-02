@@ -36,6 +36,6 @@
 	  
 	<!-- 댓긄  삭제-->
 	<delete id="replyDelete" parameterType="hashmap">
-		delete from reply where re_num = #{reNum} and user_id = #{userid}
+		delete from reply where re_num =#{reNum} and user_id =#{userid}
 	</delete>
 </mapper>

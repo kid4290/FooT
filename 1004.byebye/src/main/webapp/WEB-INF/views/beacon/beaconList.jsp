@@ -61,48 +61,41 @@
 	<!-- end top bar -->
 
 
+
+
 	<div class="clearfix">
 		<!-- service-box -->
 		<div class="col-md-4 service-box">
-		<i class="ion-android-favorite-outline size-50"></i>
 		<h3>BEACON LIST</h3>
 		<div class="h-10"></div>
 		
-	<div class="container main-container">	
-		<table style="width:100%;border:1px solid;">
-		<colgroup>
-			<col width="20%">
-			<col width="40%">
-			<col width="40%">
-		</colgroup>
-						
-		<thead style="width:100%;border:1px solid;">
-			<tr class="tl_theadtr">
-				<th scope="col">No.1</th>
-				<th scope="col">Beacon</th>
-				<th scope="col">Location</th>
+	<div class="container">
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>No.1</th>
+	        <th>Beacon</th>
+	        <th>Location</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	     <c:choose>
+	             <c:when test="${!empty list}">
+				<c:forEach var="dto" items="${list}">
+	    	 <tr>
+					<td><h4>${dto.B_IDX}</h4></td>
+					<td><a  data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
+					<td><a  type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
-		</thead>
-		
-		<tbody>
-			 <c:choose>
-             <c:when test="${!empty list}">
-			<c:forEach var="dto" items="${list}">
-			<tr>
-				<td class="bId"><a type="button" href="#" class="btn btn-box">${dto.B_IDX}</a></td>
-				<td class="bSpotName"><a class="btn btn-box" data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
-				<td class="bLoaction"><a class="btn btn-box" type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
-			</tr>
-			</c:forEach>
-			</c:when>
-			<c:otherwise>
-			Bluetooth does not exist
-			</c:otherwise>
-       </c:choose>
-		</tbody>
-		</table>
-		
-		</div>
+	    </c:forEach>
+				</c:when>
+				<c:otherwise>
+				<h4 class="uppercase">Bluetooth does not exist</h4>
+				</c:otherwise>
+	       </c:choose>
+			</tbody>
+	  </table>
+	</div>
 		<!-- end service-box -->
 	</div>
 </div>
