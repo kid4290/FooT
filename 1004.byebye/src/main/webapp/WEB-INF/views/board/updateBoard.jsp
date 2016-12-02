@@ -69,26 +69,28 @@
     <!-- end Top bar -->
     
     <!-- Main container -->
-     <div class="container main-container clearfix">
+     <div class="container main-container">
         <div class="col-md-6">
            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
         </div>
+        <h5 class="uppercase" >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
+        <div class="h-30"></div>
         <form action="updateContent.do?seq=${docNum}" method="POST">
-		<h5>Title</h5>       
+		<h5>&nbsp;&nbsp;&nbsp;Title :</h5>       
         <div class="col-md-6">
         <div class="input-contact">
            <input type="text" name="docTle" id="docTle" value="${docTle}">
 		</div>
 		</div>
 		
-		<h5>Contents</h5>
+		<h5>&nbsp;&nbsp;&nbsp;Contents :</h5>
         <div class="col-md-12">
 		<div class="textarea-contact">
            <textarea name="docCon" id="docCon" >${docCon}</textarea>
 		</div>
 		</div>
 		
-		<h5>With</h5>
+		<br/><h5>&nbsp;&nbsp;&nbsp;With :</h5>
 		<div class="col-md-6">
 		<div class="input-contact">
             <input type="text" name="docTag" id="docTag" value="${docTag}">
