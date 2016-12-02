@@ -89,9 +89,9 @@
              <c:when test="${!empty list}">
 			<c:forEach var="dto" items="${list}">
 			<tr>
-				<td class="bId"><a type="button" href="#">${dto.B_IDX}</a></td>
-				<td class="bSpotName"><a data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
-				<td class="bLoaction"><a type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
+				<td class="bId"><a type="button" href="#" class="btn btn-box">${dto.B_IDX}</a></td>
+				<td class="bSpotName"><a class="btn btn-box" data-target="#modal_test" type="button" data-toggle="modal" onclick="modalC('${dto.B_SPOTNAME}','${dto.B_LOCACTION}','${dto.B_PAGE}','${dto.B_ID}','${dto.B_IMG}');">${dto.B_SPOTNAME}</a></td>
+				<td class="bLoaction"><a class="btn btn-box" type="button" href="${dto.B_PAGE}">${dto.B_LOCACTION}</a></td>
 			</tr>
 			</c:forEach>
 			</c:when>
