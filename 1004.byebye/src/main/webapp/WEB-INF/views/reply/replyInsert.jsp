@@ -34,7 +34,7 @@
 <!-- box-header -->
 <header class="box-header">
 	<div class="box-logo">
-	    <a href="index.html"><img src="img/logo.png" width="80" alt="Logo"></a>
+	    <a href="index.do"><img src="img/circlelogo.png" width="100" alt="Logo"></a>
 	</div>
 </header>
 <!-- end box-header -->
