@@ -167,12 +167,6 @@
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="#">알림설정</a>
-	</td>
-	</tr>
-	
-	<tr class="tl_tr">
-	<td class="tl_td" height="50">
 		<a type="button" href="#">회원탈퇴</a>
 	</td>
 	</tr>
