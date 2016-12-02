@@ -73,8 +73,7 @@
 	<!-- end top bar -->
 
 <!-- main-container -->
-<!-- <div class="container main-container"> -->
-		<br/>
+<div class="container main-container">
 		<div class="col-md-6">
 			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
 		</div>
@@ -94,23 +93,23 @@
 					type="button" >삭제</a>
 			</div>
 			</c:if>
-		</div><br/>
+		</div><br/><hr>
 
-		<!-- comment --><h5>댓글</h5>
+		<!-- comment --><h5>&nbsp;&nbsp;&nbsp;&nbsp;댓글</h5>
+		<div class="col-md-12">
 		<div class="textarea-contact">
 			<div id="replyajax">
 			
-			
 			</div>
+		</div>
 		</div><br/>
 		
 		<div class="col-md-12">
-				<div id="main-post-send">
-					<div class="">
+					<div class="textarea-contact2">
 					<form id="contact" method="post">
 						<fieldset>
 							<p>
-								<textarea id="message" maxlength="500" placeholder="댓글 입력" cols="650" rows="2"></textarea>
+								<textarea id="message" maxlength="500" placeholder="댓글 입력" ></textarea>
 							</p>
 						</fieldset>
 						
@@ -121,11 +120,11 @@
 					</form>
 				
 			</div>
-		</div>
 		<!-- END comment -->
-	</div>
+	</div><br/>
+	<div class="h-30"></div>
 	<!-- end Main container -->
-<!-- 	</div> -->
+	</div>
 	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>

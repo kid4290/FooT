@@ -57,25 +57,30 @@
     </div>
     <!-- end top bar -->
 
+
+<div class="col-md-4">
+      <h3 class="text-uppercase"></h3>
+      <h5>선택된 사진/이미지</h5>
+      <div class="contact-info" style="width:100%;height:300px;background-color:#cdcdcd;">
+      <img src="" alt="" id="prevImg" style="width:100%;height:100%;"/>
+      </div>
+   </div>
+
 <!-- main-container -->
 <div class="container main-container">
 <div class="col-md-6">
 
 <form action="multiInsert.do" method="POST" enctype="multipart/form-data" id="frm">
-
+<h5 class="text-uppercase">위치</h5>
 <div class="row">
 <div class="col-md-6">
+      
 <div class="input-contact">
 <input type="text" name="place" class="col-md-10"/>
 <span></span>
 </div>
 </div>
-<div class="col-md-6">
-<div class="input-contact">
-<input type="checkbox" name="docTf" id="checkbox-2" class="custom" />
-<label for="checkbox-2">공개</label>
-</div>
-</div>
+
 <div class="col-md-6">
 <div class="input-contact">
 <input type="text" name="docTle" class="col-md-10"/>
@@ -96,10 +101,18 @@
 </div>
 </div>
 <div class="col-md-12">
-<div class="input-contact">
-<input type="file" name="picFile" accept="image/*;capture=camera"/>
-<span></span>
+
+<div class="filebox">
+  <input class="upload-name" value="파일선택" disabled="disabled">
+
+  <label for="ex_filename">업로드</label> 
+  <input type="file" name="picFile" id="ex_filename" class="upload-hidden" accept="image/*;capture=camera"/> 
 </div>
+</div>
+
+<br/><div class="col-md-6">
+<input type="checkbox" name="docTf"  />
+<label for="checkbox-2">공개</label>
 </div>
 <div class="col-md-12">
 <a href="#" onclick="document.getElementById('frm').submit();" class="btn btn-box">Send</a>
@@ -130,6 +143,24 @@
 
     <!--  custom script -->
     <script src="js/custom.js"></script>
+   
+<script type="text/javascript">
+    $(document).ready(function(){
+  var fileTarget = $('.filebox .upload-hidden');
+
+  fileTarget.on('change', function(){  // 값이 변경되면
+    if(window.FileReader){  // modern browser
+      var filename = $(this)[0].files[0].name;
+    } 
+    else {  // old IE
+      var filename = $(this).val().split('/').pop().split('\\').pop();  // 파일명만 추출
+    }
+    
+    // 추출한 파일명 삽입
+    $(this).siblings('.upload-name').val(filename);
+  });
+}); 
+</script>  
     
         <!-- 쿠키에서 주소를 가져와 place에 자동으로 깔기 시작 -->
     <script src="js/jindo_coo_ajax.js"></script>
@@ -138,9 +169,8 @@
     </script>
     <!-- place 자동 깔기 끝 -->
     
-    <!-- 업로드 예정 파일 화면에 띄우기 -->
+   <!-- 업로드 예정 파일 화면에 띄우기 -->
         <script>
-
         $(document).ready(function(){
             function readURL(input) {
                 if (input.files && input.files[0]) {
@@ -157,7 +187,7 @@
             }//readURL()--
     
             //file 양식으로 이미지를 선택(값이 변경) 되었을때 처리하는 코드
-            $("#picFile").change(function(){
+            $("#ex_filename").change(function(){
                 readURL(this);
             });
          });
