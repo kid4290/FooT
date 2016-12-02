@@ -98,6 +98,7 @@
 	.tl_td {
 		text-align: center;
 	}
+	
 	.tl_span1 {
 		color: #fff;
 		font-weight: 900;
