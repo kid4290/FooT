@@ -284,7 +284,6 @@ public class BoardController {
 		return"";
 	}
 	
-	
 	@ExceptionHandler
 	public ModelAndView commonException(RequiredException e) {
 		
