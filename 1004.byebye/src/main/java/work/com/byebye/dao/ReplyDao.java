@@ -70,7 +70,7 @@ public class ReplyDao {
 		System.out.println("reply test dao " + reNum);
 		HashMap<String,String> map = new HashMap<String,String>();
 		map.put("reNum", reNum);
-		map.put("userif", userid);
+		map.put("userid", userid);
 		return sqlSession.delete("replyDelete",map);
 
 	}
