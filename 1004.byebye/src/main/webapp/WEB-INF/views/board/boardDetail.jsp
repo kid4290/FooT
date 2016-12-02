@@ -49,8 +49,8 @@
 		<ul class="box-primary-nav">
 			<li class="box-label">MENU</li>           
 			<li><a href="index.do">Home</a></li>
-			<li><a href="fileBoardDtoFormView.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
-			<li><a href="myPlace.do">MyList</a></li>
+			<li><a href="insertBoard.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
+			<li><a href="myBoardList.do">MyList</a></li>
 			<li><a href="beaconlist.do">Beacon</a></li>
 			<li><a href="setting.do">Setting</a></li>
 		</ul>
@@ -70,7 +70,7 @@
         	<h1>I Wonder</h1>
     	</div>
     </c:if>
-    <!-- end top bar -->
+	<!-- end top bar -->
 
 <!-- main-container -->
 <div class="container main-container">
@@ -87,7 +87,7 @@
 
 			<p>with ${docTag}</p>
 			<div class="h-10"></div>
-<c:if test="${sessionScope.userid ne userid }">
+<c:if test="${sessionScope.userid eq userid }">
 			<div class="col-md-12">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
 					type="button" >수정</a>
