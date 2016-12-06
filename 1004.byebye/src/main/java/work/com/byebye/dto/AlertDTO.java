@@ -11,6 +11,23 @@ private String alertDate;
 private String docDate;
 private double distance;
 private int docNum;
+private String lately;
+
+public int getDocNum() {
+	return docNum;
+}
+
+public void setDocNum(int docNum) {
+	this.docNum = docNum;
+}
+
+public String getLately() {
+	return lately;
+}
+
+public void setLately(String lately) {
+	this.lately = lately;
+}
 
 public int getDoc_num() {
 	return docNum;
