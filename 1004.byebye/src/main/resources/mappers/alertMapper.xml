@@ -19,4 +19,9 @@ where userid=#{userid} and alert_date<=sysdate and ((lon between ${lon}-0.019 an
     and (lat between ${lat}-0.022 and ${lat}+0.022)) and rownum=1 order by distance
 ]]>
    </select>
+   <update id="alertOff" parameterType="int">
+   <![CDATA[
+   update board set alert_date=sysdate+90 where doc_num=${docNum}
+   ]]>
+   </update>
 </mapper>
