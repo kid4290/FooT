@@ -31,8 +31,8 @@
    <!-- Kakao Login Api -->
    <tr class="tl_formtr">
    <td class="tl_formtd">
-   <a id="custom-login-btn" href="javascript:loginWithKakao()"> 
-   	<img src="img/kakao.png" width="226" height="49" />
+    <a id="custom-login-btn" href="javascript:loginWithKakao()"> 
+      <img src="img/kakao.png" width="226" height="49" />
    </a>
    <script type="text/javascript">
    Kakao.init('397aabd494fcce05ada8693f67c2c1fa');

@@ -170,8 +170,8 @@ var ps = new daum.maps.services.Places();
 //주소 저장 프로세스
 function setJuso(juso, lat, lng) {
 	$('#jusoView').html(juso);
-	cookie.set("lon", lng);
-	cookie.set("lat", lat);
+	cookie.set("lon", lng.toFixed(13));
+	cookie.set("lat", lat.toFixed(13));
 	cookie.set("juso", juso);
 	alertAjax();
 }
@@ -416,7 +416,7 @@ $("#myModal").on(
 			if(object2 == 1){
 				window.location.href = 'otherBoardDetail.do?seq='+object;
 			} else {
-				$('#alertModal').modal('toggle');
+				$('#alertModal').modal('hide');
 			}
 		},
 		onerror : function() {
