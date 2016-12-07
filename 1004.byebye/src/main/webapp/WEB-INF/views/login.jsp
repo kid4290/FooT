@@ -23,15 +23,16 @@
 <div class="divbody">
 <div class="wrapper">
 <div class="container">
+<hr style="height:30px; background-color:transparent; border:none;">
    <img class="profile-img-card" src="img/circlelogo.png" />
 
 <form class="form" action="login.do">
-
+<hr style="height:25px; background-color:transparent; border:none;">
    <!-- Kakao Login Api -->
    <tr class="tl_formtr">
    <td class="tl_formtd">
    <a id="custom-login-btn" href="javascript:loginWithKakao()"> 
-   	<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="226" height="49" />
+   	<img src="img/kakao.png" width="226" height="49" />
    </a>
    <script type="text/javascript">
    Kakao.init('397aabd494fcce05ada8693f67c2c1fa');
@@ -66,7 +67,9 @@
    </script>
    </td>
    </tr>
-   
+
+<hr style="height:15px; background-color:transparent; border:none;">
+
    <!-- Naver Login Api -->
    <tr class="tl_formtr">
    <td class="tl_formtd">
@@ -88,7 +91,9 @@
    </script>
    </td>
    </tr>
-   
+
+<hr style="height:15px; background-color:transparent; border:none;">
+
    <!-- facebook login -->
    <tr class="tl_formtr">
    <td class="tl_formtd">
@@ -137,10 +142,10 @@
     }
    </script>
    
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" v="2" size="xlarge">
-페북으로 로그인
-</fb:login-button>
-<!-- <a href="#" onclick="checkLoginState();">[login]</a> -->
+<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" v="2" size="xlarge"> -->
+<!-- 페북으로 로그인 -->
+<!-- </fb:login-button> -->
+<a href="#" onclick="checkLoginState();"><img src="img/facebook.png" width="229" height="49"></a>
 
 <div id="status">
 </div>
