@@ -78,6 +78,9 @@ public class BoardController {
 		MultipartFile multi = request.getFile("picFile");
 		String date = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 		String docTf = request.getParameter("docTf");
+		if(docTf == null) {
+			docTf = "no";
+		}
 		String docTle = XssPreventer.escape(request.getParameter("docTle"));
 		String docCon = XssPreventer.escape(request.getParameter("docCon"));
 		String docTag = XssPreventer.escape(request.getParameter("docTag"));
