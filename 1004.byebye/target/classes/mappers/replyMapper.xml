@@ -8,7 +8,7 @@
 		<result property="docNum" column="doc_Num" />
 		<result property="userid" column="user_id" />
 		<result property="nickname" column="nickname"/>
-		<result property="reDate" column="re_date" />
+		<result property="reDate" column="re_dates" />
 	</resultMap>
 
 	<!-- 댓글 게시 insert -->
@@ -20,7 +20,7 @@
 	
 	<!-- 댓글 조회 -->
 	<select id="replySearch" resultMap="replyResult" parameterType="String">
-		select * from Reply where doc_num= #{docNum} order by re_date
+		select re_num,re_con,doc_num,user_id,nickname,re_date,to_char(re_date,'YYYY-MM-DD HH24')||'시' re_dates from Reply where doc_num= #{docNum} order by re_date
 	</select>
 	
 	<!-- 댓글수정 -->
