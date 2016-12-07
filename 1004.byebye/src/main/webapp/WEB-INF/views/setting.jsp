@@ -22,7 +22,7 @@
 <script src="js/modernizr.js"></script>
 <script src="js/jindo_coo_ajax.js"></script>
 
-	<style>
+<style>
 	input[type="buttonn" i], input[type="file" i]::-webkit-file-upload-button, button {
 		align-items: flex-start;
 		text-align: center;
