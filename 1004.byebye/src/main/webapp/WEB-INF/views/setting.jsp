@@ -178,9 +178,9 @@
 	<tr class="tl_trr">
 	<td class="tl_td" height="100">
 	<div class="tl_tablediv">
-	<span class="tl_span1">${dto.nickname}</span> 님 반갑습니다. <i class="ion-happy-outline"></i>
+	<span class="tl_span1">${dto.nickname}</span> 님 반갑습니다.
 	<br/>
-	<span class="tl_span2">FootFoot</span> 이 당신의 설정<i class="ion-android-settings"></i>을 도와드립니다.
+	<span class="tl_span2">FootFoot</span> 이 당신의 설정을 도와드립니다.
 	</div>
 	</td>
 	</tr>	
@@ -191,11 +191,11 @@
 	</td>
 	</tr>
 	
-	<tr class="tl_tr">
-	<td class="tl_td" height="50">
-		<a type="button" href="#" class="btn btn-box">회원탈퇴</a>
-	</td>
-	</tr>
+<!-- 	<tr class="tl_tr"> -->
+<!-- 	<td class="tl_td" height="50"> -->
+<!-- 		<a type="button" href="#" class="btn btn-box">회원탈퇴</a> -->
+<!-- 	</td> -->
+<!-- 	</tr> -->
 </table>
 </div>
 </div>
