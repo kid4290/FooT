@@ -10,12 +10,45 @@ public class Reply implements Serializable {
 	private String docNum;
 	private String userid;
 	private String nickname;
+	private String reDate;
 	
 	public Reply(){}
 	
 	
 	
 	
+
+	public String getUserid() {
+		return userid;
+	}
+
+
+
+
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+
+
+
+
+	public String getReDate() {
+		return reDate;
+	}
+
+
+
+
+
+	public void setReDate(String reDate) {
+		this.reDate = reDate;
+	}
+
+
+
+
 
 	public Reply(String reCon, String docNum, String userid, String nickname) {
 		super();
