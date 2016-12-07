@@ -175,6 +175,7 @@
 		    method : 'get',
 		    onload : function(res){ // 요청이 완료되면 실행될 콜백 함수
 		    	loadReply();
+		    	$('#message').val('');
 		    },
 		    timeout : 3,      // 3초 이내에 요청이 완료되지 않으면 ontimeout 실행 (생략 시 0)
 		    ontimeout : function(){ // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
