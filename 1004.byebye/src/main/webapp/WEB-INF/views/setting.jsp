@@ -22,7 +22,7 @@
 <script src="js/modernizr.js"></script>
 <script src="js/jindo_coo_ajax.js"></script>
 
-	<style>
+<style>
 	input[type="buttonn" i], input[type="file" i]::-webkit-file-upload-button, button {
 		align-items: flex-start;
 		text-align: center;
@@ -187,7 +187,16 @@
 	
 	<tr class="tl_tr">
 	<td class="tl_td" height="50">
-		<a type="button" href="logout.do" class="btn btn-box">로그아웃</a>
+		<c:if test="${dto.grade eq 'naver'}">
+				<a type="button" href="http://nid.naver.com/nidlogin.logout" class="btn btn-box">네이버로그아웃</a>
+		</c:if>
+		<c:if test="${dto.grade eq 'kakao'}">
+				<a type="button"  onclick="kakaoLogout ()" class="btn btn-box">카카오로그아웃</a>
+		</c:if>
+		<c:if test="${dto.grade eq 'facebook'}">
+				<a type="button"  href="logout.do" class="btn btn-box">페북로그아웃</a>
+		</c:if>
+		
 	</td>
 	</tr>
 	
@@ -211,6 +220,71 @@
 <script src="js/isotope.pkgd.min.js"></script>
 <!--  custom script -->
 <script src="js/custom.js"></script>
+
+<script src='https://developers.kakao.com/sdk/js/kakao.min.js'></script>
+<script>
+function kakaoLogout () {
+Kakao.init('397aabd494fcce05ada8693f67c2c1fa'); //카카오에서 제공 myceo.co.kr 수정
+Kakao.Auth.logout(
+function(obj) {
+if(obj==true){}else{}
+ location.href='login.do';
+ }
+);
+}
+</script>
+
+<script>
+          window.fbAsyncInit = function () {
+            FB.init({
+              appId      : '{1338492349518851}', // 앱 ID
+              status     : true,          // 로그인 상태를 확인
+              cookie     : true,          // 쿠키허용
+              xfbml      : true           // parse XFBML
+            });
+           
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    
+                    FB.api('/me', function(user) {
+                        if (user) {
+                            var image = document.getElementById('image');
+                            image.src = 'http://graph.facebook.com/' + user.id + '/picture';
+                            var name = document.getElementById('name');
+                            name.innerHTML = user.name
+                            var id = document.getElementById('id');
+                            id.innerHTML = user.id
+                        }
+                    });    
+                     
+                } else if (response.status === 'not_authorized') {
+
+                } else {
+                    
+                }
+            });
+
+            FB.Event.subscribe('auth.login', function(response) {
+                document.location.reload();
+            });
+            
+            FB.Event.subscribe('auth.logout', function(response) {
+            	 window.fbAsyncInit = function() {
+                   FB.init({
+                	   window.location.href = 'login.do';
+            });
+          };
+            };
+        
+          // Load the SDK Asynchronously
+          (function(d){
+             var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement('script'); js.id = id; js.async = true;
+             js.src = "//connect.facebook.net/ko_KR/all.js";
+             ref.parentNode.insertBefore(js, ref);
+           }(document));
+        </script>
 
 </body>
 </html>

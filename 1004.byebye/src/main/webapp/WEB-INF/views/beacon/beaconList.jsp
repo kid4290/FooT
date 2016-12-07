@@ -89,7 +89,7 @@
 	    </c:forEach>
 				</c:when>
 				<c:otherwise>
-				<h4 class="uppercase">Bluetooth does not exist</h4>
+				<h4 class="uppercase">인식된 정보가 없습니다.</h4>
 				<div class="h-30"></div>
 				</c:otherwise>
 	       </c:choose>
