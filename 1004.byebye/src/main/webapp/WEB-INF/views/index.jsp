@@ -84,7 +84,7 @@
 
 <div class="portfolio-div">
 <div class="portfolio">
-
+<div class="h-30"></div>
 <div class="no-padding portfolio_container clearfix">
 	<!-- single work -->
 	<c:forEach var="dto" items="${requestScope.list}"> 

@@ -294,7 +294,7 @@ public class BoardController {
 		if(userid.equals(userid2)) {
 			int delPlace = service.deletePlace(docNum);
 			if(delPlace>0) {
-				return "index";
+				return "redirect:myBoardList.do";
 			} else {
 				request.setAttribute("message", "Delete Error go back to the Back page");
 				return"error/errorPage";

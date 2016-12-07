@@ -66,7 +66,6 @@
 	<div class="clearfix">
 		<!-- service-box -->
 		<div class="col-md-4 service-box">
-		<h3>BEACON LIST</h3>
 		<div class="h-10"></div>
 		
 	<div class="container">
@@ -91,6 +90,7 @@
 				</c:when>
 				<c:otherwise>
 				<h4 class="uppercase">Bluetooth does not exist</h4>
+				<div class="h-30"></div>
 				</c:otherwise>
 	       </c:choose>
 			</tbody>

@@ -19,7 +19,7 @@
 	<button type="button" class="btn btn-primary btn-lg"
 		data-toggle="modal" data-target="#alertModal">Launch demo
 		modal</button>
-
+<!-- 여기서부터 바디 앞까지 복사해서 붙여두면  저절로 검색해서 뜹니다.-->
 	<!-- Modal -->
 	<div class="modal fade" id="alertModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
@@ -45,7 +45,7 @@
 		</div>
 	</div>
 
-<!-- 여기서부터 바디 앞까지 복사해서 붙여두면  저절로 검색해서 뜹니다.-->
+
 	<script type="text/javascript">
 		var json;
 		function alertAjax() {

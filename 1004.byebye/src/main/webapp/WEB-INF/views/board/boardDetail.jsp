@@ -115,8 +115,7 @@ margin-left: 5%;
 			<div class="col-md-12" style="text-align: right;">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
 					type="button" >수정</a>  
-					<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" class="btn btn-box"
-					type="button" >삭제</a>
+					<a class="btn btn-box" type="button" onclick="delete_event();">삭제</a>
 			</div>
 			</c:if>
 		</div><br/><hr>
@@ -161,6 +160,18 @@ margin-left: 5%;
 
     <!--  custom script -->
     <script src="js/custom.js"></script>
+    
+<!-- 삭제 알럿창 -->
+<script type="text/javascript">
+function delete_event() {
+	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+		location.replace("deletePlace.do?seq="+${docNum}+"&seq1="+${userid}+"");
+	} else{   //취소
+	    return;
+	}
+}
+//
+</script>
     
     <!-- 댓글 조회 시작 -->
     <script type="text/javascript">

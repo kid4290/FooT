@@ -71,7 +71,8 @@ public class BoardDao {
 
 	// 사진 상세 조회
 	public BoardDto myPlaceContent(String docNum) {
-		dto = sqlSession.selectOne("myPlaceContent", docNum);
+//		dto = sqlSession.selectOne("myPlaceContent", docNum);
+		dto = sqlSession.selectOne("myPlaceContentTwo", docNum);
 		return dto;
 	}
 	
