@@ -75,17 +75,25 @@
 <!-- main-container -->
 <div class="container main-container">
 		<div class="col-md-6">
-			<img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
+           <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
+        </div>
+        <h5 >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
+		
+		<h5>&nbsp;&nbsp;&nbsp;Contents :</h5>
+        <div class="col-md-12">
+		<div class="textarea-contact">
+           <textarea name="docCon" id="docCon" readonly="readonly">${docCon}</textarea>
 		</div>
+		</div>
+		
+		<h5>&nbsp;&nbsp;&nbsp;With :</h5>
 		<div class="col-md-6">
-<!-- 제목 주석처리함 -->		
-<%-- 				<h3 class="uppercase">${docTle}</h3> --%>
-				<h5 class="uppercase" style="color:inherit;">Where : ${place}</h5><hr>
-				<h4 class="uppercase">Contents : ${docCon}</h4>
-				<div class="h-100"></div><hr>
-				<h5 class="uppercase" style="color:inherit;">with ${docTag}</h5>
+		<div class="input-contact">
+            <input type="text" name="docTag" id="docTag" value="${docTag}" readonly="readonly">
+        </div>
+		</div>   
 			<c:if test="${sessionScope.userid eq userid }">
-			<hr><div class="col-md-12" style="text-align: right;">
+			<div class="col-md-12" style="text-align: right;">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
 					type="button" >수정</a>  
 					<a href="deletePlace.do?seq=${docNum}&seq1=${userid}" class="btn btn-box"
@@ -123,7 +131,6 @@
 	</div><br/>
 	<div class="h-30"></div>
 	<!-- end Main container -->
-	</div>
 	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>

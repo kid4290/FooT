@@ -73,8 +73,7 @@
         <div class="col-md-6">
            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
         </div>
-        <h5 class="uppercase" >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
-        <div class="h-30"></div>
+        <h5 >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
         <form action="updateContent.do?seq=${docNum}" method="POST">
 		<h5>&nbsp;&nbsp;&nbsp;Title :</h5>       
         <div class="col-md-6">
@@ -89,7 +88,6 @@
            <textarea name="docCon" id="docCon" >${docCon}</textarea>
 		</div>
 		</div>
-		
 		<br/><h5>&nbsp;&nbsp;&nbsp;With :</h5>
 		<div class="col-md-6">
 		<div class="input-contact">
@@ -106,9 +104,6 @@
     <!-- end Main container -->
 </div>
     
-    <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
-    <!-- end back to top -->
-
 
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
