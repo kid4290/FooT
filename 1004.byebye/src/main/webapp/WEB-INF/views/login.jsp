@@ -24,7 +24,7 @@
 <div class="container">
    <img class="profile-img-card" src="img/circlelogo.png" />
 
-<h1>Welcome</h1>
+<!-- <h4>당신의 로그인을 환영합니다!</h4> -->
 
 <form class="form" action="login.do">
 
