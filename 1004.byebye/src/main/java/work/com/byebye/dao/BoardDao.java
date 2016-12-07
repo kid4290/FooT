@@ -45,17 +45,6 @@ public class BoardDao {
 		return sqlSession.insert("insertBoard", dto);
 	}
 	
-
-//	// 사진조회
-//	public List<BoardDto> myPlace(String userid,Double lon, Double lat) {
-//		dto=new BoardDto(userid,lon,lat);
-//				sqlSession.selectList("myPlace", userid);
-//	}
-//	
-//	public List<BoardDto> myplace(String userid,Double lon, double lat) {
-//		dto = new BoardDto(userid,lon,lat);
-//		return sqlSession.selectList("myPlace",userid);
-//	}
 	
 	public List<BoardDto> myPlace(String userid,Double lon, double lat) {
 		dto = new BoardDto(userid,lon,lat);
@@ -71,14 +60,13 @@ public class BoardDao {
 
 	// 사진 상세 조회
 	public BoardDto myPlaceContent(String docNum) {
-		dto = sqlSession.selectOne("myPlaceContentTwo", docNum);
-		System.out.println("dao단 :" + dto);
+		dto = sqlSession.selectOne("indexContent", docNum);
 		return dto;
 	}
 	
 	// 남의 사진 상세 조회
 		public BoardDto indexContent(String docNum) {
-			dto = sqlSession.selectOne("indexContent", docNum);
+			dto = sqlSession.selectOne("myPlaceContentTwo", docNum);
 			return dto;
 		}
 

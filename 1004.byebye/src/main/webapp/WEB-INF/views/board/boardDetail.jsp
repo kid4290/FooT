@@ -83,11 +83,11 @@ margin-left: 5%;
 
 	<div class="box-headers">
 	    <div class="box-logos">
-			<c:if test="${!empty dto.userimg}">
-				<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">&nbsp;<a href="whoList.do?id=${dto.userid}" >임시닉네임</a>
+			<c:if test="${!empty otherUserimg}">
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="${otherUserimg}">&nbsp;<a href="whoList.do?id=${otherUserid}" >${otherNickname}</a>
 			</c:if>
-			<c:if test="${empty dto.userimg}">
-				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">&nbsp;<a href="whoList.do?id=${dto.userid}" >임시닉네임</a>
+			<c:if test="${empty otherUserimg}">
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">&nbsp;<a href="whoList.do?id=${otherUserid}" >${otherNickname}</a>
 			</c:if>
 	    </div>
 	</div>

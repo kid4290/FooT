@@ -182,9 +182,9 @@ public class BoardController {
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("docNum", dto.getDocNum());
-			mv.addObject("userid", dto.getUserid());
-			mv.addObject("nickname", dto.getNickname());
-			mv.addObject("userimg", dto.getUserimg());
+			mv.addObject("otherUserid", dto.getUserid());
+			mv.addObject("otherNickname", dto.getNickname());
+			mv.addObject("otherUserimg", dto.getUserimg());
 			mv.addObject("lat", dto.getLat());
 			mv.addObject("lon", dto.getLon());
 			mv.addObject("picFile", dto.getPicFile());
@@ -194,7 +194,8 @@ public class BoardController {
 			mv.addObject("docHit", dto.getDocHit());
 			mv.addObject("docTf", dto.getDocTf());
 			mv.addObject("docTag", dto.getDocTag());
-			mv.addObject("place", dto.getPlace());
+			System.out.println("dto : " + dto);
+//			mv.addObject("dto", dto);
 			mv.setViewName("board/boardDetail");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
@@ -214,7 +215,9 @@ public class BoardController {
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("docNum", dto.getDocNum());
-			mv.addObject("userid", dto.getUserid());
+			mv.addObject("otherUserid", dto.getUserid());
+			mv.addObject("otherNickname", dto.getNickname());
+			mv.addObject("otherUserimg", dto.getUserimg());
 			mv.addObject("lat", dto.getLat());
 			mv.addObject("lon", dto.getLon());
 			mv.addObject("picFile", dto.getPicFile());
