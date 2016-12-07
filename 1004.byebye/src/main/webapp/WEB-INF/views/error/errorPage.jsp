@@ -61,6 +61,7 @@ margin:0px auto;
 
 	<!-- top bar -->
 	<div class="top-bar">
+	<div class="h-30"></div>
 		<h1>Error</h1>
 	</div>
 	<!-- end top bar -->
@@ -69,16 +70,17 @@ margin:0px auto;
 	<div class="clearfix">
 		<!-- service-box -->
 		<div class="col-md-4 service-box">
-			<h3>Error Page</h3>
-	
-			<div class="container main-container mhdiv">
-				<h4>${message}이전페이지로 이동</h4>
-				<a href="#" onclick="history.back();" class="btn btn-box">Return</a>
-			</div>
+	<div class="container main-container mhdiv" >
+		<c:if test="${!empty message}">	
+			<h4>${message} 이전페이지로 이동하세요. </h4>
+		</c:if>
+		<c:if test="${empty message}">	
+			<h4>잘못된 접근입니다. 이전페이지로 이동하세요. </h4>
+		</c:if>
+		<a href="#" onclick="history.back();" class="btn btn-box">Return</a>
 		</div>
 	</div>
 </div>
-
 
 <!-- back to top -->
 <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
