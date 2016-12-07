@@ -1,6 +1,9 @@
 alter table board add(alert_date date default sysdate+90);
 
-
+/*
+ * select DISTNACE_WGS84(33.504274, 126.529182, 33.524383, 126.544333) from dual;
+	https://tonyne.jeju.onl/2016/04/14/oracle-lat-lng-distnace-query/
+ */
 CREATE OR REPLACE FUNCTION RADIANS(nDegrees IN NUMBER) 
 RETURN NUMBER DETERMINISTIC 
 IS

@@ -45,14 +45,17 @@
 		</div>
 	</div>
 
+<!-- 여기서부터 바디 앞까지 복사해서 붙여두면  저절로 검색해서 뜹니다.-->
 	<script type="text/javascript">
 		var json;
+		function alertAjax() {
 		var oAjax = new jindo.$Ajax('alert.do', {
 			type : 'xhr',
 			method : 'get', // GET 방식으로 통신
 			onload : function(res) { // 요청이 완료되면 실행될 콜백 함수
 				json = jindo.$Json(res.text());
 			if(json.get('docNum') != ''){
+				
 				//이미지 클릭시 페이지 이동
 				$('#picLink').attr("href",'javascript:alertOff('+json.get("docNum")+',1);');
 				
@@ -86,6 +89,8 @@
 		// 비동기로 호출하는 경우, 생략하면 true
 		});
 		oAjax.request();
+		}
+		alertAjax();
 		
 	function alertOff(object,object2){
 	var offAjax = new jindo.$Ajax('alertOff.do?docNum='+object, {
