@@ -30,6 +30,7 @@ public class BeaconController {
         List<BeaconDto> list = beaconService.getBeaconList();
         ModelAndView mv = new ModelAndView();
         if(list != null) {
+        	list = null;
         	mv.addObject("list", list);
         	mv.setViewName("beacon/beaconList");
         } else {

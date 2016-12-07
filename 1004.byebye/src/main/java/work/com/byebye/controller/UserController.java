@@ -41,26 +41,6 @@ public class UserController {
     * @throws UnsupportedEncodingException */
    @RequestMapping(value="naverLogin.do")
    public String naverLogin(String userid, String nickname, String userimg, HttpSession session) throws UnsupportedEncodingException {
-//      String grade = userservice.loginCheck(userid);
-//
-//      ModelAndView mv = new ModelAndView();
-//      if(grade == null) {
-//         nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
-//         System.out.println("userimg" + userimg);
-//         int result = userservice.insertKakao(userid, nickname, userimg, "naver");
-//
-//         if(result > 0) {
-//            session.setAttribute("userid", userid);
-//            session.setAttribute("nickname", nickname);
-//         } else {
-//            mv.addObject("message", "로그인 오류");
-//            mv.setViewName("error");
-//         }
-//      } else {
-//         session.setAttribute("userid", userid);
-//         session.setAttribute("nickname", nickname);
-//      }
-      
       if(newLogin(userid, nickname, userimg, "naver", session) == 1){
          return "redirect:index.do";
       } else {
@@ -73,24 +53,6 @@ public class UserController {
     * @throws UnsupportedEncodingException */
    @RequestMapping(value="kakaoLogin.do")
    public String kakaoLogin(String userid, String nickname, String userimg, HttpSession session) throws UnsupportedEncodingException {
-//      String grade = userservice.loginCheck(userid);
-//      ModelAndView mv = new ModelAndView();
-//      if(grade == null) {
-////         nickname = new String(nickname.getBytes("8859_1"), "UTF-8");
-//         System.out.println("userimg" + userimg);
-//         int result = userservice.insertKakao(userid, nickname, userimg, "kakao");
-//         if(result > 0) {
-//            session.setAttribute("userid", userid);
-//            session.setAttribute("nickname", nickname);
-//         } else {
-//            mv.addObject("message", "로그인 오류");
-//            mv.setViewName("error");
-//         }
-//      } else {
-//         session.setAttribute("userid", userid);
-//         session.setAttribute("nickname", nickname);
-//      }
-//      return "redirect:index.do";
       if(newLogin(userid, nickname, userimg, "kakao", session) == 1){
          return "redirect:index.do";
       } else {
@@ -101,22 +63,6 @@ public class UserController {
    /** facebook login */
    @RequestMapping(value="facebookLogin.do")
    public String facebookLogin(String userid, String nickname, String userimg, HttpSession session) {
-//      String grade = userservice.loginCheck(userid);
-//      ModelAndView mv = new ModelAndView();
-//      if(grade == null) {
-//         int result = userservice.insertKakao(userid, nickname, userimg, "facebook");
-//         if(result > 0) {
-//            session.setAttribute("userid", userid);
-//            session.setAttribute("nickname", nickname);
-//         } else {
-//            mv.addObject("message", "로그인 오류");
-//            mv.setViewName("error");
-//         }
-//      } else {
-//         session.setAttribute("userid", userid);
-//         session.setAttribute("nickname", nickname);
-//      }
-//      return "redirect:index.do";
       if(newLogin(userid, nickname, userimg, "facebook", session) == 1){
          return "redirect:index.do";
       } else {

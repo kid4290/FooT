@@ -26,7 +26,38 @@
     <script src="js/jindo_coo_ajax.js"></script>
 <script type="text/javascript"
       src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
-    
+
+<style type="text/css">
+	.imagediv {
+		height: 60px;
+		width: 60px;
+		display: block;
+		border-radius: 50%;
+		box-sizing: border-box;
+		overflow: hidden;
+		margin: 0px auto;
+	}
+	.imagebtn {
+		border: 0;
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		align-items: flex-start;
+		text-align: reft;
+	}
+	.imagepart {
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+		text-align: reft;
+	}
+</style>    
 
 </head>
 
@@ -74,6 +105,21 @@
 
 <!-- main-container -->
 <div class="container main-container">
+
+		<div class="imagediv">
+			<div class="imagebtn">
+			<c:if test="${!empty dto.userimg}">
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}"><a href="#" >Nickname</a>
+			</c:if>
+			<c:if test="${empty dto.userimg}">
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png"><a href="#" >Nickname</a>
+			</c:if>
+			</div>
+			<!-- 타인 userid랑 타인 nickname -->
+<%-- 			<a href="whoList.do?id=${dto.userid}">${dto.nickName}</a> --%>
+			
+		</div>
+
 		<div class="col-md-6">
            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
         </div>

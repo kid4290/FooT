@@ -71,15 +71,13 @@
                 <div class="no-padding portfolio_container clearfix">
                     <!-- single work -->
                     <c:forEach var="dto" items="${requestScope.list}"> 
-                    <div class="col-md-4 col-sm-6  fashion logo">
+                    <div class="col-md-2 col-sm-3  fashion logo">
                         <a href="boardDetail.do?seq=${dto.getDocNum()}" class="portfolio_item">
                             <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
                            />
                             <div class="portfolio_item_hover">
                                 <div class="portfolio-border clearfix">
                                     <div class="item_info">
-<%--                                         <span>${dto.getPlace()}</span> --%>
-<%--                                         <p>${dto.getDocNum()} --%>
                                         <em>${dto.getPlace()}</em>
                                     </div>
                                 </div>

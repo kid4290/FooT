@@ -134,6 +134,24 @@ public class BoardController {
 		return mv;
 	}
 	
+	/** 특정 아이디 리스트 */
+	@RequestMapping("whoList.do")
+	public @ResponseBody ModelAndView whoList(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session,HttpServletRequest request) {
+		String userid = (String) request.getParameter("id");
+
+		list = service.myPlace(userid,lon,lat);
+		
+		ModelAndView mv = new ModelAndView();
+		if (userid != null) {
+			mv.addObject("list", list);
+			mv.setViewName("board/otherBoardList");
+		} else {
+			mv.addObject("message", "Search Error go back to the Back page.");
+			mv.setViewName("error/errorPage");
+		}
+		return mv;
+	}
+	
 	@RequestMapping("imgLoad.do")
 	public @ResponseBody void imgLoad(HttpServletRequest request, HttpServletResponse response) {
 		String path = "c://temp//BoardDto/" + request.getParameter("fileName");
