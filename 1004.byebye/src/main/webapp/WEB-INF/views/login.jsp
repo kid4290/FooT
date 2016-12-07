@@ -20,11 +20,10 @@
 
 </head>
 <body>
+<div class="divbody">
 <div class="wrapper">
 <div class="container">
    <img class="profile-img-card" src="img/circlelogo.png" />
-
-<!-- <h4>당신의 로그인을 환영합니다!</h4> -->
 
 <form class="form" action="login.do">
 
@@ -32,7 +31,7 @@
    <tr class="tl_formtr">
    <td class="tl_formtd">
    <a id="custom-login-btn" href="javascript:loginWithKakao()"> 
-   <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="226" height="49" />
+   	<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="226" height="49" />
    </a>
    <script type="text/javascript">
    Kakao.init('397aabd494fcce05ada8693f67c2c1fa');
@@ -150,6 +149,7 @@
    
    
    </form>
+</div>
 </div>
 </div>
 </body>
