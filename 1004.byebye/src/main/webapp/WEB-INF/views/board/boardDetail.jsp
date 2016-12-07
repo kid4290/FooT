@@ -95,7 +95,7 @@ margin-left: 5%;
 		<div class="col-md-6">
            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
         </div>
-        <h5 >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
+        <h5>&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
 		
 		<h5>&nbsp;&nbsp;&nbsp;Contents :</h5>
         <div class="col-md-12">
@@ -117,7 +117,7 @@ margin-left: 5%;
 					<a class="btn btn-box" type="button" onclick="delete_event();">삭제</a>
 			</div>
 			</c:if>
-		</div><br/><hr>
+<br/><hr>
 
 		<!-- comment --><h5>&nbsp;&nbsp;&nbsp;&nbsp;댓글</h5>
 		<div class="col-md-12">
@@ -148,6 +148,7 @@ margin-left: 5%;
 	</div><br/>
 	<div class="h-30"></div>
 	<!-- end Main container -->
+</div>
 	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
