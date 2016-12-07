@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="work.com.mapper.alertMapper">
+<mapper namespace="work.com.mapper.AlertMapper">
 <resultMap id="alertResult" type="work.com.byebye.dto.AlertDTO">
 <result property="userid" column="userid" />
 <result property="picFile" column="pic_file" />
@@ -25,4 +25,5 @@ where userid=#{userid} and alert_date<=sysdate and ((lon between ${lon}-1.019 an
    update board set alert_date=sysdate+90 where doc_num=${value}
    ]]>
    </update>
+   
 </mapper>

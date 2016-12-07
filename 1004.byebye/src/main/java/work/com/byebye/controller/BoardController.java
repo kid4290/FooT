@@ -183,6 +183,8 @@ public class BoardController {
 		if (userid != null) {
 			mv.addObject("docNum", dto.getDocNum());
 			mv.addObject("userid", dto.getUserid());
+			mv.addObject("nickname", dto.getNickname());
+			mv.addObject("userimg", dto.getUserimg());
 			mv.addObject("lat", dto.getLat());
 			mv.addObject("lon", dto.getLon());
 			mv.addObject("picFile", dto.getPicFile());

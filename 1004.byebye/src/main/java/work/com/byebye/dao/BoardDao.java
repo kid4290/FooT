@@ -73,6 +73,7 @@ public class BoardDao {
 	public BoardDto myPlaceContent(String docNum) {
 //		dto = sqlSession.selectOne("myPlaceContent", docNum);
 		dto = sqlSession.selectOne("myPlaceContentTwo", docNum);
+		System.out.println("dao단 :" + dto);
 		return dto;
 	}
 	

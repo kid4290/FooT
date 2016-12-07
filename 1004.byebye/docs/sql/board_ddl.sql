@@ -44,3 +44,9 @@ increment BY 1
 select * from users;
 
 select * from board;
+
+
+select b.doc_num doc_num,b.userid userid, b.lat lat, b.lon lon, b.PIC_FILE pic_file, 
+b.MOV_FILE mov_file, b.DOC_TLE doc_tle, b.doc_con doc_con, b.DOC_DATE doc_date, b.doc_hit doc_hit,
+b.doc_tf doc_tf, b.DOC_TAG doc_tag, b.PLACE place, b.ALERT_DATE alert_date, u.NICKNAME nickname, u.USERIMG userimg
+ from board b,users u where b.USERID=u.USERID and b.doc_num=8;
