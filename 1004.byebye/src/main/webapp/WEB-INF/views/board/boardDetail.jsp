@@ -36,7 +36,6 @@ margin-left: 5%;
 </style>
 
 </head>
-
 <body>
 	<!-- box header -->
 	<header class="box-header">
