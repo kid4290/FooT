@@ -414,7 +414,7 @@ $("#myModal").on(
 		method : 'get', // GET 방식으로 통신
 		onload : function(res) { // 요청이 완료되면 실행될 콜백 함수
 			if(object2 == 1){
-				window.location.href = 'boardDetail.do?seq='+object;
+				window.location.href = 'otherBoardDetail.do?seq='+object;
 			} else {
 				$('#alertModal').modal('toggle');
 			}
