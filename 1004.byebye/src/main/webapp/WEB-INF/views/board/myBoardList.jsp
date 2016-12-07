@@ -23,11 +23,6 @@
     <script src="js/jindo_coo_ajax.js"></script>
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
 
-<style type="text/css">
-.tlnonsearch {
-width:95%;
-}
-</style>
 </head>
 
 <body>
@@ -69,12 +64,16 @@ width:95%;
         <!-- portfolio div -->
         <div class="portfolio-div">
             <div class="portfolio">
-
+            	
                 <!-- portfolio_container -->
-                <div class="no-padding portfolio_container clearfix">
+                <div class="clearfix">
                  <!-- single work -->
                  <c:if test="${requestScope.list eq null or fn:length(requestScope.list) eq 0}">
-                 	<a href="insertBoard.do"><div style="margin-left:10%;"><img class="tlnonsearch" src="img/nonsearch.png"></div></a>
+                 	<div class="clearfix"><div class="col-md-4 service-box">
+                 	<a href="insertBoard.do" style="color:#999;">
+                 	<h4>조회결과가 없습니다. 기록을 남겨주세요. (클릭)</h4>
+                 	</a>
+                 	</div></div>
                  </c:if>
                     <c:forEach var="dto" items="${requestScope.list}"> 
                     <div class="col-md-4 col-sm-6  fashion logo">

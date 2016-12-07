@@ -69,14 +69,14 @@ margin:0px auto;
 	<div class="clearfix">
 		<!-- service-box -->
 		<div class="col-md-4 service-box">
-		<h3>Error Page</h3>
-		
-	<div class="container main-container mhdiv" >	
-		<h4>${message} 이전페이지로 이동 </h4>
-		<a href="#" onclick="history.back();" class="btn btn-box">Return</a>
+			<h3>Error Page</h3>
+	
+			<div class="container main-container mhdiv">
+				<h4>${message}이전페이지로 이동</h4>
+				<a href="#" onclick="history.back();" class="btn btn-box">Return</a>
+			</div>
 		</div>
 	</div>
-</div>
 </div>
 
 
