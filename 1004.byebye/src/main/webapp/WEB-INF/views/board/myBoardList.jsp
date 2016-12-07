@@ -60,6 +60,7 @@ width:95%;
 
     <!-- top bar -->
     <div class="top-bar">
+    <div class="h-30"></div>
         <h1>MY LIST</h1>
     </div>
     <!-- end top bar -->

@@ -61,6 +61,7 @@ margin:0px auto;
 
 	<!-- top bar -->
 	<div class="top-bar">
+	<div class="h-30"></div>
 		<h1>Error</h1>
 	</div>
 	<!-- end top bar -->

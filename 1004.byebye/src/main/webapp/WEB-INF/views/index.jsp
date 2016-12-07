@@ -62,6 +62,7 @@
             </ul>
         </nav>
 
+<div class="h-30"></div>
 <div class="main-container portfolio-inner clearfix">
 	<section class="box-intro">
 	<div class="table-cell">

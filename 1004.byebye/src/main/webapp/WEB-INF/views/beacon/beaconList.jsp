@@ -56,6 +56,7 @@
 
 	<!-- top bar -->
 	<div class="top-bar">
+	<div class="h-30"></div>
 		<h1>BEACON</h1>
 	</div>
 	<!-- end top bar -->
