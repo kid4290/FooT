@@ -109,13 +109,13 @@ public class Reply implements Serializable {
 		this.docNum = docNum;
 	}
 
-	public String getuserid() {
-		return userid;
-	}
-
-	public void setuserid(String userid) {
-		this.userid = userid;
-	}
+//	public String getuserid() {
+//		return userid;
+//	}
+//
+//	public void setuserid(String userid) {
+//		this.userid = userid;
+//	}
 	
 	
 
