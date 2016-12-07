@@ -14,53 +14,28 @@
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="css/comment.css" rel="stylesheet">
 
-    <!-- main css -->
-    <link href="css/style.css" rel="stylesheet">
+<!-- main css -->
+<link href="css/style.css" rel="stylesheet">
 
-   
-
-    <!-- modernizr -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/jindo_coo_ajax.js"></script>
-<script type="text/javascript"
-      src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
+<!-- modernizr -->
+<script src="js/modernizr.js"></script>
+<script src="js/jindo_coo_ajax.js"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d9d5aabffb52cda458f3d0c2f07c8553&libraries=services"></script>
 
 <style type="text/css">
-	.imagediv {
-		height: 60px;
-		width: 60px;
-		display: block;
-		border-radius: 50%;
-		box-sizing: border-box;
-		overflow: hidden;
-		margin: 0px auto;
-	}
-	.imagebtn {
-		border: 0;
-		height: 100%;
-		width: 100%;
-		padding: 0;
-		align-items: flex-start;
-		text-align: reft;
-	}
-	.imagepart {
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font: inherit;
-		vertical-align: baseline;
-		text-align: reft;
-	}
-</style>    
+.imagepart {
+width: 50px;
+height: 50px;
+overflow: hidden;
+border-radius: 50%;
+}
+.box-headers {
+margin-left: 5%;
+}
+</style>
 
 </head>
-
 <body>
 	<!-- box header -->
 	<header class="box-header">
@@ -106,22 +81,21 @@
 <!-- main-container -->
 <div class="container main-container">
 
-		<div class="imagediv">
-			<div class="imagebtn">
+	<div class="box-headers">
+	    <div class="box-logos">
 			<c:if test="${!empty dto.userimg}">
-				<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}"><a href="#" >Nickname</a>
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="${dto.userimg}">&nbsp;<a href="whoList.do?id=${dto.userid}" >임시닉네임</a>
 			</c:if>
 			<c:if test="${empty dto.userimg}">
-				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png"><a href="#" >Nickname</a>
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">&nbsp;<a href="whoList.do?id=${dto.userid}" >임시닉네임</a>
 			</c:if>
-			</div>
-			<!-- 타인 userid랑 타인 nickname -->
-		</div><a href="whoList.do?id=${dto.userid}">임시닉네임</a>
+	    </div>
+	</div>
 
 		<div class="col-md-6">
            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />
         </div>
-        <h5 >&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
+        <h5>&nbsp;&nbsp;&nbsp;Where : </h5>&nbsp;&nbsp;&nbsp;${place}
 		
 		<h5>&nbsp;&nbsp;&nbsp;Contents :</h5>
         <div class="col-md-12">
@@ -143,7 +117,7 @@
 					<a class="btn btn-box" type="button" onclick="delete_event();">삭제</a>
 			</div>
 			</c:if>
-		</div><br/><hr>
+<br/><hr>
 
 		<!-- comment --><h5>&nbsp;&nbsp;&nbsp;&nbsp;댓글</h5>
 		<div class="col-md-12">
@@ -174,6 +148,7 @@
 	</div><br/>
 	<div class="h-30"></div>
 	<!-- end Main container -->
+</div>
 	
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
