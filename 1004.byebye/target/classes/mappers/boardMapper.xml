@@ -16,6 +16,8 @@
 		<result property="docTf" column="doc_Tf" />
 		<result property="docTag" column="doc_Tag" />
 		<result property="place" column="place" />
+		<result property="userimg" column="userimg"/>
+		<result property="nickname" column="nickname"/>
 <!-- 		<result property="distance" column="distance" /> -->
 	</resultMap>
 
@@ -64,6 +66,15 @@
 	<select id="myPlaceContent" resultMap="boardResult"
 		parameterType="String">
 		select doc_num,userid,lat,lon,pic_file,mov_file,doc_tle,doc_con,doc_date,doc_hit,doc_tf,doc_tag,place from BOARD where doc_num= #{docNum}
+	</select>
+	
+	<select id="myPlaceContentTwo" resultMap="boardResult" parameterType="String">
+	<![CDATA[
+	select b.doc_num doc_num,b.userid userid, b.lat lat, b.lon lon, b.PIC_FILE pic_file, 
+b.MOV_FILE mov_file, b.DOC_TLE doc_tle, b.doc_con doc_con, b.DOC_DATE doc_date, b.doc_hit doc_hit,
+b.doc_tf doc_tf, b.DOC_TAG doc_tag, b.PLACE place, b.ALERT_DATE alert_date, u.NICKNAME nickname, u.USERIMG userimg
+ from board b,users u where b.USERID=u.USERID and b.doc_num=#{docNum};
+	]]>
 	</select>
 
 	<!-- 남의 사진 상세 조회 -->
