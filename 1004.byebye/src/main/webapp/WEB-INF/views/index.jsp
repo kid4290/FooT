@@ -449,6 +449,12 @@ $("#myModal").on(
 			return '약' + Math.floor(object / 30) + '개월전';
 		}
 	}
+	
+	if(navigator.userAgent.match('Android')){
+		//안드로이드 링크 붙이기
+	} else {
+		//PC용 링크 붙이기
+	}
 
 	</script>
 
