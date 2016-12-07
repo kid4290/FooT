@@ -40,6 +40,8 @@ start with 1
 increment BY 1
 ;
 
+alter table board modify(lat number(35,30));
+alter table board modify(lon number(35,30));
 
 select * from users;
 
