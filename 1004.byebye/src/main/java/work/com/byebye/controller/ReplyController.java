@@ -168,7 +168,7 @@ public class ReplyController {
 			mv.addObject("reNum", dto.getReNum());
 			mv.addObject("reCon",dto.getReCon());
 			mv.addObject("docNum",dto.getDocNum());
-			mv.addObject("userid",dto.getuserid());
+			mv.addObject("userid",dto.getUserid());
 			mv.setViewName("");
 		} else {
 			mv.addObject("댓글 상세 보기 오류 ");
@@ -207,7 +207,7 @@ public class ReplyController {
 				mv.addObject("reNum", dto.getReNum());
 				mv.addObject("reCon",dto.getReCon());
 				mv.addObject("docNum",dto.getDocNum());
-				mv.addObject("userid",dto.getuserid());
+				mv.addObject("userid",dto.getUserid());
 				mv.setViewName("");
 			} else {
 				mv.addObject("댓글 상세 보기 오류 ");
