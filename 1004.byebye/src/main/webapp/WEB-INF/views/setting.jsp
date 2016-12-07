@@ -193,7 +193,7 @@
 	
 <!-- 	<tr class="tl_tr"> -->
 <!-- 	<td class="tl_td" height="50"> -->
-<!-- 		<a type="button" href="#" class="btn btn-box">회원탈퇴</a> -->
+<!-- 		<a type="button" href="deleteUser.do" class="btn btn-box">회원탈퇴</a> -->
 <!-- 	</td> -->
 <!-- 	</tr> -->
 </table>

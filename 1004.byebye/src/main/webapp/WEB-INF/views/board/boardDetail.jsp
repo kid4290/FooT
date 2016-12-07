@@ -116,8 +116,7 @@
 			</c:if>
 			</div>
 			<!-- 타인 userid랑 타인 nickname -->
-<%-- 			<a href="whoList.do?id=${dto.userid}">${dto.nickName}</a> --%>
-		</div>
+		</div><a href="whoList.do?id=${dto.userid}">임시닉네임</a>
 
 		<div class="col-md-6">
            <img src="imgLoad.do?fileName=${picFile}" class="img-responsive" style="width:100%" />

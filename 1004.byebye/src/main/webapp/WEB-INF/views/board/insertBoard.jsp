@@ -114,8 +114,9 @@
 <input type="checkbox" name="docTf"  />
 <label for="checkbox-2">공개</label>
 </div>
-<div class="col-md-12">
-<a href="#" onclick="document.getElementById('frm').submit();" class="btn btn-box">Send</a>
+<div class="col-md-12" style="float:right;margin-right:2%;">
+<a href="#" onclick="document.getElementById('frm').submit();" class="btn btn-box" >등록</a>
+	<a type="button" class="btn btn-box" onclick="history.back();" >취소</a>
 </div>
 </div>
 </form>
@@ -125,11 +126,6 @@
 
 </div>
 <!-- end main-container -->
-
-    <!-- back to top -->
-    <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
-    <!-- end back to top -->
-
 
 
     <!-- jQuery -->
