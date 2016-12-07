@@ -137,12 +137,14 @@ public class BoardController {
 	@RequestMapping("whoList.do")
 	public @ResponseBody ModelAndView whoList(@CookieValue(value="lon", defaultValue="0") Double lon , @CookieValue(value="lat", defaultValue="0") Double lat,HttpSession session,HttpServletRequest request) {
 		String userid = (String) request.getParameter("id");
+		String nickname = (String) request.getParameter("nic");
 
 		list = service.myPlace(userid,lon,lat);
 		
 		ModelAndView mv = new ModelAndView();
 		if (userid != null) {
 			mv.addObject("list", list);
+			mv.addObject("otherNickname", nickname);
 			mv.setViewName("board/otherBoardList");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");
@@ -194,8 +196,6 @@ public class BoardController {
 			mv.addObject("docHit", dto.getDocHit());
 			mv.addObject("docTf", dto.getDocTf());
 			mv.addObject("docTag", dto.getDocTag());
-			System.out.println("dto : " + dto);
-//			mv.addObject("dto", dto);
 			mv.setViewName("board/boardDetail");
 		} else {
 			mv.addObject("message", "Search Error go back to the Back page.");

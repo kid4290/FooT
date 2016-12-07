@@ -65,15 +65,17 @@ margin-left: 5%;
 
 
     <!-- top bar -->
-    <c:if test="${sessionScope.userid eq userid }">
+    <c:if test="${sessionScope.userid eq otherUserid }">
     	<div class="top-bar">
+    	<div class="h-30"></div>
         	<h1>My Content</h1>
     	</div>
     </c:if>
     
-    <c:if test="${sessionScope.userid ne userid }">
+    <c:if test="${sessionScope.userid ne otherUserid }">
     	<div class="top-bar">
-        	<h1>Others Content</h1>
+    	<div class="h-30"></div>
+        	<h1>Other Content</h1>
     	</div>
     </c:if>
 	<!-- end top bar -->
@@ -84,10 +86,10 @@ margin-left: 5%;
 	<div class="box-headers">
 	    <div class="box-logos">
 			<c:if test="${!empty otherUserimg}">
-				<img alt="프로필 사진 바꾸기" class="imagepart" src="${otherUserimg}">&nbsp;<a href="whoList.do?id=${otherUserid}" >${otherNickname}</a>
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="${otherUserimg}">&nbsp;<a href="whoList.do?id=${otherUserid}&nic=${otherNickname}" >${otherNickname}</a>
 			</c:if>
 			<c:if test="${empty otherUserimg}">
-				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">&nbsp;<a href="whoList.do?id=${otherUserid}" >${otherNickname}</a>
+				<img alt="프로필 사진 바꾸기" class="imagepart" src="img/default.png">&nbsp;<a href="whoList.do?id=${otherUserid}&nic=${otherNickname}" >${otherNickname}</a>
 			</c:if>
 	    </div>
 	</div>

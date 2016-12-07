@@ -57,7 +57,8 @@
  
     <!-- top bar -->
     <div class="top-bar">
-        <h1>Who r u?</h1>
+    <div class="h-30"></div>
+        <h3 style="color:#fff;">${otherNickname}</h3>
     </div>
     <!-- end top bar -->
 
@@ -72,7 +73,7 @@
                     <!-- single work -->
                     <c:forEach var="dto" items="${requestScope.list}"> 
                     <div class="col-md-2 col-sm-3  fashion logo">
-                        <a href="boardDetail.do?seq=${dto.getDocNum()}" class="portfolio_item">
+                        <a href="otherBoardDetail.do?seq=${dto.getDocNum()}" class="portfolio_item">
                             <img src="imgLoad.do?fileName=${dto.getPicFile()}" alt="image" class="img-responsive" 
                            />
                             <div class="portfolio_item_hover">

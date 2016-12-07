@@ -74,13 +74,11 @@
                  </c:if>
                     <c:forEach var="dto" items="${requestScope.list}"> 
                     <div class="col-md-4 col-sm-6  fashion logo">
-                        <a href="boardDetail.do?seq=${dto.getDocNum()}" class="portfolio_item">
+                        <a href="otherBoardDetail.do?seq=${dto.getDocNum()}" class="portfolio_item">
                             <img src="imgLoad.do?fileName=${dto.getPicFile()}" class="img-responsive" style="width:100%" />
                             <div class="portfolio_item_hover">
                                 <div class="portfolio-border clearfix">
                                     <div class="item_info">
-<%--                                         <span>${dto.getPlace()}</span> --%>
-<%--                                         <p>${dto.getDocNum()} --%>
                                         <em>${dto.getPlace()}</em>
                                     </div>
                                 </div>
