@@ -1,3 +1,5 @@
+
+
 CREATE SEQUENCE SEQ_RE_NUM;
 
 CREATE TABLE REPLY (
@@ -8,6 +10,7 @@ USER_ID VARCHAR2(40)
 );
 
 alter table reply add(nickname varchar2(30));
+alter table reply add(re_date date default sysdate);
 
 alter table reply add(re_date date default sysdate);
 
