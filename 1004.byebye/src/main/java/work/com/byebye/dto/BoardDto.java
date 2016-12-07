@@ -20,9 +20,26 @@ public class BoardDto implements Serializable {
 //	   private MultipartFile bfile12;
 	   private String place;
 	   private Double distance;
+	   private String nickname;
+	   private String userimg;
 	   
-	   
-	   public Double getDistance() {
+	   public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getUserimg() {
+		return userimg;
+	}
+
+	public void setUserimg(String userimg) {
+		this.userimg = userimg;
+	}
+
+	public Double getDistance() {
 		return distance;
 	}
 

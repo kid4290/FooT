@@ -16,6 +16,8 @@
 		<result property="docTf" column="doc_Tf" />
 		<result property="docTag" column="doc_Tag" />
 		<result property="place" column="place" />
+		<result property="userimg" column="userimg"/>
+		<result property="nickname" column="nickname"/>
 <!-- 		<result property="distance" column="distance" /> -->
 	</resultMap>
 
