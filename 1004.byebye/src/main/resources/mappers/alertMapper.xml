@@ -14,7 +14,7 @@
 
    <select id="alertPlace" resultMap="alertResult" parameterType="hashmap">
 <![CDATA[
-select userid,pic_file,alert_date,doc_date,doc_num,TRUNC(alert_date-doc_date) as lately
+select userid,pic_file,alert_date,doc_date,doc_num,TRUNC(sysdate-doc_date) as lately
 ,DISTNACE_WGS84(${lon}, ${lat}, lon, lat) as DISTANCE from board
 where userid=#{userid} and alert_date<=sysdate and ((lon between ${lon}-1.019 and ${lon}+1.019)
     and (lat between ${lat}-1.022 and ${lat}+1.022)) and rownum=1 order by distance
