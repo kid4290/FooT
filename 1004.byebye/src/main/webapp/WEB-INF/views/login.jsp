@@ -140,6 +140,7 @@
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" v="2" size="xlarge">
 페북으로 로그인
 </fb:login-button>
+<!-- <a href="#" onclick="checkLoginState();">[login]</a> -->
 
 <div id="status">
 </div>
