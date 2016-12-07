@@ -157,7 +157,6 @@
   });
 }); 
 </script>  
-    
         <!-- 쿠키에서 주소를 가져와 place에 자동으로 깔기 시작 -->
     <script src="js/jindo_coo_ajax.js"></script>
     <script type="text/javascript">
