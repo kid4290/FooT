@@ -188,10 +188,10 @@
     
 <!-- 삭제 알럿창 -->
 <script type="text/javascript">
-function delete_event(){
+function delete_event() {
 	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 		location.replace("deletePlace.do?seq="+${docNum}+"&seq1="+${userid}+"");
-	}else{   //취소
+	} else{   //취소
 	    return;
 	}
 }
