@@ -22,7 +22,6 @@
 <body>
 <div class="wrapper">
 <div class="container">
-
    <img class="profile-img-card" src="img/circlelogo.png" />
 
 <h1>Welcome</h1>
