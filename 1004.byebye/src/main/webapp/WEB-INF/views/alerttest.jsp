@@ -30,15 +30,16 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					<h4 class="modal-title" id="myModalLabel">기억나시나요?</h4>
 				</div>
 				<div class="modal-body">
-					<div id="picFile"></div>
-					<div id="json"></div>
+				<span id="lately">ㅁㄴㅇㄹ</span>에 <span id="distance">ㅁㄴㅇㄹ</span> 거리에 올렸던 사진입니다. 사진 클릭시 글 내용을 보실 수 있습니다.
+				<a id="picLink"><img style="width:100%;" id="picFile" alt="" src=""></a>
+					<!-- <div id="json"></div> -->
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" id="close" class="btn btn-default" data-dismiss="modal" onclick="">3개월 뒤 다시 보기</button>
+<!-- 					<button type="button" class="btn btn-primary">Save changes</button> -->
 				</div>
 			</div>
 		</div>
@@ -52,8 +53,25 @@
 			onload : function(res) { // 요청이 완료되면 실행될 콜백 함수
 				json = jindo.$Json(res.text());
 			if(json.get('docNum') != ''){
-				$('#picFile').html(json.get("picFile"));
+				//이미지 클릭시 페이지 이동
+				$('#picLink').attr("href",'javascript:alertOff('+json.get("docNum")+',1);');
+				
+				//그냥 닫기
+				$('#close').attr("onclick",'alertOff('+json.get("docNum")+');');
+				
+				//이미지 띄우기
+				$('#picFile').attr("src",'imgLoad.do?fileName='+json.get("picFile"));
+				
+				//거리 띄우기
+				$('#distance').html(distance(json.get("distance")));
+				
+				//기간 띄우기
+				$('#lately').html(how(json.get("lately")));
+				
+				//테스트
 				$('#json').html(res.text());
+				
+				//모달 띄우기
 				$('#alertModal').modal('show');
 			}
 			},
@@ -68,6 +86,49 @@
 		// 비동기로 호출하는 경우, 생략하면 true
 		});
 		oAjax.request();
+		
+	function alertOff(object,object2){
+	var offAjax = new jindo.$Ajax('alertOff.do?docNum='+object, {
+		type : 'xhr',
+		method : 'get', // GET 방식으로 통신
+		onload : function(res) { // 요청이 완료되면 실행될 콜백 함수
+			if(object2 == 1){
+				window.location.href = 'boardDetail.do?seq='+object;
+			} else {
+				$('#alertModal').modal('toggle');
+			}
+		},
+		onerror : function() {
+			alert(error);
+		},
+		timeout : 0, // 3초 이내에 요청이 완료되지 않으면 ontimeout 실행 (생략 시 0)
+		ontimeout : function() { // 타임 아웃이 발생하면 실행될 콜백 함수, 생략 시 타임 아웃이 되면 아무 처리도 하지 않음
+			alert("Timeout!");
+		},
+		async : true
+	// 비동기로 호출하는 경우, 생략하면 true
+	});
+	offAjax.request();
+	}
+	
+	function distance(object) {
+		if (Math.floor(object) > 0) {
+			return '약' + Math.floor(object) + 'km 인근';
+		} else if (1 > object && object > 0.1) {
+			return '약' + Math.floor(object * 10) + '00m 인근';
+		} else {
+			return '약 100m 이내';
+		}
+	}
+
+	function how(object) {
+		if (Math.floor(object / 365) > 0) {
+			return '약' + Math.floor(object / 365) + '년전';
+		} else {
+			return '약' + Math.floor(object / 30) + '개월전';
+		}
+	}
+
 	</script>
 </body>
 </html>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import work.com.byebye.dto.AlertDTO;
@@ -42,4 +43,17 @@ public class AlertController {
       mv.setViewName("json");
       return mv;
    }
+   
+   @RequestMapping(value="alertOff.do",method=RequestMethod.GET)
+   public ModelAndView alertOff(ModelAndView mv, int docNum){
+	   System.out.println("alertOff:"+docNum);
+	   if(service.alertOff(docNum) == 1){
+		   mv.addObject("result", "{'state':'true'}");
+	   } else {
+		   mv.addObject("result", "{'state':'false'}");
+	   }
+	   mv.setViewName("json");
+	   return mv;
+   }
+   
 }

@@ -89,6 +89,7 @@ public String toString() {
 	json.put("docDate", docDate);
 	json.put("distance", distance);
 	json.put("docNum", docNum);
+	json.put("lately", lately);
 	
 	return json.toString();
 }

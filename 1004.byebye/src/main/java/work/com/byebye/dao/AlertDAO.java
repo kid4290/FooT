@@ -41,4 +41,9 @@ public class AlertDAO {
       map.put("userid", userid);
       return sqlSession.selectOne("alertPlace", map);
    }
+
+   public int alertOff(int docNum) {
+	   // TODO Auto-generated method stub
+	   return sqlSession.update("alertOff",docNum);
+   }
 }

@@ -20,4 +20,9 @@ public class AlertService {
    public AlertDTO alert(String lat, String lon, String userid){
       return dao.alert(lat, lon, userid);
    }
+
+   public int alertOff(int docNum) {
+	   // TODO Auto-generated method stub
+	   return dao.alertOff(docNum);
+   }
 }
