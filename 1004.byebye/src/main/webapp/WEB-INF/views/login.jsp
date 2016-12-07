@@ -27,7 +27,7 @@
 
 <h1>Welcome</h1>
 
-<form class="form">
+<form class="form" action="login.do">
 
    <!-- Kakao Login Api -->
    <tr class="tl_formtr">
