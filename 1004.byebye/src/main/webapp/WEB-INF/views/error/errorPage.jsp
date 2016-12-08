@@ -50,7 +50,7 @@ margin:0px auto;
 				<li><a href="index.do">Home</a><i class="ion-ios-circle-filled color"></i></li>
 				<li><a href="insertBoard.do">Insert</a></li>
 				<li><a href="myBoardList.do">MyList</a></li>
-				<li><a href="beaconlist.do">Beacon</a></li>
+				<li><a href="beaconlist.do" id="beacon">Beacon</a></li>
 				<li><a href="setting.do">Setting</a></li>
             </ul>
         </nav>
@@ -95,6 +95,15 @@ margin:0px auto;
 <script src="js/isotope.pkgd.min.js"></script>
 <!--  custom script -->
 <script src="js/custom.js"></script>
+<script type="text/javascript">
+if(navigator.userAgent.match('Android')){
+	//안드로이드 링크 붙이기
+	$('#beacon').attr("href","foot://start/");
+} else {
+	//PC용 링크 붙이기
+	$('#beacon').attr("href","javascript:alert('안드로이드에서만 작동합니다.')");
+}
+</script>
 
 </body>
 </html>

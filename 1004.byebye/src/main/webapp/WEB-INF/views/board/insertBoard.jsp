@@ -44,7 +44,7 @@
 			<li><a href="index.do">Home</a></li>
 			<li><a href="insertBoard.do">Insert</a><i class="ion-ios-circle-filled color"></i></li>
 			<li><a href=myBoardList.do>MyList</a></li>
-			<li><a href="beaconlist.do">Beacon</a></li>
+			<li><a href="beaconlist.do" id="beacon">Beacon</a></li>
 			<li><a href="setting.do">Setting</a></li>
 		</ul>
 	</nav>

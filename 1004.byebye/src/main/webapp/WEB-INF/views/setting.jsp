@@ -142,7 +142,7 @@
 				<li><a href="index.do">Home</a></li>
 				<li><a href="insertBoard.do">Insert</a></li>
 				<li><a href="myBoardList.do">MyList</a></li>
-				<li><a href="beaconlist.do">Beacon</a></li>
+				<li><a href="beaconlist.do" id="beacon">Beacon</a></li>
 				<li><a href="setting.do">Setting</a><i class="ion-ios-circle-filled color"></i></li>
             </ul>
         </nav>
@@ -285,6 +285,15 @@ if(obj==true){}else{}
              js.src = "//connect.facebook.net/ko_KR/all.js";
              ref.parentNode.insertBefore(js, ref);
            }(document));
+        </script>
+        <script type="text/javascript">
+    	if(navigator.userAgent.match('Android')){
+    		//안드로이드 링크 붙이기
+    		$('#beacon').attr("href","foot://start/");
+    	} else {
+    		//PC용 링크 붙이기
+    		$('#beacon').attr("href","javascript:alert('안드로이드에서만 작동합니다.')");
+    	}
         </script>
 
 </body>
