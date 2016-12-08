@@ -453,8 +453,10 @@ $("#myModal").on(
 	
 	if(navigator.userAgent.match('Android')){
 		//안드로이드 링크 붙이기
+		$('#asdfdd').attr("href","bill://test2/");
 	} else {
 		//PC용 링크 붙이기
+		$('#asdfdd').attr("href","javascript:alert('안드로이드에서만 작동합니다.')");
 	}
 
 	</script>
