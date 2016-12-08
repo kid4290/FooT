@@ -113,11 +113,11 @@ margin-left: 5%;
         </div>
 		</div>   
 		<script type="text/javascript">
-		alert('sessionScope.userid:${sessionScope.userid},userid:${userid}')
+		//alert('sessionScope.userid:${sessionScope.userid},userid:${userid}')
 		</script>
-			<c:if test="${sessionScope.userid eq userid }">
+			<c:if test="${sessionScope.userid eq otherUserid }">
 			<div class="col-md-12" style="text-align: right;">
-				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
+				<a href="updateContentView.do?seq=${docNum}&seq2=${otherUserid}" class="btn btn-box"
 					type="button" >수정</a>  
 					<a class="btn btn-box" type="button" onclick="delete_event();">삭제</a>
 			</div>
