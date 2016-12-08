@@ -112,6 +112,9 @@ margin-left: 5%;
             <input type="text" name="docTag" id="docTag" value="${docTag}" readonly="readonly">
         </div>
 		</div>   
+		<script type="text/javascript">
+		alert('sessionScope.userid:${sessionScope.userid},userid:${userid}')
+		</script>
 			<c:if test="${sessionScope.userid eq userid }">
 			<div class="col-md-12" style="text-align: right;">
 				<a href="updateContentView.do?seq=${docNum}&seq2=${userid}" class="btn btn-box"
