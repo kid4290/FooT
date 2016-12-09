@@ -37,7 +37,6 @@ public class BeaconDao {
 	}
 	
 	public BeaconDto getBeacon(String BId) {
-		System.out.println("BId" + BId);
 		dto = sqlSession.selectOne("getBeacon", BId);
 		return dto;
 	}
