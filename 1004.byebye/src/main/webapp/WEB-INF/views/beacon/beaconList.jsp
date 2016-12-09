@@ -46,7 +46,7 @@
 				<li><a href="index.do">Home</a></li>
 				<li><a href="insertBoard.do">Insert</a></li>
 				<li><a href="myBoardList.do">MyList</a></li>
-				<li><a href="beaconlist.do">Beacon</a><i class="ion-ios-circle-filled color"></i></li>
+				<li><a href="beaconlist.do" id="beacon">Beacon</a><i class="ion-ios-circle-filled color"></i></li>
 				<li><a href="setting.do">Setting</a></li>
             </ul>
         </nav>
@@ -154,6 +154,14 @@ function modalC(object1,object2,object3,object4,object5){
 	$('#bigName3').html(object3);
 	$('#bigName4').html(object4);
 	$('#imgSrc').attr("src",object5);
+}
+
+if(navigator.userAgent.match('Android')){
+	//안드로이드 링크 붙이기
+	$('#beacon').attr("href","start://foot/");
+} else {
+	//PC용 링크 붙이기
+	$('#beacon').attr("href","javascript:alert('안드로이드에서만 작동합니다.')");
 }
 </script>
 </body>

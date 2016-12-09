@@ -119,7 +119,7 @@
     <script type="text/javascript">
 	if(navigator.userAgent.match('Android')){
 		//안드로이드 링크 붙이기
-		$('#beacon').attr("href","foot://start/");
+		$('#beacon').attr("href","start://foot/");
 	} else {
 		//PC용 링크 붙이기
 		$('#beacon').attr("href","javascript:alert('안드로이드에서만 작동합니다.')");
