@@ -107,6 +107,7 @@
       } else {
         document.getElementById('status').innerHTML = 'Please log ' +
           'into Facebook.';
+        alert(response.status);
       }
    }
    
