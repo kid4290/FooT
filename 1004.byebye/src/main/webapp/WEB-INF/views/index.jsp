@@ -27,7 +27,6 @@
    width: 250px;
    height: 350px;
 }
-
 #overlay {
    position: absolute;
    left: 48.5%;
